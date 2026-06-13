@@ -1,0 +1,28 @@
+# Local/dev artifacts
+.codex-cache/
+memory-bank/.refresh_state.json
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+dist/
+build/
+logs/
+reports/
+var/
+media/
+recordings/
+
+# Private/local artifacts
+data/private/
+private/
+secrets/
+*.secret.*
+*.key
+*.pem
+.env
+.env.*

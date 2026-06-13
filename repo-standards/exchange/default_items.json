@@ -1,0 +1,614 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "repo-kit-exchange-policy",
+      "source_path": "docs/CROSS_REPO_EXCHANGE.md",
+      "target_path": "docs/CROSS_REPO_EXCHANGE.md",
+      "category": "docs",
+      "description": "Cross-repo exchange operating policy and command flow."
+    },
+    {
+      "id": "repo-kit-exchange-manifest-template",
+      "source_path": "docs/templates/repo-kit/exchange.json",
+      "target_path": ".repo-kit/exchange.json",
+      "category": "template",
+      "description": "Downstream manifest template for imports, exports, exclusions, cadence, and ledger tracking."
+    },
+    {
+      "id": "repo-kit-exchange-schema",
+      "source_path": "repo-standards/exchange/exchange.schema.json",
+      "target_path": ".repo-kit/exchange.schema.json",
+      "category": "schema",
+      "description": "JSON schema for downstream exchange manifests."
+    },
+    {
+      "id": "repo-kit-exchange-scripts",
+      "source_path": "scripts/exchange",
+      "target_path": "scripts/exchange",
+      "category": "scripts",
+      "description": "Proposal-first exchange scripts for due checks, cataloging, import/export proposals, and drift checks."
+    },
+    {
+      "id": "repo-kit-language-lint-policy",
+      "source_path": "docs/LANGUAGE_LINTING.md",
+      "target_path": "docs/LANGUAGE_LINTING.md",
+      "category": "docs",
+      "description": "Language linting policy and runnable baseline matrix for Markdown, Python, PowerShell, JSON/YAML, JS/TS, C++, C#, and Unreal assets."
+    },
+    {
+      "id": "repo-kit-language-lint-script",
+      "source_path": "scripts/lint/run_language_lint.ps1",
+      "target_path": "scripts/lint/run_language_lint.ps1",
+      "category": "scripts",
+      "description": "Dependency-light language lint runner with optional stronger tool detection."
+    },
+    {
+      "id": "repo-kit-language-lint-matrix",
+      "source_path": "repo-standards/lint/language_lint_matrix.json",
+      "target_path": "repo-standards/lint/language_lint_matrix.json",
+      "category": "repo-standards",
+      "description": "Machine-readable lint profile matrix with required tools, optional tools, fallbacks, report artifacts, and downstream applicability."
+    },
+    {
+      "id": "repo-kit-docs-terminology-cspell-profile",
+      "source_path": "repo-standards/lint/cspell.json",
+      "target_path": "repo-standards/lint/cspell.json",
+      "category": "repo-standards",
+      "description": "Optional cspell profile for docs spelling and terminology linting with generated, vendor, archive, and binary paths ignored."
+    },
+    {
+      "id": "repo-kit-docs-terminology-allowlist",
+      "source_path": "repo-standards/lint/docs_terminology_allowlist.txt",
+      "target_path": "repo-standards/lint/docs_terminology_allowlist.txt",
+      "category": "repo-standards",
+      "description": "Shared repo-kit documentation terminology allowlist for cspell-backed typo drift checks."
+    },
+    {
+      "id": "repo-kit-gitignore-matrix",
+      "source_path": "repo-standards/gitignore/gitignore_matrix.json",
+      "target_path": "repo-standards/gitignore/gitignore_matrix.json",
+      "category": "repo-standards",
+      "description": "Repo-type-to-gitignore fragment matrix used by the upgrade planner for non-mutating drift reports."
+    },
+    {
+      "id": "repo-kit-gitignore-fragments",
+      "source_path": "repo-standards/gitignore/fragments",
+      "target_path": "repo-standards/gitignore/fragments",
+      "category": "repo-standards",
+      "description": "Tracked gitignore fragment library for generated artifacts, archives, tools, Unreal, C++, Python, web, docs-only, and QA Live outputs."
+    },
+    {
+      "id": "repo-kit-codex-verifier",
+      "source_path": "scripts/codex-verify.ps1",
+      "target_path": "scripts/codex-verify.ps1",
+      "category": "scripts",
+      "description": "Canonical verifier entrypoint with pending-pitfall capture and memory-bank recording hooks."
+    },
+    {
+      "id": "repo-kit-agents-contract",
+      "source_path": "AGENTS.md",
+      "target_path": "AGENTS.md",
+      "category": "agent-contract",
+      "description": "Codex operating contract inherited by downstream repos for scope discipline, verification, and memory-bank usage."
+    },
+    {
+      "id": "repo-kit-next-work-status-helper",
+      "source_path": "scripts/status/next_work.ps1",
+      "target_path": "scripts/status/next_work.ps1",
+      "category": "scripts",
+      "description": "Per-wave status helper reporting next unchecked TODO, dirty files, latest verifier log, and latest QA Live status."
+    },
+    {
+      "id": "repo-kit-lint-scripts",
+      "source_path": "scripts/lint",
+      "target_path": "scripts/lint",
+      "category": "scripts",
+      "description": "Changed-scope and full lint entrypoints used by scripts/codex-verify.ps1."
+    },
+    {
+      "id": "repo-kit-memory-bank-checker",
+      "source_path": "scripts/lifecycle/check_memory_bank.py",
+      "target_path": "scripts/lifecycle/check_memory_bank.py",
+      "category": "scripts",
+      "description": "Memory-bank quality gate for local and cloud context-profile budgets."
+    },
+    {
+      "id": "repo-kit-memory-scripts",
+      "source_path": "scripts/memory",
+      "target_path": "scripts/memory",
+      "category": "scripts",
+      "description": "Memory-bank refresh, repo-kit catalog sync, context guard, and pitfall recording scripts."
+    },
+    {
+      "id": "repo-kit-memory-bank-readme",
+      "source_path": "docs/templates/memory-bank/README_template.md",
+      "target_path": "memory-bank/README.md",
+      "category": "memory-bank",
+      "description": "Starter memory-bank README for downstream Codex/default agent context discipline."
+    },
+    {
+      "id": "repo-kit-memory-bank-projectbrief",
+      "source_path": "docs/templates/memory-bank/projectbrief_template.md",
+      "target_path": "memory-bank/projectbrief.md",
+      "category": "memory-bank",
+      "description": "Starter durable project brief for downstream memory-bank setup."
+    },
+    {
+      "id": "repo-kit-memory-bank-product-context",
+      "source_path": "docs/templates/memory-bank/productContext_template.md",
+      "target_path": "memory-bank/productContext.md",
+      "category": "memory-bank",
+      "description": "Starter product/context notes for downstream memory-bank setup."
+    },
+    {
+      "id": "repo-kit-memory-bank-system-patterns",
+      "source_path": "docs/templates/memory-bank/systemPatterns_template.md",
+      "target_path": "memory-bank/systemPatterns.md",
+      "category": "memory-bank",
+      "description": "Starter architecture and system-pattern notes for downstream memory-bank setup."
+    },
+    {
+      "id": "repo-kit-memory-bank-tech-context",
+      "source_path": "docs/templates/memory-bank/techContext_template.md",
+      "target_path": "memory-bank/techContext.md",
+      "category": "memory-bank",
+      "description": "Starter technical context notes for downstream memory-bank setup."
+    },
+    {
+      "id": "repo-kit-memory-bank-active-context",
+      "source_path": "docs/templates/memory-bank/activeContext_template.md",
+      "target_path": "memory-bank/activeContext.md",
+      "category": "memory-bank",
+      "description": "Starter active objective and next-action file for downstream memory-bank setup."
+    },
+    {
+      "id": "repo-kit-memory-bank-progress",
+      "source_path": "docs/templates/memory-bank/progress_template.md",
+      "target_path": "memory-bank/progress.md",
+      "category": "memory-bank",
+      "description": "Starter progress and verification notes for downstream memory-bank setup."
+    },
+    {
+      "id": "repo-kit-memory-bank-context-pack",
+      "source_path": "docs/templates/memory-bank/context-pack_template.md",
+      "target_path": "memory-bank/context-pack.md",
+      "category": "memory-bank",
+      "description": "Starter compact context pack for local/cloud agent handoffs."
+    },
+    {
+      "id": "repo-kit-memory-bank-decisions",
+      "source_path": "docs/templates/memory-bank/decisions_template.md",
+      "target_path": "memory-bank/decisions.md",
+      "category": "memory-bank",
+      "description": "Starter decision log for downstream memory-bank setup."
+    },
+    {
+      "id": "repo-kit-memory-bank-handoff",
+      "source_path": "docs/templates/memory-bank/HANDOFF_template.md",
+      "target_path": "memory-bank/HANDOFF.md",
+      "category": "memory-bank",
+      "description": "Compact handoff template for low-context local AI transfer."
+    },
+    {
+      "id": "repo-kit-memory-bank-catalog",
+      "source_path": "docs/templates/memory-bank/repoKitCatalog_template.md",
+      "target_path": "memory-bank/repoKitCatalog.md",
+      "category": "memory-bank",
+      "description": "Per-wave repo-kit capability review and adoption log."
+    },
+    {
+      "id": "repo-kit-memory-bank-solution-harvest",
+      "source_path": "docs/templates/memory-bank/solutionHarvest_template.md",
+      "target_path": "memory-bank/solutionHarvest.md",
+      "category": "memory-bank",
+      "description": "Reusable solution capture log for cross-repo promotion candidates."
+    },
+    {
+      "id": "repo-kit-memory-bank-common-pitfalls",
+      "source_path": "docs/templates/memory-bank/commonPitfalls_template.md",
+      "target_path": "memory-bank/commonPitfalls.md",
+      "category": "memory-bank",
+      "description": "Recurring failure and fix log for downstream verifier learning."
+    },
+    {
+      "id": "repo-kit-maturity-scorecard-policy",
+      "source_path": "docs/REPO_MATURITY_SCORECARD.md",
+      "target_path": "docs/REPO_MATURITY_SCORECARD.md",
+      "category": "docs",
+      "description": "Scorecard contract for assessing existing repos before repo-kit upgrade planning."
+    },
+    {
+      "id": "repo-kit-health-self-assessment",
+      "source_path": "docs/REPO_HEALTH_SELF_ASSESSMENT.md",
+      "target_path": "docs/REPO_HEALTH_SELF_ASSESSMENT.md",
+      "category": "docs",
+      "description": "OpenSSF Best Practices and community-health self-assessment mapping local evidence, hosted setup, owner decisions, and downstream report-first adoption."
+    },
+    {
+      "id": "repo-kit-maturity-scorecard-script",
+      "source_path": "scripts/doctor/score_repo.ps1",
+      "target_path": "scripts/doctor/score_repo.ps1",
+      "category": "scripts",
+      "description": "Non-mutating repo maturity scorecard with JSON/Markdown output and optional threshold gate."
+    },
+    {
+      "id": "repo-kit-type-pack-recommender-policy",
+      "source_path": "docs/REPO_TYPE_PACK_RECOMMENDER.md",
+      "target_path": "docs/REPO_TYPE_PACK_RECOMMENDER.md",
+      "category": "docs",
+      "description": "Repo type detection and pack recommendation contract for downstream upgrade planning."
+    },
+    {
+      "id": "repo-kit-type-pack-recommender-script",
+      "source_path": "scripts/doctor/detect_repo_type.ps1",
+      "target_path": "scripts/doctor/detect_repo_type.ps1",
+      "category": "scripts",
+      "description": "Non-mutating detector for Python, PowerShell, web, C++, Unreal, docs-only, mixed, and unknown repos with pack recommendations."
+    },
+    {
+      "id": "repo-kit-upgrade-planner-policy",
+      "source_path": "docs/REPO_UPGRADE_PLANNER.md",
+      "target_path": "docs/REPO_UPGRADE_PLANNER.md",
+      "category": "docs",
+      "description": "Non-mutating existing-repo upgrade plan contract with copy, update, manual review, and do-not-touch buckets."
+    },
+    {
+      "id": "repo-kit-upgrade-planner-script",
+      "source_path": "scripts/rollout/plan_repo_upgrade.ps1",
+      "target_path": "scripts/rollout/plan_repo_upgrade.ps1",
+      "category": "scripts",
+      "description": "One-command existing-repo upgrade planner that combines scorecard, repo type recommendations, and exchange drift."
+    },
+    {
+      "id": "repo-kit-upgrade-planner-schema",
+      "source_path": "archive/local-reports/repo_upgrade_plan.schema.json",
+      "target_path": "archive/local-reports/repo_upgrade_plan.schema.json",
+      "category": "schema",
+      "description": "JSON schema for non-mutating existing repo upgrade plan reports."
+    },
+    {
+      "id": "repo-kit-repo-consistency-policy",
+      "source_path": "repo-standards/policies/repo_consistency_policy.json",
+      "target_path": "repo-standards/policies/repo_consistency_policy.json",
+      "category": "policy",
+      "description": "Declarative repo consistency policy for required artifacts and text-contract checks."
+    },
+    {
+      "id": "repo-kit-repo-consistency-policy-schema",
+      "source_path": "repo-standards/policies/repo_consistency_policy.schema.json",
+      "target_path": "repo-standards/policies/repo_consistency_policy.schema.json",
+      "category": "schema",
+      "description": "JSON schema for repo consistency policy rules, severity, applicability, remediation, and downstream override metadata."
+    },
+    {
+      "id": "repo-kit-standards-migration-manifest",
+      "source_path": "repo-standards/migrations/standards_migrations.json",
+      "target_path": "repo-standards/migrations/standards_migrations.json",
+      "category": "policy",
+      "description": "Versioned standards migration manifest with required replay answers and hook policy."
+    },
+    {
+      "id": "repo-kit-standards-migration-schema",
+      "source_path": "repo-standards/migrations/standards_migrations.schema.json",
+      "target_path": "repo-standards/migrations/standards_migrations.schema.json",
+      "category": "schema",
+      "description": "JSON schema for standards migration manifests."
+    },
+    {
+      "id": "repo-kit-standards-migration-answers",
+      "source_path": "docs/templates/repo-kit/migration_answers.json",
+      "target_path": ".repo-kit/migration_answers.json",
+      "category": "template",
+      "description": "Local-owned replay answer file template used to record standards migration decisions."
+    },
+    {
+      "id": "repo-kit-agent-instructions-compatibility-policy",
+      "source_path": "docs/AGENT_INSTRUCTIONS_COMPATIBILITY.md",
+      "target_path": "docs/AGENT_INSTRUCTIONS_COMPATIBILITY.md",
+      "category": "docs",
+      "description": "Cross-agent instruction projection policy for Codex, Cline, Claude Code, Cursor, and GitHub Copilot."
+    },
+    {
+      "id": "repo-kit-agent-instructions-compatibility-model",
+      "source_path": "repo-standards/agents/agent_instruction_compatibility.json",
+      "target_path": "repo-standards/agents/agent_instruction_compatibility.json",
+      "category": "schema",
+      "description": "Machine-readable source-of-truth model for cross-agent instruction projections."
+    },
+    {
+      "id": "repo-kit-todo-process-policy",
+      "source_path": "docs/TODO_PROCESS.md",
+      "target_path": "docs/TODO_PROCESS.md",
+      "category": "docs",
+      "description": "Canonical TODO metadata, ready-queue, QA Live automation, and downstream migration process."
+    },
+    {
+      "id": "repo-kit-decisions-log",
+      "source_path": "docs/DECISIONS.md",
+      "target_path": "docs/DECISIONS.md",
+      "category": "docs",
+      "description": "Lightweight permanent decision log for technical choices that do not need full ADR records."
+    },
+    {
+      "id": "repo-kit-release-checklist",
+      "source_path": "docs/RELEASE_CHECKLIST.md",
+      "target_path": "docs/RELEASE_CHECKLIST.md",
+      "category": "docs",
+      "description": "Release and post-wave checklist covering local verify, QA Live gate, artifact review, and manual smoke checks."
+    },
+    {
+      "id": "repo-kit-todo-audit-policy",
+      "source_path": "docs/TODO_AUDIT.md",
+      "target_path": "docs/TODO_AUDIT.md",
+      "category": "docs",
+      "description": "Canonical TODO audit and evidence formatting contract."
+    },
+    {
+      "id": "repo-kit-todo-agent-queue-schema",
+      "source_path": "repo-standards/todo/todo_agent_queue.schema.json",
+      "target_path": "repo-standards/todo/todo_agent_queue.schema.json",
+      "category": "schema",
+      "description": "Machine-readable TODO ready-queue schema for Codex, Cline, and other agents."
+    },
+    {
+      "id": "repo-kit-todo-format-checker",
+      "source_path": "scripts/lifecycle/check_todo_format.py",
+      "target_path": "scripts/lifecycle/check_todo_format.py",
+      "category": "scripts",
+      "description": "Repo-level TODO format checker backed by scripts/todo_audit."
+    },
+    {
+      "id": "repo-kit-todo-ready-queue-checker",
+      "source_path": "scripts/lifecycle/check_todo_ready_queue.py",
+      "target_path": "scripts/lifecycle/check_todo_ready_queue.py",
+      "category": "scripts",
+      "description": "Repo-level TODO ready-queue checker and agent JSON exporter."
+    },
+    {
+      "id": "repo-kit-todo-audit-library",
+      "source_path": "scripts/todo_audit",
+      "target_path": "scripts/todo_audit",
+      "category": "scripts",
+      "description": "Support package for TODO parsing, evidence linting, repair, reports, and queue checkers."
+    },
+    {
+      "id": "repo-kit-task-pack-generator-policy",
+      "source_path": "docs/TASK_PACK_GENERATOR.md",
+      "target_path": "docs/TASK_PACK_GENERATOR.md",
+      "category": "docs",
+      "description": "Task-pack generation contract for compact Codex/default agent handoff from upgrade-plan reports and TODO ready-queue items."
+    },
+    {
+      "id": "repo-kit-task-pack-generator-script",
+      "source_path": "scripts/rollout/write_task_pack.ps1",
+      "target_path": "scripts/rollout/write_task_pack.ps1",
+      "category": "scripts",
+      "description": "Generates .codex-cache/task-pack.md from selected upgrade-plan actions or TODO ready-queue items without applying changes."
+    },
+    {
+      "id": "repo-kit-downstream-upgrade-dashboard-policy",
+      "source_path": "docs/DOWNSTREAM_UPGRADE_DASHBOARD.md",
+      "target_path": "docs/DOWNSTREAM_UPGRADE_DASHBOARD.md",
+      "category": "docs",
+      "description": "Fleet-level dashboard contract for scorecards, missing packs, upgrade-plan action counts, and priority order."
+    },
+    {
+      "id": "repo-kit-downstream-upgrade-dashboard-script",
+      "source_path": "scripts/rollout/build_upgrade_dashboard.ps1",
+      "target_path": "scripts/rollout/build_upgrade_dashboard.ps1",
+      "category": "scripts",
+      "description": "Builds a read-only upgrade dashboard for one repo or a downstream fleet."
+    },
+    {
+      "id": "repo-kit-downstream-upgrade-dashboard-schema",
+      "source_path": "archive/local-reports/downstream_upgrade_dashboard_report.schema.json",
+      "target_path": "archive/local-reports/downstream_upgrade_dashboard_report.schema.json",
+      "category": "schema",
+      "description": "JSON schema for downstream upgrade dashboard reports."
+    },
+    {
+      "id": "repo-kit-solution-cli-policy",
+      "source_path": "docs/SOLUTION_CLI.md",
+      "target_path": "docs/SOLUTION_CLI.md",
+      "category": "docs",
+      "description": "Solution search, promotion, and approval-gated apply contract for reusable repo-kit solutions."
+    },
+    {
+      "id": "repo-kit-solution-cli-script",
+      "source_path": "scripts/solutions/search_solutions.ps1",
+      "target_path": "scripts/solutions/search_solutions.ps1",
+      "category": "scripts",
+      "description": "Searches reusable solution records, promotes harvest candidates, and builds plan-first downstream apply reports."
+    },
+    {
+      "id": "repo-kit-solution-cli-schema",
+      "source_path": "archive/local-reports/solution_cli_report.schema.json",
+      "target_path": "archive/local-reports/solution_cli_report.schema.json",
+      "category": "schema",
+      "description": "JSON schema for solution search/promote/apply reports."
+    },
+    {
+      "id": "repo-kit-security-supply-chain-policy",
+      "source_path": "docs/SECURITY_SUPPLY_CHAIN_PACK.md",
+      "target_path": "docs/SECURITY_SUPPLY_CHAIN_PACK.md",
+      "category": "docs",
+      "description": "Reusable security pack covering SBOM, secrets, license, pinned actions, branch protection, dependency updates, CODEOWNERS, and PR templates."
+    },
+    {
+      "id": "repo-kit-security-supply-chain-script",
+      "source_path": "scripts/security/check_supply_chain_pack.ps1",
+      "target_path": "scripts/security/check_supply_chain_pack.ps1",
+      "category": "scripts",
+      "description": "Local, report-first security supply-chain baseline checker for downstream repos."
+    },
+    {
+      "id": "repo-kit-security-scanner-profiles",
+      "source_path": "repo-standards/security/security_scanner_profiles.json",
+      "target_path": "repo-standards/security/security_scanner_profiles.json",
+      "category": "repo-standards",
+      "description": "Machine-readable optional scanner profiles for OSSF Scorecard, OSV Scanner, Trivy, and SBOM generation with offline-safe fallbacks."
+    },
+    {
+      "id": "repo-kit-testing-strategy-policy",
+      "source_path": "docs/TESTING_STRATEGY_PACK.md",
+      "target_path": "docs/TESTING_STRATEGY_PACK.md",
+      "category": "docs",
+      "description": "Repo-type minimum viable test suite strategy for smoke, contract, fixture, regression, and golden-path checks."
+    },
+    {
+      "id": "repo-kit-testing-strategy-script",
+      "source_path": "scripts/testing/check_testing_strategy_pack.ps1",
+      "target_path": "scripts/testing/check_testing_strategy_pack.ps1",
+      "category": "scripts",
+      "description": "Local checker for repo-type testing strategy pack adoption and test baseline gaps."
+    },
+    {
+      "id": "repo-kit-testing-strategy-templates",
+      "source_path": "templates/testing/minimum_viable_suite",
+      "target_path": "templates/testing/minimum_viable_suite",
+      "category": "templates",
+      "description": "Minimum viable suite matrix and smoke templates for downstream repo testing baselines."
+    },
+    {
+      "id": "repo-kit-unreal-cpp-policy",
+      "source_path": "docs/UNREAL_CPP_REPO_PACK.md",
+      "target_path": "docs/UNREAL_CPP_REPO_PACK.md",
+      "category": "docs",
+      "description": "Host-safe Unreal/C++ repo pack for UAT, UBT, Blueprint compile, C++ compile database, generated artifacts, modules, plugins, and content policy."
+    },
+    {
+      "id": "repo-kit-unreal-cpp-checker",
+      "source_path": "scripts/doctor/check_unreal_cpp_pack.ps1",
+      "target_path": "scripts/doctor/check_unreal_cpp_pack.ps1",
+      "category": "scripts",
+      "description": "Report-first checker for Unreal/C++ pack readiness and host-safe diagnostics."
+    },
+    {
+      "id": "repo-kit-unreal-command-templates",
+      "source_path": "docs/templates/unreal",
+      "target_path": "docs/templates/unreal",
+      "category": "templates",
+      "description": "Host-gated UAT, UBT, and CompileAllBlueprints command templates for downstream Unreal repos."
+    },
+    {
+      "id": "repo-kit-common-pitfalls-policy",
+      "source_path": "docs/COMMON_PITFALLS.md",
+      "target_path": "docs/COMMON_PITFALLS.md",
+      "category": "docs",
+      "description": "Reusable policy for recording recurring coding and workflow problems into memory-bank."
+    },
+    {
+      "id": "repo-kit-pitfall-recorder",
+      "source_path": "scripts/memory/record_pitfall.ps1",
+      "target_path": "scripts/memory/record_pitfall.ps1",
+      "category": "scripts",
+      "description": "Classifies and records resolved failure patterns into memory-bank/commonPitfalls.md."
+    },
+    {
+      "id": "repo-kit-devcontainer-policy",
+      "source_path": "docs/DEVCONTAINER_POLICY.md",
+      "target_path": "docs/DEVCONTAINER_POLICY.md",
+      "category": "docs",
+      "description": "Optional devcontainer policy and template-selection guidance for repo-kit-managed repos."
+    },
+    {
+      "id": "repo-kit-devcontainer-installer",
+      "source_path": "scripts/bootstrap/install_devcontainer_template.ps1",
+      "target_path": "scripts/bootstrap/install_devcontainer_template.ps1",
+      "category": "scripts",
+      "description": "Installer for copying a selected repo-kit devcontainer template into a downstream repo."
+    },
+    {
+      "id": "repo-kit-devcontainer-templates",
+      "source_path": "docs/templates/devcontainer",
+      "target_path": "docs/templates/devcontainer",
+      "category": "template",
+      "description": "Reusable base, Python, and PowerShell devcontainer templates for downstream repos."
+    },
+    {
+      "id": "repo-kit-devcontainer-python-config",
+      "source_path": "docs/templates/devcontainer/python/devcontainer.json",
+      "target_path": ".devcontainer/devcontainer.json",
+      "category": "template",
+      "description": "Python-oriented devcontainer baseline for downstream repos that want a ready-to-open container workspace."
+    },
+    {
+      "id": "repo-kit-devcontainer-python-post-create",
+      "source_path": "docs/templates/devcontainer/python/post-create.ps1",
+      "target_path": ".devcontainer/post-create.ps1",
+      "category": "template",
+      "description": "Python-oriented devcontainer post-create hook that downstream repos can adapt for local setup."
+    },
+    {
+      "id": "repo-kit-reusable-pack-standard",
+      "source_path": "docs/REUSABLE_PACK_STANDARD.md",
+      "target_path": "docs/REUSABLE_PACK_STANDARD.md",
+      "category": "docs",
+      "description": "Reusable pack extraction standard covering fixture-driven contract verification, consumer adapter plans, public-safe boundaries, private artifact vault manifests, and promotion criteria."
+    },
+    {
+      "id": "repo-kit-reusable-pack-extraction-roadmap",
+      "source_path": "docs/REUSABLE_PACK_EXTRACTION_ROADMAP.md",
+      "target_path": "docs/REUSABLE_PACK_EXTRACTION_ROADMAP.md",
+      "category": "docs",
+      "description": "Reusable pack extraction roadmap tracking standalone pack repos, consumer adapters, private artifact boundaries, and next implementation targets."
+    },
+    {
+      "id": "repo-kit-consumer-adapter-plan-template",
+      "source_path": "docs/templates/repo-kit/consumer_adapter_plan.md",
+      "target_path": "docs/templates/repo-kit/consumer_adapter_plan.md",
+      "category": "template",
+      "description": "Starter plan template for implementing the first consumer adapter against a reusable pack contract."
+    },
+    {
+      "id": "repo-kit-source-preservation-source-packet-schema",
+      "source_path": "repo-standards/source-preservation/source_packet.schema.json",
+      "target_path": "repo-standards/source-preservation/source_packet.schema.json",
+      "category": "repo-standards",
+      "description": "Public-safe source-packet/v1 schema for preserved source metadata, artifact hashes, citation binding, privacy review, and recrawl status."
+    },
+    {
+      "id": "repo-kit-source-preservation-capture-request-schema",
+      "source_path": "repo-standards/source-preservation/capture_request.schema.json",
+      "target_path": "repo-standards/source-preservation/capture_request.schema.json",
+      "category": "repo-standards",
+      "description": "Public-safe source-capture-request/v1 schema for consumer-owned source capture adapters."
+    },
+    {
+      "id": "repo-kit-source-preservation-recrawl-diff-schema",
+      "source_path": "repo-standards/source-preservation/recrawl_diff.schema.json",
+      "target_path": "repo-standards/source-preservation/recrawl_diff.schema.json",
+      "category": "repo-standards",
+      "description": "Public-safe source-recrawl-diff/v1 schema for changed, missing, blocked, unchanged, and not-checked source states."
+    },
+    {
+      "id": "repo-kit-source-preservation-consumer-adoption",
+      "source_path": "docs/source-preservation/CONSUMER_ADOPTION.md",
+      "target_path": "docs/source-preservation/CONSUMER_ADOPTION.md",
+      "category": "docs",
+      "description": "Consumer adoption guide for using Source Preservation Kit contracts without copying private captures or live adapter behavior."
+    },
+    {
+      "id": "repo-kit-local-app-launcher-contract",
+      "source_path": "repo-standards/local-app-launcher/local_app_launcher.schema.json",
+      "target_path": "repo-standards/local-app-launcher/local_app_launcher.schema.json",
+      "category": "repo-standards",
+      "description": "Public-safe local-app-launcher/v1 schema for loopback local app runtime, live/test ports, health, watchdog, Windows startup, and lifecycle operation metadata."
+    },
+    {
+      "id": "repo-kit-local-app-launcher-controller",
+      "source_path": "scripts/launcher/local_app_launcher.ps1",
+      "target_path": "scripts/launcher/local_app_launcher.ps1",
+      "category": "scripts",
+      "description": "Generic PowerShell controller for validating launcher manifests, selecting ports, checking status, lifecycle actions, watchdogs, and optional Windows scheduled-task management."
+    },
+    {
+      "id": "repo-kit-local-app-launcher-consumer-adoption",
+      "source_path": "docs/local-app-launcher/CONSUMER_ADOPTION.md",
+      "target_path": "docs/local-app-launcher/CONSUMER_ADOPTION.md",
+      "category": "docs",
+      "description": "Consumer adoption guide for using Local App Launcher Kit without copying private runtime state or consumer-specific app behavior."
+    }
+  ]
+}

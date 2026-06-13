@@ -1,0 +1,4 @@
+# Repo-kit exchange watchdog repo list example.
+# One repo root per line. Blank lines and # comments are ignored.
+F:\dev\youtube-automation
+F:\dev\qa-live-test-system

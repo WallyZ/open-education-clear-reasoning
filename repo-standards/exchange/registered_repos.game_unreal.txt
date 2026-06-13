@@ -1,0 +1,6 @@
+# Game/Unreal-focused reuse intake lane.
+# One repo root per line. Blank lines and # comments are ignored.
+F:\dev\open-education-game-development
+F:\dev\open-education-suite
+F:\dev\qa-live-test-system
+F:\dev\ComfyUI-automation

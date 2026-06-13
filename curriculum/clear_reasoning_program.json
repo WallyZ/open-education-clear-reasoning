@@ -1,0 +1,223 @@
+{
+  "schema_version": "open-education-clear-reasoning/program/v1",
+  "repo_id": "open-education-clear-reasoning",
+  "program_id": "clear-reasoning-foundations",
+  "title": "Clear Reasoning Foundations",
+  "license_policy": {
+    "default_content_license": "Original repo-authored course design; source text must use public-domain or explicitly licensed editions before inclusion.",
+    "source_text_boundary": "This metadata references great works but does not include copyrighted translations or copied course assets."
+  },
+  "privacy_boundary": {
+    "contains_learner_private_data": false,
+    "contains_copyrighted_source_text": false,
+    "contains_generated_media": false
+  },
+  "source_canon": [
+    {
+      "id": "euclid-elements",
+      "author": "Euclid",
+      "work": "Elements",
+      "role": "Definitions, postulates, common notions, construction, demonstration, and cumulative proof craft.",
+      "use_boundary": "Reference and public-domain edition metadata only until source packets prove text rights."
+    },
+    {
+      "id": "aristotle-categories",
+      "author": "Aristotle",
+      "work": "Categories",
+      "role": "Terms, predication, classification, and category-error detection.",
+      "use_boundary": "Use source references and original exercises unless a licensed translation is recorded."
+    },
+    {
+      "id": "aristotle-on-interpretation",
+      "author": "Aristotle",
+      "work": "On Interpretation",
+      "role": "Propositions, affirmation, denial, contradiction, and modal language.",
+      "use_boundary": "Use source references and original exercises unless a licensed translation is recorded."
+    },
+    {
+      "id": "aristotle-prior-analytics",
+      "author": "Aristotle",
+      "work": "Prior Analytics",
+      "role": "Syllogistic reasoning, valid form, and inference discipline.",
+      "use_boundary": "Use source references and original exercises unless a licensed translation is recorded."
+    },
+    {
+      "id": "aristotle-posterior-analytics",
+      "author": "Aristotle",
+      "work": "Posterior Analytics",
+      "role": "Demonstration, first principles, causes, and explanatory knowledge.",
+      "use_boundary": "Use source references and original exercises unless a licensed translation is recorded."
+    },
+    {
+      "id": "aristotle-topics",
+      "author": "Aristotle",
+      "work": "Topics",
+      "role": "Dialectical questions, endoxa, objections, and ordered inquiry.",
+      "use_boundary": "Use source references and original exercises unless a licensed translation is recorded."
+    },
+    {
+      "id": "aristotle-sophistical-refutations",
+      "author": "Aristotle",
+      "work": "Sophistical Refutations",
+      "role": "Fallacy detection, sophistry, and bad-faith argument repair.",
+      "use_boundary": "Use source references and original exercises unless a licensed translation is recorded."
+    },
+    {
+      "id": "aristotle-rhetoric",
+      "author": "Aristotle",
+      "work": "Rhetoric",
+      "role": "Ethos, pathos, logos, audience, persuasion, and civic speech.",
+      "use_boundary": "Use source references and original exercises unless a licensed translation is recorded."
+    },
+    {
+      "id": "plato-dialogues",
+      "author": "Plato",
+      "work": "Selected Dialogues",
+      "role": "Socratic questioning, intellectual humility, and dialogue practice.",
+      "use_boundary": "Use public-domain editions or source references with edition metadata."
+    },
+    {
+      "id": "cicero-quintilian-rhetoric",
+      "author": "Cicero and Quintilian",
+      "work": "Selected rhetorical works",
+      "role": "Invention, arrangement, character of the speaker, eloquence, and public argument.",
+      "use_boundary": "Use licensed or public-domain editions only."
+    }
+  ],
+  "mastery_bands": [
+    "recognize",
+    "name",
+    "analyze",
+    "produce",
+    "perform"
+  ],
+  "course": {
+    "id": "clear-reasoning-foundations",
+    "title": "Clear Reasoning Foundations",
+    "estimated_hours": 84,
+    "modules": [
+      {
+        "id": "m01-attention-distinction",
+        "title": "Attention And Distinction",
+        "source_refs": ["plato-dialogues"],
+        "skills": ["notice the question type", "distinguish terms", "keep a confusion log"],
+        "practice": ["distinction ladder", "claim sorting", "spoken summary"],
+        "assessment": "Explain three ways one debate fails because categories were mixed.",
+        "performance_pressure": "Private written analysis and short spoken explanation."
+      },
+      {
+        "id": "m02-terms-definitions-categories",
+        "title": "Terms, Definitions, And Categories",
+        "source_refs": ["aristotle-categories"],
+        "skills": ["define stable terms", "test borderline cases", "detect category mistakes"],
+        "practice": ["term lock", "definition tree", "borderline-case test"],
+        "assessment": "Repair a confused argument by stabilizing its key terms.",
+        "performance_pressure": "Friendly questioner asks for examples and counterexamples."
+      },
+      {
+        "id": "m03-propositions-contradiction",
+        "title": "Propositions And Contradiction",
+        "source_refs": ["aristotle-on-interpretation"],
+        "skills": ["extract propositions", "identify contradiction", "repair qualifiers"],
+        "practice": ["proposition extraction", "contradiction pairs", "qualifier repair"],
+        "assessment": "Map a paragraph into propositions and test consistency.",
+        "performance_pressure": "Confused listener asks whether two claims can both be true."
+      },
+      {
+        "id": "m04-euclidean-proof-craft",
+        "title": "Euclidean Proof Craft",
+        "source_refs": ["euclid-elements"],
+        "skills": ["separate definitions from assumptions", "sequence proof steps", "identify missing premises"],
+        "practice": ["Euclidean step test", "missing-step insertion", "construction explanation"],
+        "assessment": "Reconstruct a simple proof-like argument from accepted premises.",
+        "performance_pressure": "Learner explains each step aloud without skipping warrant questions."
+      },
+      {
+        "id": "m05-valid-inference-syllogism",
+        "title": "Valid Inference And Syllogism",
+        "source_refs": ["aristotle-prior-analytics"],
+        "skills": ["translate claims into syllogistic form", "find the middle term", "separate validity from truth"],
+        "practice": ["syllogism translation", "invalid-form repair", "middle-term check"],
+        "assessment": "Translate a public claim into syllogistic form and test validity.",
+        "performance_pressure": "Skeptical listener challenges validity and premise truth separately."
+      },
+      {
+        "id": "m06-demonstration-first-principles",
+        "title": "Demonstration And First Principles",
+        "source_refs": ["aristotle-posterior-analytics"],
+        "skills": ["distinguish that from why", "map first principles", "explain causes"],
+        "practice": ["cause ladder", "first-principles map", "explanation depth test"],
+        "assessment": "Write a demonstration-style explanation of a real-world claim.",
+        "performance_pressure": "Skeptical listener asks what would have to be true first."
+      },
+      {
+        "id": "m07-dialectic-ordered-questions",
+        "title": "Dialectic And Ordered Questions",
+        "source_refs": ["aristotle-topics", "plato-dialogues"],
+        "skills": ["ask ordered questions", "track concessions", "separate attack from inquiry"],
+        "practice": ["question ladder", "concession map", "objection sorting"],
+        "assessment": "Conduct a written dialogue that clarifies disagreement.",
+        "performance_pressure": "Friendly opponent answers unpredictably but cooperatively."
+      },
+      {
+        "id": "m08-fallacies-sophistry",
+        "title": "Fallacies And Sophistry",
+        "source_refs": ["aristotle-sophistical-refutations"],
+        "skills": ["identify equivocation", "repair false dilemmas", "resist bad-faith pressure"],
+        "practice": ["fallacy repair", "equivocation hunt", "combative opponent reset"],
+        "assessment": "Produce a fallacy repair packet for a combative argument.",
+        "performance_pressure": "Combative opponent uses insults, topic shifts, and false dilemmas."
+      },
+      {
+        "id": "m09-rhetoric-ethical-persuasion",
+        "title": "Rhetoric And Ethical Persuasion",
+        "source_refs": ["aristotle-rhetoric", "cicero-quintilian-rhetoric"],
+        "skills": ["adapt to audience", "balance ethos pathos and logos", "avoid manipulative persuasion"],
+        "practice": ["speech compression", "ethos pathos logos audit", "arrangement outline"],
+        "assessment": "Deliver a short speech outline with ethical constraint notes.",
+        "performance_pressure": "Public audience needs clarity without oversimplification."
+      },
+      {
+        "id": "m10-dialogue-disagreement",
+        "title": "Dialogue And Disagreement",
+        "source_refs": ["plato-dialogues", "cicero-quintilian-rhetoric"],
+        "skills": ["steelman opposing views", "answer without contempt", "preserve friendship under conflict"],
+        "practice": ["steelman ladder", "tone discipline", "friendship-after-argument rehearsal"],
+        "assessment": "Steelman and answer a position the learner strongly rejects.",
+        "performance_pressure": "Skeptical listener challenges motive and conclusion."
+      },
+      {
+        "id": "m11-modern-transfer",
+        "title": "Modern Transfer",
+        "source_refs": ["euclid-elements", "aristotle-rhetoric", "aristotle-sophistical-refutations"],
+        "skills": ["separate data from warrant", "audit media claims", "identify incentives"],
+        "practice": ["media claim audit", "data warrant separation", "incentive map"],
+        "assessment": "Analyze a modern argument and identify what would change the conclusion.",
+        "performance_pressure": "Learner answers a fast-moving current-events claim without overclaiming."
+      },
+      {
+        "id": "m12-capstone-performance",
+        "title": "Capstone Performance",
+        "source_refs": ["euclid-elements", "aristotle-prior-analytics", "aristotle-rhetoric", "aristotle-topics"],
+        "skills": ["assemble proof portfolio", "defend under questions", "self-audit reasoning habits"],
+        "practice": ["portfolio revision", "live question defense", "speech rehearsal"],
+        "assessment": "Submit and defend the Clear Reasoning Capstone Portfolio.",
+        "performance_pressure": "Live disputation, public speech, and final self-correction."
+      }
+    ]
+  },
+  "capstone": {
+    "id": "clear-reasoning-capstone-portfolio",
+    "required_artifacts": [
+      "Euclidean-style proof reconstruction",
+      "Aristotelian syllogism and validity analysis",
+      "demonstration or first-principles explanation",
+      "fallacy repair packet",
+      "written steelman and reply",
+      "recorded or transcribed dialogue reference",
+      "persuasive speech outline and performance rubric",
+      "self-audit and continuing practice plan"
+    ],
+    "passing_standard": "The learner must demonstrate sound reasoning, fair representation, ethical persuasion, clear speech, and specific self-correction."
+  }
+}

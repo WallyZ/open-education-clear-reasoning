@@ -1,0 +1,7 @@
+# CODEOWNERS template
+# Replace @org/repo-maintainers with your team/user.
+
+* @org/repo-maintainers
+/docs/** @org/repo-maintainers
+/scripts/** @org/repo-maintainers
+/.github/** @org/repo-maintainers

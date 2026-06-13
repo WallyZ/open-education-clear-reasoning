@@ -1,0 +1,141 @@
+{
+  "exclusions": [
+    {
+      "reason": "Project data may contain private learner records or generated artifacts.",
+      "glob": "data/**"
+    },
+    {
+      "reason": "Runtime package builds and generated outputs are local artifacts.",
+      "glob": "var/**"
+    },
+    {
+      "reason": "Voice practice recordings must stay in consumer-owned private artifact storage.",
+      "glob": "recordings/**"
+    },
+    {
+      "reason": "Generated lecture or practice media is not source curriculum.",
+      "glob": "media/**"
+    },
+    {
+      "reason": "Configuration may contain local or environment-specific values.",
+      "glob": "config/**"
+    },
+    {
+      "reason": "Secrets and local environment files must never be exported.",
+      "glob": ".env*"
+    },
+    {
+      "reason": "Task-local cache, logs, and verification artifacts are not reusable source assets.",
+      "glob": ".codex-cache/**"
+    }
+  ],
+  "repo": {
+    "owner": "@owner",
+    "kind": "content-repo",
+    "id": "open-education-clear-reasoning",
+    "notes": "Subject-owned open education content repo for reasoning, proof, dialectic, rhetoric, and communication. Keep learner private data, generated media, private recordings, and unlicensed source text excluded.",
+    "privacy_classification": "public-capable"
+  },
+  "ledger": {
+    "path": ".repo-kit/exchange-ledger.jsonl"
+  },
+  "imports": [
+    {
+      "id": "repo-kit-codex-verifier",
+      "source_hash": "",
+      "last_checked_utc": "2026-06-13T21:41:02.4239112Z",
+      "target_path": "scripts/codex-verify.ps1",
+      "source_path": "scripts/codex-verify.ps1",
+      "source_ref": "F:/dev/00-repo-kit/main",
+      "status": "current"
+    },
+    {
+      "override_reason": "Clear Reasoning adds a subject curriculum contract check.",
+      "source_path": "scripts/lint",
+      "last_checked_utc": "2026-06-13T21:41:02.4239112Z",
+      "source_hash": "",
+      "id": "repo-kit-lint-scripts",
+      "status": "local_override",
+      "target_path": "scripts/lint",
+      "source_ref": "F:/dev/00-repo-kit/main"
+    },
+    {
+      "id": "repo-kit-todo-lifecycle",
+      "source_hash": "",
+      "last_checked_utc": "2026-06-13T21:41:02.4239112Z",
+      "target_path": "scripts/lifecycle/",
+      "source_path": "scripts/lifecycle/check_todo_format.py,scripts/lifecycle/check_todo_ready_queue.py",
+      "source_ref": "F:/dev/00-repo-kit/main",
+      "status": "current"
+    },
+    {
+      "id": "repo-kit-memory-bank",
+      "source_hash": "",
+      "last_checked_utc": "2026-06-13T21:41:02.4239112Z",
+      "target_path": "memory-bank/,scripts/memory/",
+      "source_path": "memory-bank templates and scripts/memory",
+      "source_ref": "F:/dev/00-repo-kit/main",
+      "status": "current"
+    },
+    {
+      "id": "repo-kit-exchange-system",
+      "source_hash": "",
+      "last_checked_utc": "2026-06-13T21:41:02.4239112Z",
+      "target_path": "docs/CROSS_REPO_EXCHANGE.md,scripts/exchange,repo-standards/exchange",
+      "source_path": "docs/CROSS_REPO_EXCHANGE.md,scripts/exchange,repo-standards/exchange",
+      "source_ref": "F:/dev/00-repo-kit/main",
+      "status": "current"
+    }
+  ],
+  "$schema": "exchange.schema.json",
+  "version": 1,
+  "cadence": {
+    "last_prompt_utc": "",
+    "idle_required": true,
+    "allowed_dirty_globs": [],
+    "interval_days": 7,
+    "last_catalog_utc": "2026-06-13T21:41:02.4239112Z"
+  },
+  "exports": [
+    {
+      "local_path": "curriculum/clear_reasoning_program.json",
+      "last_reviewed_utc": "2026-06-13T21:41:02.4239112Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "curriculum-metadata",
+      "proposed_destination": "open-education-suite/content-sources/open-education-clear-reasoning/clear_reasoning_program.json",
+      "id": "clear-reasoning-program-contract",
+      "evidence": "Machine-readable program metadata for the Clear Reasoning Foundations course."
+    },
+    {
+      "local_path": "schemas/clear_reasoning_program.schema.json",
+      "last_reviewed_utc": "2026-06-13T21:41:02.4239112Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "schema",
+      "proposed_destination": "00-repo-kit/repo-standards/open-education/clear_reasoning_program.schema.json",
+      "id": "clear-reasoning-program-schema",
+      "evidence": "Public-safe schema for subject-owned clear reasoning curriculum metadata."
+    },
+    {
+      "local_path": "study-plans/clear-reasoning-foundations/COURSE.md",
+      "last_reviewed_utc": "2026-06-13T21:41:02.4239112Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "course-plan",
+      "proposed_destination": "open-education-suite/study-plans/clear-reasoning-foundations/COURSE.md",
+      "id": "clear-reasoning-course-plan",
+      "evidence": "Twelve-module foundations course for proof, logic, dialectic, rhetoric, and disagreement practice."
+    },
+    {
+      "local_path": "scripts/lifecycle/check_clear_reasoning_program.py",
+      "last_reviewed_utc": "2026-06-13T21:41:02.4239112Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "validator",
+      "proposed_destination": "00-repo-kit/scripts/lifecycle/check_clear_reasoning_program.py",
+      "id": "clear-reasoning-curriculum-checker",
+      "evidence": "Stdlib checker validates docs, source boundaries, curriculum shape, module source refs, privacy flags, and capstone requirements."
+    }
+  ]
+}
