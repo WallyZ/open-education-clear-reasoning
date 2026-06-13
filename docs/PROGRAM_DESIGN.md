@@ -29,6 +29,21 @@ A graduate of the program should be able to:
 8. Speak clearly under friendly, confused, hostile, or bad-faith pressure.
 9. Use rhetoric ethically: fitting words to audience, purpose, evidence, and moral constraints.
 10. Transfer the method to politics, family, work, faith, science, media, education, and self-government.
+11. Read great works for reusable reasoning moves instead of passive historical appreciation.
+12. Teach a reasoning move to another learner and diagnose where the learner loses the thread.
+
+## Complete Program Shape
+
+The full program is a ladder, not a single survey course.
+
+1. Foundations: terms, propositions, proof sequence, fallacies, basic rhetoric, and dialogue discipline.
+2. Formal discipline: Euclidean proof, Aristotelian inference, scholastic distinction, and validity testing.
+3. Inquiry and evidence: induction, causes, probability, scientific method, data claims, and source reliability.
+4. Dialectic and disputation: ordered questions, objections, replies, concessions, and live disagreement.
+5. Rhetoric and public speech: invention, arrangement, style, delivery, audience adaptation, and ethical persuasion.
+6. Civic and moral judgment: law, institutions, incentives, prudence, justice, duty, liberty, and public consequence.
+7. Adversarial reasoning: sophistry, eristic tactics, propaganda patterns, manipulative framing, and calm repair.
+8. Teaching and leadership: explain difficult ideas, coach correction, run fair discussions, and build reasoning cultures.
 
 ## Course Architecture
 
@@ -48,6 +63,21 @@ It has twelve modules:
 10. Dialogue and disagreement: steelmanning, charity, courage, and friendship.
 11. Modern transfer: media claims, policy debates, institutions, data, and incentives.
 12. Capstone: proof portfolio, live disputation, speech, and self-audit.
+
+## Advanced Tracks
+
+After foundations, the program branches into reusable advanced tracks.
+
+| Track | Primary Sources | World-Class Outcome |
+| --- | --- | --- |
+| Grammar And Meaning | Aristotle, Porphyry, Boethius, Locke, Port-Royal Logic | Learner can stabilize terms, detect ambiguity, and explain meaning shifts precisely. |
+| Proof And Demonstration | Euclid, Archimedes, Aristotle, Newton | Learner can build cumulative arguments where every step is visible. |
+| Dialectic And Disputation | Plato, Aristotle, Abelard, Aquinas | Learner can ask ordered questions, state objections strongly, answer directly, and synthesize. |
+| Rhetoric And Speech | Isocrates, Aristotle, Cicero, Quintilian, Augustine, Lincoln, Douglass | Learner can persuade ethically under public pressure without weakening truth. |
+| Inquiry And Evidence | Bacon, Galileo, Mill, Peirce, Darwin | Learner can separate observation, inference, cause, probability, and explanation. |
+| Civic And Moral Judgment | Aristotle, Cicero, Confucius, Epictetus, Smith, Federalist Papers, Tocqueville | Learner can reason about duty, incentives, institutions, character, liberty, and consequence. |
+| Adversarial Argument | Sophistical Refutations, Schopenhauer as diagnostic reference, propaganda and debate cases | Learner can recognize manipulative moves without becoming manipulative. |
+| Teacher Formation | Quintilian, Augustine, Aquinas, modern reference-only pedagogy | Learner can teach, coach correction, and run disciplined discussion. |
 
 ## Mastery Model
 
@@ -72,6 +102,16 @@ Every module includes:
 - reflection and transfer exercise
 - summative assessment with rubric
 
+Every advanced track must include:
+
+- a source-move extraction drill
+- a historical example and a modern transfer case
+- an adversarial misuse case
+- a spoken explanation
+- a written artifact
+- a revision requirement
+- a teach-back requirement
+
 ## World-Class Bar
 
 A unit is not complete unless it includes:
@@ -86,7 +126,10 @@ A unit is not complete unless it includes:
 - ethical constraint
 - instructor or self-review rubric
 - public-safe provenance and license notes
+- performance pressure level
+- revision loop
+- evidence that the learner can transfer the skill to a fresh case
 
-## Non-Goals For First Scaffold
+## Non-Goals For Current Content Repo
 
-The initial repo does not implement a learner UI, adaptive engine, generated lecture video, or live debate simulator. Those belong in later waves after the curriculum contract is stable.
+This repo does not implement a learner UI, adaptive engine, generated lecture video, or live debate simulator. Those belong in later waves after the curriculum contract is stable.

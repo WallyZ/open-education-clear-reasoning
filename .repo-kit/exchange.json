@@ -128,6 +128,26 @@
       "evidence": "Twelve-module foundations course for proof, logic, dialectic, rhetoric, and disagreement practice."
     },
     {
+      "local_path": "docs/SOURCE_CANON.md",
+      "last_reviewed_utc": "2026-06-13T22:45:00Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "source-canon",
+      "proposed_destination": "open-education-suite/content-sources/open-education-clear-reasoning/SOURCE_CANON.md",
+      "id": "clear-reasoning-source-canon",
+      "evidence": "Public-safe expanded source canon for reasoning, proof, rhetoric, inquiry, civic judgment, and adversarial reasoning."
+    },
+    {
+      "local_path": "docs/CANON_INTEGRATION_MAP.md",
+      "last_reviewed_utc": "2026-06-13T22:45:00Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "curriculum-method",
+      "proposed_destination": "open-education-suite/content-sources/open-education-clear-reasoning/CANON_INTEGRATION_MAP.md",
+      "id": "clear-reasoning-canon-integration-map",
+      "evidence": "Maps great works to trainable reasoning moves, practice labs, assessments, and transfer requirements."
+    },
+    {
       "local_path": "scripts/lifecycle/check_clear_reasoning_program.py",
       "last_reviewed_utc": "2026-06-13T21:41:02.4239112Z",
       "privacy_classification": "public",

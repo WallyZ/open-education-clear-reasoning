@@ -17,71 +17,386 @@
       "id": "euclid-elements",
       "author": "Euclid",
       "work": "Elements",
+      "tradition": "mathematical demonstration",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
       "role": "Definitions, postulates, common notions, construction, demonstration, and cumulative proof craft.",
+      "recommended_use": "proof reconstruction and missing-step discipline",
       "use_boundary": "Reference and public-domain edition metadata only until source packets prove text rights."
     },
     {
       "id": "aristotle-categories",
       "author": "Aristotle",
       "work": "Categories",
+      "tradition": "classical logic",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
       "role": "Terms, predication, classification, and category-error detection.",
+      "recommended_use": "definition discipline and category repair",
       "use_boundary": "Use source references and original exercises unless a licensed translation is recorded."
     },
     {
       "id": "aristotle-on-interpretation",
       "author": "Aristotle",
       "work": "On Interpretation",
+      "tradition": "classical logic",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
       "role": "Propositions, affirmation, denial, contradiction, and modal language.",
+      "recommended_use": "proposition extraction and contradiction testing",
       "use_boundary": "Use source references and original exercises unless a licensed translation is recorded."
     },
     {
       "id": "aristotle-prior-analytics",
       "author": "Aristotle",
       "work": "Prior Analytics",
+      "tradition": "formal inference",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
       "role": "Syllogistic reasoning, valid form, and inference discipline.",
+      "recommended_use": "validity tests and middle-term checks",
       "use_boundary": "Use source references and original exercises unless a licensed translation is recorded."
     },
     {
       "id": "aristotle-posterior-analytics",
       "author": "Aristotle",
       "work": "Posterior Analytics",
+      "tradition": "demonstration",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
       "role": "Demonstration, first principles, causes, and explanatory knowledge.",
+      "recommended_use": "first-principles explanation and cause ladders",
       "use_boundary": "Use source references and original exercises unless a licensed translation is recorded."
     },
     {
       "id": "aristotle-topics",
       "author": "Aristotle",
       "work": "Topics",
+      "tradition": "dialectic",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
       "role": "Dialectical questions, endoxa, objections, and ordered inquiry.",
+      "recommended_use": "question ladders and concession maps",
       "use_boundary": "Use source references and original exercises unless a licensed translation is recorded."
     },
     {
       "id": "aristotle-sophistical-refutations",
       "author": "Aristotle",
       "work": "Sophistical Refutations",
+      "tradition": "fallacy diagnosis",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
       "role": "Fallacy detection, sophistry, and bad-faith argument repair.",
+      "recommended_use": "fallacy repair and eristic shield practice",
       "use_boundary": "Use source references and original exercises unless a licensed translation is recorded."
     },
     {
       "id": "aristotle-rhetoric",
       "author": "Aristotle",
       "work": "Rhetoric",
+      "tradition": "rhetoric",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
       "role": "Ethos, pathos, logos, audience, persuasion, and civic speech.",
+      "recommended_use": "ethical persuasion and audience adaptation",
       "use_boundary": "Use source references and original exercises unless a licensed translation is recorded."
     },
     {
       "id": "plato-dialogues",
       "author": "Plato",
       "work": "Selected Dialogues",
+      "tradition": "socratic inquiry",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
       "role": "Socratic questioning, intellectual humility, and dialogue practice.",
+      "recommended_use": "question sequencing and intellectual posture",
       "use_boundary": "Use public-domain editions or source references with edition metadata."
     },
     {
-      "id": "cicero-quintilian-rhetoric",
-      "author": "Cicero and Quintilian",
-      "work": "Selected rhetorical works",
-      "role": "Invention, arrangement, character of the speaker, eloquence, and public argument.",
+      "id": "isocrates-orations",
+      "author": "Isocrates",
+      "work": "Selected Orations",
+      "tradition": "civic rhetoric",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Education through public speech, civic formation, and practical eloquence.",
+      "recommended_use": "public speech formation and civic audience awareness",
       "use_boundary": "Use licensed or public-domain editions only."
+    },
+    {
+      "id": "cicero-rhetoric-duty",
+      "author": "Cicero",
+      "work": "De Inventione, De Oratore, and De Officiis",
+      "tradition": "roman rhetoric and duty",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Invention, arrangement, eloquence, public argument, and duty.",
+      "recommended_use": "speech arrangement and civic judgment",
+      "use_boundary": "Use licensed or public-domain editions only."
+    },
+    {
+      "id": "quintilian-institutio",
+      "author": "Quintilian",
+      "work": "Institutio Oratoria",
+      "tradition": "rhetorical formation",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Moral formation of the speaker and systematic rhetorical training.",
+      "recommended_use": "speaker discipline and teacher formation",
+      "use_boundary": "Use licensed or public-domain editions only."
+    },
+    {
+      "id": "porphyry-isagoge",
+      "author": "Porphyry",
+      "work": "Isagoge",
+      "tradition": "classification",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Genus, species, difference, property, and accident.",
+      "recommended_use": "definition trees and classification practice",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "boethius-logical-works",
+      "author": "Boethius",
+      "work": "Logical works",
+      "tradition": "medieval logic",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Transmission of logic and dialectic into later traditions.",
+      "recommended_use": "bridge from ancient logic to scholastic method",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "augustine-doctrina",
+      "author": "Augustine",
+      "work": "De Doctrina Christiana",
+      "tradition": "interpretation and teaching",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Teaching, interpretation, persuasion, and moral responsibility in communication.",
+      "recommended_use": "ethical interpretation and teacher formation",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "abelard-sic-et-non",
+      "author": "Peter Abelard",
+      "work": "Sic et Non",
+      "tradition": "scholastic question framing",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Holding apparent contradictions long enough to clarify questions and terms.",
+      "recommended_use": "tension mapping and question formation",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "aquinas-disputation",
+      "author": "Thomas Aquinas",
+      "work": "Summa Theologiae and disputed-question method",
+      "tradition": "scholastic disputation",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Objections, replies, distinctions, synthesis, and ordered disputation.",
+      "recommended_use": "objection box and synthesis practice",
+      "use_boundary": "Use public-domain editions or original summaries only."
+    },
+    {
+      "id": "bacon-novum-organum",
+      "author": "Francis Bacon",
+      "work": "Novum Organum",
+      "tradition": "inductive inquiry",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Induction, idols of the mind, inquiry discipline, and bias-resistant method.",
+      "recommended_use": "inquiry audits and induction ladders",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "galileo-dialogue",
+      "author": "Galileo Galilei",
+      "work": "Dialogue Concerning the Two Chief World Systems",
+      "tradition": "scientific dialogue",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Dialogue form, observation, mathematical science, and controversy.",
+      "recommended_use": "model competition and scientific dialogue practice",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "descartes-method",
+      "author": "Rene Descartes",
+      "work": "Rules for the Direction of the Mind and Discourse on Method",
+      "tradition": "methodical reasoning",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Method, clarity, order, and disciplined doubt.",
+      "recommended_use": "ordered problem solving and method critique",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "port-royal-logic",
+      "author": "Antoine Arnauld and Pierre Nicole",
+      "work": "Logic or the Art of Thinking",
+      "tradition": "grammar-to-logic",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Terms, propositions, method, and judgment.",
+      "recommended_use": "careful language and judgment practice",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "locke-essay",
+      "author": "John Locke",
+      "work": "Essay Concerning Human Understanding",
+      "tradition": "language and evidence",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Language, ideas, evidence, assent, and confusion from words.",
+      "recommended_use": "meaning discipline and evidence humility",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "hume-enquiry",
+      "author": "David Hume",
+      "work": "Enquiry Concerning Human Understanding",
+      "tradition": "causation and probability",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Causation, induction, probability, and skepticism.",
+      "recommended_use": "cause/probability caution and induction limits",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "mill-system-of-logic",
+      "author": "John Stuart Mill",
+      "work": "A System of Logic",
+      "tradition": "causal induction",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Induction, causal methods, and evidence patterns.",
+      "recommended_use": "causal reasoning and rival explanation comparison",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "peirce-inquiry",
+      "author": "Charles Sanders Peirce",
+      "work": "Selected essays on inquiry",
+      "tradition": "fallibilist inquiry",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Fixation of belief, abduction, inquiry, and fallibilism.",
+      "recommended_use": "belief audit and hypothesis generation",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "darwin-origin",
+      "author": "Charles Darwin",
+      "work": "On the Origin of Species",
+      "tradition": "cumulative evidential argument",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Evidence assembly, cumulative argument, and explanatory theory.",
+      "recommended_use": "long-form evidential reasoning and rival explanations",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "newton-principia-opticks",
+      "author": "Isaac Newton",
+      "work": "Principia and Opticks",
+      "tradition": "mathematical science",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Mathematical demonstration, experiment, and queries.",
+      "recommended_use": "proof/evidence integration and model discipline",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "confucius-analects",
+      "author": "Confucius",
+      "work": "Analects",
+      "tradition": "moral speech and cultivation",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Moral cultivation, speech restraint, social order, and learning.",
+      "recommended_use": "character, restraint, and respectful correction",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "stoic-handbook-meditations",
+      "author": "Epictetus and Marcus Aurelius",
+      "work": "Enchiridion and Meditations",
+      "tradition": "self-command",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Attention, judgment, control, self-command, and discipline.",
+      "recommended_use": "composure under pressure and self-correction",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "smith-moral-sentiments-wealth",
+      "author": "Adam Smith",
+      "work": "Theory of Moral Sentiments and Wealth of Nations",
+      "tradition": "moral and incentive reasoning",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Sympathy, moral judgment, incentives, markets, and social order.",
+      "recommended_use": "incentive analysis and moral imagination",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "federalist-papers",
+      "author": "Alexander Hamilton, James Madison, and John Jay",
+      "work": "Federalist Papers",
+      "tradition": "constitutional argument",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Institutional design, faction, power, and public argument.",
+      "recommended_use": "civic reasoning and constitutional argument mapping",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "tocqueville-democracy",
+      "author": "Alexis de Tocqueville",
+      "work": "Democracy in America",
+      "tradition": "civic culture analysis",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Democratic habits, associations, equality, liberty, and civic culture.",
+      "recommended_use": "institution/culture reasoning and long-range consequences",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "lincoln-douglass-speech",
+      "author": "Abraham Lincoln and Frederick Douglass",
+      "work": "Selected speeches and debates",
+      "tradition": "public moral argument",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Compression, moral clarity, witness, irony, and public courage.",
+      "recommended_use": "speech craft and moral reasoning under pressure",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "pascal-newman-persuasion",
+      "author": "Blaise Pascal and John Henry Newman",
+      "work": "Pensees, provincial letters, and Grammar of Assent",
+      "tradition": "assent and persuasion",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Persuasion, conscience, probability, informal reasoning, and assent.",
+      "recommended_use": "practical certainty and moral persuasion",
+      "use_boundary": "Reference-only until edition packet is verified."
+    },
+    {
+      "id": "strategy-adversarial-classics",
+      "author": "Sun Tzu, Machiavelli, Clausewitz, and diagnostic eristic references",
+      "work": "Selected strategy and adversarial reasoning works",
+      "tradition": "strategic and adversarial reasoning",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Strategic awareness, adversarial incentives, and manipulative tactic recognition.",
+      "recommended_use": "adversarial recognition with ethical constraints",
+      "use_boundary": "Reference-only; train diagnosis and repair, not dishonest imitation."
     }
   ],
   "mastery_bands": [
@@ -91,15 +406,125 @@
     "produce",
     "perform"
   ],
+  "advanced_tracks": [
+    {
+      "id": "grammar-meaning",
+      "title": "Grammar And Meaning",
+      "source_refs": ["aristotle-categories", "porphyry-isagoge", "boethius-logical-works", "locke-essay", "port-royal-logic"],
+      "outcomes": ["stabilize terms", "classify meanings", "repair ambiguity"],
+      "labs": ["definition tree", "predication map", "ambiguity repair"],
+      "capstone_artifact": "Meaning audit of a public argument."
+    },
+    {
+      "id": "proof-demonstration",
+      "title": "Proof And Demonstration",
+      "source_refs": ["euclid-elements", "aristotle-posterior-analytics", "newton-principia-opticks"],
+      "outcomes": ["sequence proof steps", "defend first principles", "separate proof from persuasion"],
+      "labs": ["missing-step insertion", "first-principles map", "proof aloud"],
+      "capstone_artifact": "Proof reconstruction and oral defense."
+    },
+    {
+      "id": "dialectic-disputation",
+      "title": "Dialectic And Disputation",
+      "source_refs": ["plato-dialogues", "aristotle-topics", "abelard-sic-et-non", "aquinas-disputation"],
+      "outcomes": ["ask ordered questions", "track concessions", "answer strong objections"],
+      "labs": ["question ladder", "objection box", "structured disputation"],
+      "capstone_artifact": "Written and spoken disputation packet."
+    },
+    {
+      "id": "rhetoric-public-speech",
+      "title": "Rhetoric And Public Speech",
+      "source_refs": ["isocrates-orations", "aristotle-rhetoric", "cicero-rhetoric-duty", "quintilian-institutio", "augustine-doctrina", "lincoln-douglass-speech"],
+      "outcomes": ["invent arguments", "arrange speeches", "persuade ethically under pressure"],
+      "labs": ["arrangement outline", "speech compression", "audience adaptation"],
+      "capstone_artifact": "Ethical persuasive speech with rubric and revision."
+    },
+    {
+      "id": "inquiry-evidence",
+      "title": "Inquiry And Evidence",
+      "source_refs": ["bacon-novum-organum", "galileo-dialogue", "descartes-method", "hume-enquiry", "mill-system-of-logic", "peirce-inquiry", "darwin-origin"],
+      "outcomes": ["separate observation from inference", "test rival causes", "state uncertainty honestly"],
+      "labs": ["induction ladder", "causal rival map", "belief-fixation audit"],
+      "capstone_artifact": "Evidence audit and rival-explanation analysis."
+    },
+    {
+      "id": "civic-moral-judgment",
+      "title": "Civic And Moral Judgment",
+      "source_refs": ["confucius-analects", "stoic-handbook-meditations", "smith-moral-sentiments-wealth", "federalist-papers", "tocqueville-democracy", "cicero-rhetoric-duty"],
+      "outcomes": ["name duties and tradeoffs", "analyze incentives", "reason about institutions"],
+      "labs": ["duty-conflict map", "institutional incentive map", "prudence case"],
+      "capstone_artifact": "Civic judgment memo with objections and limits."
+    },
+    {
+      "id": "adversarial-reasoning",
+      "title": "Adversarial Reasoning",
+      "source_refs": ["aristotle-sophistical-refutations", "strategy-adversarial-classics"],
+      "outcomes": ["detect manipulative tactics", "slow pressure", "answer claims without mirroring abuse"],
+      "labs": ["eristic shield", "bad-faith reset", "frame-control audit"],
+      "capstone_artifact": "Combative exchange repair and self-command audit."
+    },
+    {
+      "id": "teacher-formation",
+      "title": "Teacher Formation",
+      "source_refs": ["quintilian-institutio", "augustine-doctrina", "aquinas-disputation"],
+      "outcomes": ["teach reasoning moves", "diagnose confusion", "coach revision"],
+      "labs": ["teach-back", "error diagnosis", "revision conference"],
+      "capstone_artifact": "Recorded or transcribed teach-back with correction notes."
+    }
+  ],
+  "practice_labs": [
+    {
+      "id": "source-move-extraction",
+      "title": "Source-Move Extraction",
+      "skill_family": "reading-to-practice",
+      "source_refs": ["euclid-elements", "aristotle-topics", "cicero-rhetoric-duty"],
+      "evidence": "Learner turns a source reference into a repeatable drill without copying source text."
+    },
+    {
+      "id": "objection-box",
+      "title": "Objection Box",
+      "skill_family": "dialectic",
+      "source_refs": ["aristotle-topics", "aquinas-disputation"],
+      "evidence": "Learner states and answers the strongest objections with concessions."
+    },
+    {
+      "id": "induction-ladder",
+      "title": "Induction Ladder",
+      "skill_family": "inquiry",
+      "source_refs": ["bacon-novum-organum", "mill-system-of-logic", "peirce-inquiry"],
+      "evidence": "Learner separates observations, rivals, uncertainty, and conclusion."
+    },
+    {
+      "id": "evidence-incentive-map",
+      "title": "Evidence And Incentive Map",
+      "skill_family": "civic judgment",
+      "source_refs": ["smith-moral-sentiments-wealth", "federalist-papers", "tocqueville-democracy"],
+      "evidence": "Learner identifies evidence gaps, incentives, costs, beneficiaries, and limits."
+    },
+    {
+      "id": "eristic-shield",
+      "title": "Eristic Shield",
+      "skill_family": "adversarial reasoning",
+      "source_refs": ["aristotle-sophistical-refutations", "strategy-adversarial-classics"],
+      "evidence": "Learner handles pressure tactics without returning manipulation."
+    },
+    {
+      "id": "teach-back",
+      "title": "Teach-Back",
+      "skill_family": "teacher formation",
+      "source_refs": ["quintilian-institutio", "augustine-doctrina"],
+      "evidence": "Learner teaches a reasoning move, diagnoses confusion, and revises instruction."
+    }
+  ],
   "course": {
     "id": "clear-reasoning-foundations",
     "title": "Clear Reasoning Foundations",
-    "estimated_hours": 84,
+    "estimated_hours": 96,
     "modules": [
       {
         "id": "m01-attention-distinction",
         "title": "Attention And Distinction",
-        "source_refs": ["plato-dialogues"],
+        "source_refs": ["plato-dialogues", "confucius-analects"],
         "skills": ["notice the question type", "distinguish terms", "keep a confusion log"],
         "practice": ["distinction ladder", "claim sorting", "spoken summary"],
         "assessment": "Explain three ways one debate fails because categories were mixed.",
@@ -108,7 +533,7 @@
       {
         "id": "m02-terms-definitions-categories",
         "title": "Terms, Definitions, And Categories",
-        "source_refs": ["aristotle-categories"],
+        "source_refs": ["aristotle-categories", "porphyry-isagoge", "boethius-logical-works"],
         "skills": ["define stable terms", "test borderline cases", "detect category mistakes"],
         "practice": ["term lock", "definition tree", "borderline-case test"],
         "assessment": "Repair a confused argument by stabilizing its key terms.",
@@ -117,7 +542,7 @@
       {
         "id": "m03-propositions-contradiction",
         "title": "Propositions And Contradiction",
-        "source_refs": ["aristotle-on-interpretation"],
+        "source_refs": ["aristotle-on-interpretation", "port-royal-logic"],
         "skills": ["extract propositions", "identify contradiction", "repair qualifiers"],
         "practice": ["proposition extraction", "contradiction pairs", "qualifier repair"],
         "assessment": "Map a paragraph into propositions and test consistency.",
@@ -126,7 +551,7 @@
       {
         "id": "m04-euclidean-proof-craft",
         "title": "Euclidean Proof Craft",
-        "source_refs": ["euclid-elements"],
+        "source_refs": ["euclid-elements", "newton-principia-opticks"],
         "skills": ["separate definitions from assumptions", "sequence proof steps", "identify missing premises"],
         "practice": ["Euclidean step test", "missing-step insertion", "construction explanation"],
         "assessment": "Reconstruct a simple proof-like argument from accepted premises.",
@@ -135,7 +560,7 @@
       {
         "id": "m05-valid-inference-syllogism",
         "title": "Valid Inference And Syllogism",
-        "source_refs": ["aristotle-prior-analytics"],
+        "source_refs": ["aristotle-prior-analytics", "boethius-logical-works"],
         "skills": ["translate claims into syllogistic form", "find the middle term", "separate validity from truth"],
         "practice": ["syllogism translation", "invalid-form repair", "middle-term check"],
         "assessment": "Translate a public claim into syllogistic form and test validity.",
@@ -144,7 +569,7 @@
       {
         "id": "m06-demonstration-first-principles",
         "title": "Demonstration And First Principles",
-        "source_refs": ["aristotle-posterior-analytics"],
+        "source_refs": ["aristotle-posterior-analytics", "aquinas-disputation"],
         "skills": ["distinguish that from why", "map first principles", "explain causes"],
         "practice": ["cause ladder", "first-principles map", "explanation depth test"],
         "assessment": "Write a demonstration-style explanation of a real-world claim.",
@@ -153,7 +578,7 @@
       {
         "id": "m07-dialectic-ordered-questions",
         "title": "Dialectic And Ordered Questions",
-        "source_refs": ["aristotle-topics", "plato-dialogues"],
+        "source_refs": ["aristotle-topics", "plato-dialogues", "abelard-sic-et-non", "aquinas-disputation"],
         "skills": ["ask ordered questions", "track concessions", "separate attack from inquiry"],
         "practice": ["question ladder", "concession map", "objection sorting"],
         "assessment": "Conduct a written dialogue that clarifies disagreement.",
@@ -162,7 +587,7 @@
       {
         "id": "m08-fallacies-sophistry",
         "title": "Fallacies And Sophistry",
-        "source_refs": ["aristotle-sophistical-refutations"],
+        "source_refs": ["aristotle-sophistical-refutations", "strategy-adversarial-classics"],
         "skills": ["identify equivocation", "repair false dilemmas", "resist bad-faith pressure"],
         "practice": ["fallacy repair", "equivocation hunt", "combative opponent reset"],
         "assessment": "Produce a fallacy repair packet for a combative argument.",
@@ -171,7 +596,7 @@
       {
         "id": "m09-rhetoric-ethical-persuasion",
         "title": "Rhetoric And Ethical Persuasion",
-        "source_refs": ["aristotle-rhetoric", "cicero-quintilian-rhetoric"],
+        "source_refs": ["aristotle-rhetoric", "isocrates-orations", "cicero-rhetoric-duty", "quintilian-institutio", "augustine-doctrina"],
         "skills": ["adapt to audience", "balance ethos pathos and logos", "avoid manipulative persuasion"],
         "practice": ["speech compression", "ethos pathos logos audit", "arrangement outline"],
         "assessment": "Deliver a short speech outline with ethical constraint notes.",
@@ -180,7 +605,7 @@
       {
         "id": "m10-dialogue-disagreement",
         "title": "Dialogue And Disagreement",
-        "source_refs": ["plato-dialogues", "cicero-quintilian-rhetoric"],
+        "source_refs": ["plato-dialogues", "cicero-rhetoric-duty", "quintilian-institutio", "lincoln-douglass-speech"],
         "skills": ["steelman opposing views", "answer without contempt", "preserve friendship under conflict"],
         "practice": ["steelman ladder", "tone discipline", "friendship-after-argument rehearsal"],
         "assessment": "Steelman and answer a position the learner strongly rejects.",
@@ -189,7 +614,7 @@
       {
         "id": "m11-modern-transfer",
         "title": "Modern Transfer",
-        "source_refs": ["euclid-elements", "aristotle-rhetoric", "aristotle-sophistical-refutations"],
+        "source_refs": ["bacon-novum-organum", "hume-enquiry", "mill-system-of-logic", "peirce-inquiry", "smith-moral-sentiments-wealth", "federalist-papers", "tocqueville-democracy"],
         "skills": ["separate data from warrant", "audit media claims", "identify incentives"],
         "practice": ["media claim audit", "data warrant separation", "incentive map"],
         "assessment": "Analyze a modern argument and identify what would change the conclusion.",
@@ -198,11 +623,11 @@
       {
         "id": "m12-capstone-performance",
         "title": "Capstone Performance",
-        "source_refs": ["euclid-elements", "aristotle-prior-analytics", "aristotle-rhetoric", "aristotle-topics"],
-        "skills": ["assemble proof portfolio", "defend under questions", "self-audit reasoning habits"],
-        "practice": ["portfolio revision", "live question defense", "speech rehearsal"],
+        "source_refs": ["euclid-elements", "aristotle-prior-analytics", "aristotle-rhetoric", "aristotle-topics", "bacon-novum-organum", "aquinas-disputation"],
+        "skills": ["assemble proof portfolio", "defend under questions", "self-audit reasoning habits", "teach a reasoning move"],
+        "practice": ["portfolio revision", "live question defense", "speech rehearsal", "teach-back"],
         "assessment": "Submit and defend the Clear Reasoning Capstone Portfolio.",
-        "performance_pressure": "Live disputation, public speech, and final self-correction."
+        "performance_pressure": "Live disputation, public speech, teach-back, and final self-correction."
       }
     ]
   },
@@ -216,8 +641,12 @@
       "written steelman and reply",
       "recorded or transcribed dialogue reference",
       "persuasive speech outline and performance rubric",
+      "evidence and induction audit",
+      "civic or moral judgment case",
+      "source-move extraction artifact",
+      "teach-back artifact",
       "self-audit and continuing practice plan"
     ],
-    "passing_standard": "The learner must demonstrate sound reasoning, fair representation, ethical persuasion, clear speech, and specific self-correction."
+    "passing_standard": "The learner must demonstrate sound reasoning, fair representation, ethical persuasion, evidence humility, clear speech, teach-back ability, and specific self-correction."
   }
 }

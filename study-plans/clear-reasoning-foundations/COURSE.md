@@ -23,82 +23,84 @@ By the end, the learner can:
 - build ethical persuasive speeches
 - disagree with discipline and charity
 - transfer reasoning habits to modern problems
+- extract a reasoning move from a source tradition and practice it
+- revise weak arguments into stronger, fairer arguments
 
 ## Module Map
 
 ### 1. Attention And Distinction
 
-- Source anchors: trivium tradition, Plato-style inquiry.
+- Source anchors: trivium tradition, Plato-style inquiry, Confucian speech restraint.
 - Core skill: slow down enough to notice what kind of question is being asked.
 - Practice: distinction ladder, claim sorting, confusion log.
 - Assessment: explain three ways one debate fails because categories were mixed.
 
 ### 2. Terms, Definitions, And Categories
 
-- Source anchors: Aristotle, Categories.
+- Source anchors: Aristotle, Categories; Porphyry, Isagoge; Boethius.
 - Core skill: define terms and detect category mistakes.
 - Practice: definition tree, genus/difference drill, borderline-case test.
 - Assessment: repair a confused argument by stabilizing its key terms.
 
 ### 3. Propositions And Contradiction
 
-- Source anchors: Aristotle, On Interpretation.
+- Source anchors: Aristotle, On Interpretation; Port-Royal Logic.
 - Core skill: identify propositions, contradiction, implication, and modal language.
 - Practice: proposition extraction, contradiction pairs, qualifier repair.
 - Assessment: map a paragraph into propositions and test consistency.
 
 ### 4. Euclidean Proof Craft
 
-- Source anchors: Euclid, Elements Book I.
+- Source anchors: Euclid, Elements Book I; Archimedes and Newton as later proof/evidence extensions.
 - Core skill: build from definitions, postulates, common notions, and ordered steps.
 - Practice: proof labeling, missing-step insertion, construction explanation.
 - Assessment: reconstruct a simple proof-like argument from accepted premises.
 
 ### 5. Valid Inference And Syllogism
 
-- Source anchors: Aristotle, Prior Analytics.
+- Source anchors: Aristotle, Prior Analytics; medieval logic manuals as extension.
 - Core skill: distinguish valid form from persuasive appearance.
 - Practice: syllogism forms, middle-term checks, invalid-form repair.
 - Assessment: translate a public claim into syllogistic form and test validity.
 
 ### 6. Demonstration And First Principles
 
-- Source anchors: Aristotle, Posterior Analytics.
+- Source anchors: Aristotle, Posterior Analytics; Aquinas as disputation/synthesis extension.
 - Core skill: explain not only that something is true, but why it follows.
 - Practice: cause ladder, first-principles map, explanation depth test.
 - Assessment: write a demonstration-style explanation of a real-world claim.
 
 ### 7. Dialectic And Ordered Questions
 
-- Source anchors: Aristotle, Topics; Plato dialogues.
+- Source anchors: Aristotle, Topics; Plato dialogues; Abelard and Aquinas as advanced disputation models.
 - Core skill: ask questions that reveal structure rather than merely attack.
 - Practice: question ladder, concession map, objection sorting.
 - Assessment: conduct a written dialogue that clarifies disagreement.
 
 ### 8. Fallacies And Sophistry
 
-- Source anchors: Aristotle, Sophistical Refutations.
+- Source anchors: Aristotle, Sophistical Refutations; diagnostic eristic references.
 - Core skill: detect bad reasoning and repair it into a fairer form.
 - Practice: equivocation hunt, false dilemma repair, non sequitur tagging.
 - Assessment: produce a fallacy repair packet for a combative argument.
 
 ### 9. Rhetoric And Ethical Persuasion
 
-- Source anchors: Aristotle, Rhetoric; Cicero; Quintilian.
+- Source anchors: Aristotle, Rhetoric; Isocrates; Cicero; Quintilian; Augustine.
 - Core skill: persuade without hiding weak reasoning or manipulating the audience.
 - Practice: ethos/pathos/logos audit, audience adaptation, arrangement outline.
 - Assessment: deliver a short speech outline with ethical constraint notes.
 
 ### 10. Dialogue And Disagreement
 
-- Source anchors: Plato, Cicero, Quintilian, civic rhetoric tradition.
+- Source anchors: Plato, Cicero, Quintilian, Lincoln, Douglass, civic rhetoric tradition.
 - Core skill: remain fair, clear, and courageous while disagreeing.
 - Practice: steelman ladder, tone discipline, friendship-after-argument rehearsal.
 - Assessment: steelman and answer a position the learner strongly rejects.
 
 ### 11. Modern Transfer
 
-- Source anchors: classical tools applied to modern media, policy, work, and family life.
+- Source anchors: Bacon, Galileo, Locke, Hume, Mill, Peirce, Darwin, Smith, Federalist Papers, Tocqueville.
 - Core skill: apply ancient reasoning tools to live claims without becoming anachronistic.
 - Practice: media claim audit, data/warrant separation, incentive map.
 - Assessment: analyze a modern argument and identify what would change the conclusion.
@@ -107,7 +109,7 @@ By the end, the learner can:
 
 - Source anchors: entire course.
 - Core skill: perform clear reasoning in writing, speech, and dialogue.
-- Practice: portfolio revision, live question defense, speech rehearsal.
+- Practice: portfolio revision, live question defense, speech rehearsal, teach-back.
 - Assessment: capstone portfolio and disputation.
 
 ## Weekly Rhythm
@@ -120,6 +122,7 @@ Each module should include:
 - one spoken explanation
 - one dialogue or objection exercise
 - one reflection and revision
+- one source-move extraction or teach-back where appropriate
 
 ## Completion Evidence
 
@@ -131,5 +134,21 @@ A completed learner portfolio includes:
 - spoken explanation transcript or recording reference
 - capstone portfolio
 - self-audit
+- teach-back artifact
 
 Private recordings or learner submissions must stay outside this public-capable repo.
+
+## Advanced Continuation Path
+
+After foundations, learners move into one or more advanced tracks:
+
+1. Grammar and meaning.
+2. Proof and demonstration.
+3. Dialectic and disputation.
+4. Inquiry and evidence.
+5. Rhetoric and public speech.
+6. Civic and moral judgment.
+7. Adversarial reasoning.
+8. Teacher formation.
+
+Each track must end with a written artifact, a spoken performance, a revision record, and a practical transfer case.

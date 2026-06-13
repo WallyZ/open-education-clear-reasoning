@@ -4,7 +4,7 @@
 
 This repo is a subject content repo. The normal workflow is:
 
-1. Add or revise source metadata in `docs/SOURCE_CANON.md` and `curriculum/clear_reasoning_program.json`.
+1. Add or revise source metadata in `docs/SOURCE_CANON.md`, `docs/CANON_INTEGRATION_MAP.md`, and `curriculum/clear_reasoning_program.json`.
 2. Add lesson, module, practice, or assessment material under `study-plans/` or `exercises/`.
 3. Update TODO evidence for completed curriculum work.
 4. Run canonical verification.
@@ -28,6 +28,7 @@ This repo owns:
 
 - curriculum metadata
 - source canon
+- canon integration map
 - study plans
 - exercises
 - assessment rubrics
@@ -36,6 +37,14 @@ This repo owns:
 ## Source Rules
 
 Do not copy source text unless the edition or translation is public domain or otherwise licensed for reuse. Prefer source references and original exercises until source preservation packets exist.
+
+Each source integration should answer:
+
+1. What reasoning move does this source train?
+2. What modern confusion does the move solve?
+3. What drill builds it?
+4. What assessment proves it?
+5. What misuse must be prevented?
 
 ## Future Integration Targets
 

@@ -6,6 +6,12 @@ Build this from a strong curriculum scaffold into a world-class reasoning, speak
 
 ## Tasks
 
+- [x] [P1] Expand the great-works canon and source integration map. <!-- yta:evidence paths="docs/SOURCE_CANON.md,docs/CANON_INTEGRATION_MAP.md,curriculum/clear_reasoning_program.json,scripts/lifecycle/check_clear_reasoning_program.py" id=clear-reasoning-expanded-canon -->
+  - What: Add additional books/authors and define how each source family becomes reasoning practice, assessment, and transfer.
+  - Acceptance: Canon includes classical, scholastic, inquiry/evidence, civic/moral, rhetoric/speech, global/comparative, and adversarial reasoning sources; curriculum metadata exposes advanced tracks and practice labs; deterministic verification enforces the expanded contract.
+  - Evidence: Added `docs/CANON_INTEGRATION_MAP.md`, expanded `docs/SOURCE_CANON.md`, added `advanced_tracks` and `practice_labs` to `curriculum/clear_reasoning_program.json`, and tightened `scripts/lifecycle/check_clear_reasoning_program.py`.
+  - Verification: Passed `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`; log `.codex-cache\logs\codex-verify_20260613_174411_c1512fd6.log`.
+
 - [ ] [P1] Add license-verified source packets for the first public-domain editions. <!-- yta:evidence paths="docs/SOURCE_CANON.md" id=clear-reasoning-source-packets -->
   - What: Create source packet records for Euclid and Aristotle editions before any source text excerpts are copied.
   - Acceptance: Each packet includes edition, translation, publication date, license/public-domain evidence, URL/library reference, excerpt boundary, and attribution.
@@ -16,10 +22,11 @@ Build this from a strong curriculum scaffold into a world-class reasoning, speak
   - Acceptance: Export includes course ID, modules, objectives, assessments, source refs, privacy boundary, and logical refs only.
   - Verification: `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`.
 
-- [ ] [P1] Build the assessment item bank and mastery evidence map. <!-- yta:evidence paths="docs/ASSESSMENT_RUBRICS.md" id=clear-reasoning-assessment-bank -->
+- [x] [P1] Build the assessment item bank and mastery evidence map. <!-- yta:evidence paths="docs/ASSESSMENT_RUBRICS.md" id=clear-reasoning-assessment-bank -->
   - What: Add module-level essay, proof, dialogue, speech, and fallacy-repair assessments mapped to mastery bands.
   - Acceptance: Every module has at least one written assessment, one spoken assessment, one transfer case, and one revision path.
-  - Verification: `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`.
+  - Evidence: Added `Mastery Evidence Map` to `docs/ASSESSMENT_RUBRICS.md` covering written assessment, spoken assessment, transfer case, and revision path for every foundation module.
+  - Verification: Passed `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`; log `.codex-cache\logs\codex-verify_20260613_174411_c1512fd6.log`.
 
 - [ ] [P2] Add a debate and hostile-conversation practice lab. <!-- yta:evidence paths="exercises/reasoning-drills.md" id=clear-reasoning-debate-lab -->
   - What: Create progressive scripts and rubrics for friendly, skeptical, combative, and bad-faith opponents.
@@ -40,3 +47,4 @@ Build this from a strong curriculum scaffold into a world-class reasoning, speak
   - What: Define browser/operator tests for course navigation, drills, assessments, accessibility, and source provenance.
   - Acceptance: QA Live can open the learner surface, complete a representative drill, inspect feedback, and capture logs/screenshots.
   - Verification: `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`.
+

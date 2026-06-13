@@ -1,8 +1,8 @@
 # Progress
 
 ## Completed
-- No recent commits available.
-- 2026-06-13: TODO status checked=0 (0), unchecked=0 (-10).
+- 2026-06-13: [296cce3] Scaffold clear reasoning education repo
+- 2026-06-13: TODO status checked=0 (0), unchecked=0 (0).
 
 ## In progress
 - No active TODO item detected.

@@ -11,6 +11,8 @@
     "privacy_boundary",
     "source_canon",
     "mastery_bands",
+    "advanced_tracks",
+    "practice_labs",
     "course",
     "capstone"
   ],
@@ -38,15 +40,29 @@
     },
     "source_canon": {
       "type": "array",
-      "minItems": 8,
+      "minItems": 24,
       "items": {
         "type": "object",
-        "required": ["id", "author", "work", "role", "use_boundary"],
+        "required": [
+          "id",
+          "author",
+          "work",
+          "tradition",
+          "integration_stage",
+          "source_packet_status",
+          "role",
+          "recommended_use",
+          "use_boundary"
+        ],
         "properties": {
           "id": { "type": "string" },
           "author": { "type": "string" },
           "work": { "type": "string" },
+          "tradition": { "type": "string" },
+          "integration_stage": { "type": "string" },
+          "source_packet_status": { "type": "string" },
           "role": { "type": "string" },
+          "recommended_use": { "type": "string" },
           "use_boundary": { "type": "string" }
         }
       }
@@ -55,6 +71,37 @@
       "type": "array",
       "minItems": 5,
       "items": { "type": "string" }
+    },
+    "advanced_tracks": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "source_refs", "outcomes", "labs", "capstone_artifact"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "source_refs": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "outcomes": { "type": "array", "minItems": 2, "items": { "type": "string" } },
+          "labs": { "type": "array", "minItems": 2, "items": { "type": "string" } },
+          "capstone_artifact": { "type": "string" }
+        }
+      }
+    },
+    "practice_labs": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "skill_family", "source_refs", "evidence"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "skill_family": { "type": "string" },
+          "source_refs": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "evidence": { "type": "string" }
+        }
+      }
     },
     "course": {
       "type": "object",
@@ -87,7 +134,7 @@
       "required": ["id", "required_artifacts", "passing_standard"],
       "properties": {
         "id": { "type": "string" },
-        "required_artifacts": { "type": "array", "minItems": 6, "items": { "type": "string" } },
+        "required_artifacts": { "type": "array", "minItems": 10, "items": { "type": "string" } },
         "passing_standard": { "type": "string" }
       }
     }

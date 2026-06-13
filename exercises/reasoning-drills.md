@@ -91,3 +91,72 @@ After any argument, write:
 - where I represented the other person fairly
 - where I caricatured or dodged
 - what I will practice before the next discussion
+
+## Drill 11: Source-Move Extraction
+
+1. Pick a source reference from the canon.
+2. Identify one reasoning move the source trains.
+3. Write the move in one sentence without copying source text.
+4. Create a tiny modern example that uses the move.
+5. Create a tiny modern example that abuses the move.
+6. Turn the move into a repeatable five-minute drill.
+7. Name the assessment that would prove the learner can use it.
+
+## Drill 12: Objection Box
+
+1. State your claim.
+2. Write the three strongest objections against it.
+3. For each objection, decide whether it attacks a term, premise, inference, evidence, priority, or consequence.
+4. Answer the strongest objection first.
+5. Name what you would concede if the objection is partly right.
+6. Rewrite your claim with the concession included.
+
+## Drill 13: Induction Ladder
+
+1. State the general claim.
+2. List the observations supporting it.
+3. List rival explanations.
+4. Name the strongest counterexample.
+5. State what additional evidence would strengthen or weaken the claim.
+6. Reduce confidence if the evidence is thin.
+7. Explain the result without overstating certainty.
+
+## Drill 14: Evidence And Incentive Map
+
+1. Identify the speaker, institution, audience, and incentive.
+2. Separate observation, interpretation, prediction, and recommendation.
+3. Ask who benefits if the claim is accepted.
+4. Ask what evidence is missing.
+5. Ask what would change the conclusion.
+6. Rewrite the claim with confidence level and uncertainty stated.
+
+## Drill 15: Eristic Shield
+
+Use this when someone is trying to win by pressure rather than reason:
+
+1. Name the active tactic privately: insult, speed, ambiguity, false dilemma, demand flood, motive attack, or topic shift.
+2. State the claim you will answer.
+3. Ask for one premise or one standard at a time.
+4. Refuse to defend claims you did not make.
+5. Slow the pace until each move is visible.
+6. Leave if the other person refuses reasons.
+
+## Drill 16: Civic Judgment Case
+
+1. State the proposed action or policy.
+2. Name the goods it tries to protect.
+3. Name the goods it risks damaging.
+4. Identify incentives created by the proposal.
+5. Identify who pays the cost and who receives the benefit.
+6. State the strongest argument for and against it.
+7. Give a limited judgment and name the uncertainty.
+
+## Drill 17: Teach-Back
+
+1. Pick one reasoning move.
+2. Teach it in three minutes to another person or simulated learner.
+3. Ask the learner to apply it to a fresh example.
+4. Diagnose the first place the learner gets confused.
+5. Revise your explanation.
+6. Record the correction path.
+7. Repeat until the learner can explain the move back to you.

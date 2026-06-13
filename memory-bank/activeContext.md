@@ -13,7 +13,7 @@ Last updated: 2026-06-13
 - `memory-bank/activeContext.md` and `memory-bank/progress.md` maintenance.
 
 ## Risks/blockers
-- No git commit history available for summary.
+- No major blockers captured during refresh.
 
 ## Next 3 actions
 - Review backlog and add the next actionable TODO item.

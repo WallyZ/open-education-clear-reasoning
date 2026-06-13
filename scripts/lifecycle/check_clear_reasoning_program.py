@@ -19,12 +19,13 @@ FORBIDDEN_TOKENS = [
 REQUIRED_DOC_TOKENS = {
     "README.md": ["open-education-clear-reasoning", "Euclid", "Aristotle"],
     "docs/PROGRAM_DESIGN.md": ["World-Class Bar", "Mastery Model", "Course Architecture"],
-    "docs/SOURCE_CANON.md": ["Use Boundary", "Euclid", "Aristotle"],
-    "docs/PEDAGOGY.md": ["Daily Practice Loop", "Performance Pressure Ladder"],
-    "docs/ASSESSMENT_RUBRICS.md": ["Capstone Standard", "Definition discipline"],
-    "docs/WORKFLOW.md": ["Courseware Integration", "Source Rules"],
+    "docs/SOURCE_CANON.md": ["Use Boundary", "Integration Stages", "Global And Comparative Extensions"],
+    "docs/CANON_INTEGRATION_MAP.md": ["Integration Lanes", "Reference-Only Modern Sources", "Integration Rule"],
+    "docs/PEDAGOGY.md": ["Daily Practice Loop", "Source-Move Method", "Performance Pressure Ladder"],
+    "docs/ASSESSMENT_RUBRICS.md": ["Capstone Standard", "Definition discipline", "Mastery Evidence Map"],
+    "docs/WORKFLOW.md": ["Courseware Integration", "Source Rules", "CANON_INTEGRATION_MAP"],
     "study-plans/clear-reasoning-foundations/COURSE.md": ["Clear Reasoning Foundations", "Module Map", "Completion Evidence"],
-    "exercises/reasoning-drills.md": ["Term Lock", "Steelman Ladder", "Combative Opponent Reset"],
+    "exercises/reasoning-drills.md": ["Term Lock", "Steelman Ladder", "Combative Opponent Reset", "Source-Move Extraction"],
 }
 
 
@@ -77,18 +78,75 @@ def _validate_program(root: Path, errors: list[str]) -> None:
         _require(token not in blob, f"curriculum includes forbidden token: {token}", errors)
 
     sources = program.get("source_canon") or []
-    _require(isinstance(sources, list) and len(sources) >= 8, "source_canon must include at least 8 sources", errors)
+    _require(isinstance(sources, list) and len(sources) >= 24, "source_canon must include at least 24 sources", errors)
     source_ids = {str(source.get("id")) for source in sources if isinstance(source, dict)}
-    for required in ("euclid-elements", "aristotle-categories", "aristotle-prior-analytics", "aristotle-rhetoric"):
+    for required in (
+        "euclid-elements",
+        "aristotle-categories",
+        "aristotle-prior-analytics",
+        "aristotle-rhetoric",
+        "porphyry-isagoge",
+        "aquinas-disputation",
+        "bacon-novum-organum",
+        "mill-system-of-logic",
+        "peirce-inquiry",
+        "confucius-analects",
+        "federalist-papers",
+    ):
         _require(required in source_ids, f"missing required source: {required}", errors)
     for source in sources:
         if not isinstance(source, dict):
             errors.append("source_canon entries must be objects")
             continue
+        source_id = source.get("id")
         _require(bool(source.get("use_boundary")), f"source {source.get('id')} missing use_boundary", errors)
+        _require(bool(source.get("tradition")), f"source {source_id} missing tradition", errors)
+        _require(source.get("integration_stage") == "reference_only", f"source {source_id} must stay reference_only until packet is verified", errors)
+        _require(source.get("source_packet_status") == "needed", f"source {source_id} must require a source packet before excerpts", errors)
+        _require(bool(source.get("recommended_use")), f"source {source_id} missing recommended_use", errors)
 
     mastery_bands = program.get("mastery_bands") or []
     _require(mastery_bands == ["recognize", "name", "analyze", "produce", "perform"], "mastery bands must match expected ladder", errors)
+
+    advanced_tracks = program.get("advanced_tracks") or []
+    _require(len(advanced_tracks) >= 6, "advanced_tracks must include at least 6 tracks", errors)
+    track_ids: set[str] = set()
+    for track in advanced_tracks:
+        if not isinstance(track, dict):
+            errors.append("advanced_tracks entries must be objects")
+            continue
+        track_id = str(track.get("id") or "")
+        _require(bool(track_id), "advanced track missing id", errors)
+        _require(track_id not in track_ids, f"duplicate advanced track id: {track_id}", errors)
+        track_ids.add(track_id)
+        refs = track.get("source_refs") or []
+        _require(bool(refs), f"advanced track {track_id} missing source_refs", errors)
+        for ref in refs:
+            _require(str(ref) in source_ids, f"advanced track {track_id} references unknown source {ref}", errors)
+        _require(len(track.get("outcomes") or []) >= 2, f"advanced track {track_id} needs at least 2 outcomes", errors)
+        _require(len(track.get("labs") or []) >= 2, f"advanced track {track_id} needs at least 2 labs", errors)
+        _require(bool(track.get("capstone_artifact")), f"advanced track {track_id} missing capstone_artifact", errors)
+    for required_track in ("grammar-meaning", "proof-demonstration", "dialectic-disputation", "rhetoric-public-speech", "inquiry-evidence", "civic-moral-judgment", "adversarial-reasoning"):
+        _require(required_track in track_ids, f"missing required advanced track: {required_track}", errors)
+
+    practice_labs = program.get("practice_labs") or []
+    _require(len(practice_labs) >= 6, "practice_labs must include at least 6 labs", errors)
+    lab_ids: set[str] = set()
+    for lab in practice_labs:
+        if not isinstance(lab, dict):
+            errors.append("practice_labs entries must be objects")
+            continue
+        lab_id = str(lab.get("id") or "")
+        _require(bool(lab_id), "practice lab missing id", errors)
+        _require(lab_id not in lab_ids, f"duplicate practice lab id: {lab_id}", errors)
+        lab_ids.add(lab_id)
+        _require(bool(lab.get("skill_family")), f"practice lab {lab_id} missing skill_family", errors)
+        _require(bool(lab.get("evidence")), f"practice lab {lab_id} missing evidence", errors)
+        refs = lab.get("source_refs") or []
+        for ref in refs:
+            _require(str(ref) in source_ids, f"practice lab {lab_id} references unknown source {ref}", errors)
+    for required_lab in ("source-move-extraction", "objection-box", "induction-ladder", "eristic-shield", "teach-back"):
+        _require(required_lab in lab_ids, f"missing required practice lab: {required_lab}", errors)
 
     course = program.get("course") or {}
     modules = course.get("modules") or []
