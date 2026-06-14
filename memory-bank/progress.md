@@ -1,8 +1,9 @@
 # Progress
 
 ## Completed
-- 2026-06-13: [296cce3] Scaffold clear reasoning education repo
-- 2026-06-13: TODO status checked=0 (0), unchecked=0 (0).
+- 2026-06-14: [2af36fb] Expand clear reasoning curriculum canon
+- 2026-06-14: [296cce3] Scaffold clear reasoning education repo
+- 2026-06-14: TODO status checked=0 (0), unchecked=0 (0).
 
 ## In progress
 - No active TODO item detected.
@@ -15,5 +16,5 @@
 - Inputs: todo=docs/TODO.md, todo_root=docs/todo, commits=8, profile=cloud
 - Profile resolution: explicit -ContextProfile parameter
 - TODO source: hub
-- Generated on: 2026-06-13
+- Generated on: 2026-06-14
 

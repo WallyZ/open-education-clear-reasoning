@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Clear Reasoning Source Packet",
+  "type": "object",
+  "required": [
+    "source_id",
+    "civilization",
+    "tradition",
+    "author",
+    "work",
+    "edition_or_translation",
+    "source_reference",
+    "rights",
+    "excerpt_boundary",
+    "pedagogical_use",
+    "cultural_context",
+    "review"
+  ],
+  "properties": {
+    "source_id": { "type": "string", "minLength": 3 },
+    "civilization": { "type": "string", "minLength": 3 },
+    "tradition": { "type": "string", "minLength": 3 },
+    "author": { "type": "string", "minLength": 1 },
+    "work": { "type": "string", "minLength": 1 },
+    "edition_or_translation": { "type": "string", "minLength": 1 },
+    "source_reference": {
+      "type": "object",
+      "required": ["url_or_library_reference", "last_accessed"],
+      "properties": {
+        "url_or_library_reference": { "type": "string", "minLength": 1 },
+        "archive_reference": { "type": "string" },
+        "last_accessed": { "type": "string", "minLength": 1 }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "required": ["license_or_public_domain_claim", "evidence", "reuse_limits"],
+      "properties": {
+        "license_or_public_domain_claim": { "type": "string", "minLength": 1 },
+        "evidence": { "type": "string", "minLength": 1 },
+        "jurisdiction_notes": { "type": "string" },
+        "reuse_limits": { "type": "string", "minLength": 1 }
+      }
+    },
+    "excerpt_boundary": {
+      "type": "object",
+      "required": ["boundary", "pedagogical_reason", "contains_source_text"],
+      "properties": {
+        "boundary": { "type": "string", "minLength": 1 },
+        "pedagogical_reason": { "type": "string", "minLength": 1 },
+        "contains_source_text": { "const": false }
+      }
+    },
+    "pedagogical_use": {
+      "type": "object",
+      "required": ["reasoning_move", "module_or_track", "practice_drill", "assessment_artifact", "transfer_case"],
+      "properties": {
+        "reasoning_move": { "type": "string", "minLength": 1 },
+        "module_or_track": { "type": "string", "minLength": 1 },
+        "practice_drill": { "type": "string", "minLength": 1 },
+        "assessment_artifact": { "type": "string", "minLength": 1 },
+        "transfer_case": { "type": "string", "minLength": 1 }
+      }
+    },
+    "cultural_context": {
+      "type": "object",
+      "required": ["knowledge_standard", "argument_goal", "disagreement_norm", "authority_structure", "cultural_caveat", "misread_risks"],
+      "properties": {
+        "knowledge_standard": { "type": "string", "minLength": 1 },
+        "argument_goal": { "type": "string", "minLength": 1 },
+        "disagreement_norm": { "type": "string", "minLength": 1 },
+        "authority_structure": { "type": "string", "minLength": 1 },
+        "cultural_caveat": { "type": "string", "minLength": 1 },
+        "misread_risks": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": ["reviewer_status", "approved_uses", "remaining_uncertainties"],
+      "properties": {
+        "reviewer_status": { "type": "string", "enum": ["needs_review", "reference_only", "approved_for_original_lesson", "approved_for_excerpt_use"] },
+        "reviewer_name_or_role": { "type": "string" },
+        "review_date": { "type": "string" },
+        "approved_uses": { "type": "array", "items": { "type": "string" } },
+        "rejected_or_softened_claims": { "type": "array", "items": { "type": "string" } },
+        "remaining_uncertainties": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

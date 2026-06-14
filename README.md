@@ -32,6 +32,9 @@ It contains:
 
 - source canon and use boundaries
 - canon integration map
+- civilization coverage and culture-difference framework
+- source packet system
+- curriculum matrix and reviewer standard
 - course architecture
 - module sequence
 - practice drills
@@ -45,9 +48,11 @@ It does not contain learner private data, generated media, copyrighted translati
 
 1. Read `docs/PROGRAM_DESIGN.md`.
 2. Review `docs/CANON_INTEGRATION_MAP.md`.
-3. Review `study-plans/clear-reasoning-foundations/COURSE.md`.
-4. Inspect `curriculum/clear_reasoning_program.json`.
-5. Run verification:
+3. Review `docs/CIVILIZATION_COVERAGE.md` and `docs/CULTURE_DIFFERENCE_FRAMEWORK.md`.
+4. Review `docs/CURRICULUM_MATRIX.md`, `docs/REVIEWER_STANDARD.md`, and `docs/BUILD_ORDER.md`.
+5. Review `study-plans/clear-reasoning-foundations/COURSE.md`.
+6. Inspect `curriculum/clear_reasoning_program.json` and `curriculum/civilization_reasoning_framework.json`.
+7. Run verification:
 
 ```powershell
 pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked

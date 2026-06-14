@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 SCHEMA_VERSION = "open-education-clear-reasoning/program/v1"
+FRAMEWORK_SCHEMA_VERSION = "open-education-clear-reasoning/civilization-framework/v1"
 REPO_ID = "open-education-clear-reasoning"
 FORBIDDEN_TOKENS = [
     "excerpt_text",
@@ -21,11 +22,38 @@ REQUIRED_DOC_TOKENS = {
     "docs/PROGRAM_DESIGN.md": ["World-Class Bar", "Mastery Model", "Course Architecture"],
     "docs/SOURCE_CANON.md": ["Use Boundary", "Integration Stages", "Global And Comparative Extensions"],
     "docs/CANON_INTEGRATION_MAP.md": ["Integration Lanes", "Reference-Only Modern Sources", "Integration Rule"],
+    "docs/CIVILIZATION_COVERAGE.md": ["Western civilization is the main spine", "Civilization Lanes", "Cultural Comparison Questions"],
+    "docs/CULTURE_DIFFERENCE_FRAMEWORK.md": ["Primary Rule", "Required Lens Fields", "Misread Controls"],
+    "docs/SOURCE_PACKET_SYSTEM.md": ["Packet Lifecycle", "Required Packet Fields", "Approval Rule"],
+    "docs/CURRICULUM_MATRIX.md": ["Foundation Matrix", "Advanced Track Matrix", "Matrix Completion Standard"],
+    "docs/REVIEWER_STANDARD.md": ["Review Categories", "Required Reviewer Checks", "Cultural Humility Standard"],
+    "docs/BUILD_ORDER.md": ["Phase 1: Western Foundation Spine", "Phase 3: Comparative Lesson Extensions", "Build Rule"],
     "docs/PEDAGOGY.md": ["Daily Practice Loop", "Source-Move Method", "Performance Pressure Ladder"],
     "docs/ASSESSMENT_RUBRICS.md": ["Capstone Standard", "Definition discipline", "Mastery Evidence Map"],
     "docs/WORKFLOW.md": ["Courseware Integration", "Source Rules", "CANON_INTEGRATION_MAP"],
     "study-plans/clear-reasoning-foundations/COURSE.md": ["Clear Reasoning Foundations", "Module Map", "Completion Evidence"],
     "exercises/reasoning-drills.md": ["Term Lock", "Steelman Ladder", "Combative Opponent Reset", "Source-Move Extraction"],
+}
+
+REQUIRED_FRAMEWORKS = {
+    "civilization_coverage",
+    "culture_difference_framework",
+    "source_packet_system",
+    "curriculum_matrix",
+    "reviewer_standard",
+    "build_order",
+}
+
+REQUIRED_COVERAGE_LANES = {
+    "western-greek-roman",
+    "western-scholastic",
+    "western-early-modern-scientific",
+    "western-civic-constitutional",
+    "indian-nyaya-buddhist",
+    "islamic-reasoning",
+    "jewish-legal-philosophical",
+    "chinese-classical",
+    "african-oral-deliberative",
 }
 
 
@@ -176,6 +204,77 @@ def _validate_program(root: Path, errors: list[str]) -> None:
     _require("self-audit" in json.dumps(capstone).lower(), "capstone must include self-audit", errors)
 
 
+def _validate_civilization_framework(root: Path, errors: list[str]) -> None:
+    schema_path = root / "schemas" / "civilization_reasoning_framework.schema.json"
+    framework_path = root / "curriculum" / "civilization_reasoning_framework.json"
+    packet_schema_path = root / "schemas" / "source_packet.schema.json"
+    packet_readme_path = root / "source-packets" / "README.md"
+    packet_template_path = root / "source-packets" / "TEMPLATE.md"
+
+    for path, label in (
+        (schema_path, "civilization framework schema"),
+        (framework_path, "civilization framework"),
+        (packet_schema_path, "source packet schema"),
+        (packet_readme_path, "source packet readme"),
+        (packet_template_path, "source packet template"),
+    ):
+        _require(path.is_file(), f"missing {label}", errors)
+    if not schema_path.is_file() or not framework_path.is_file() or not packet_schema_path.is_file():
+        return
+
+    schema = _load_json(schema_path)
+    framework = _load_json(framework_path)
+    packet_schema = _load_json(packet_schema_path)
+
+    _require(schema.get("title") == "Civilization Reasoning Framework", "civilization framework schema title drifted", errors)
+    _require(packet_schema.get("title") == "Clear Reasoning Source Packet", "source packet schema title drifted", errors)
+    _require(framework.get("schema_version") == FRAMEWORK_SCHEMA_VERSION, "unexpected civilization framework schema_version", errors)
+    _require(framework.get("repo_id") == REPO_ID, "unexpected civilization framework repo_id", errors)
+    _require(framework.get("primary_spine") == "western-civilization", "civilization framework must keep western-civilization as primary spine", errors)
+
+    frameworks = set(str(item) for item in (framework.get("required_frameworks") or []))
+    for required in REQUIRED_FRAMEWORKS:
+        _require(required in frameworks, f"civilization framework missing required framework: {required}", errors)
+
+    lanes = framework.get("coverage_lanes") or []
+    _require(len(lanes) >= 8, "civilization framework must include at least 8 coverage lanes", errors)
+    lane_ids: set[str] = set()
+    primary_count = 0
+    comparative_count = 0
+    for lane in lanes:
+        if not isinstance(lane, dict):
+            errors.append("coverage_lanes entries must be objects")
+            continue
+        lane_id = str(lane.get("id") or "")
+        _require(bool(lane_id), "coverage lane missing id", errors)
+        _require(lane_id not in lane_ids, f"duplicate coverage lane id: {lane_id}", errors)
+        lane_ids.add(lane_id)
+        priority = lane.get("priority")
+        if priority == "primary":
+            primary_count += 1
+        if priority == "comparative":
+            comparative_count += 1
+        for key in ("knowledge_standard", "argument_goal", "disagreement_norm", "authority_structure", "build_status"):
+            _require(bool(lane.get(key)), f"coverage lane {lane_id} missing {key}", errors)
+        _require(len(lane.get("transferable_moves") or []) >= 1, f"coverage lane {lane_id} missing transferable moves", errors)
+        _require(len(lane.get("misread_risks") or []) >= 1, f"coverage lane {lane_id} missing misread risks", errors)
+        if priority == "comparative":
+            _require("review" in str(lane.get("build_status")), f"comparative lane {lane_id} must require review before lesson build", errors)
+
+    for required_lane in REQUIRED_COVERAGE_LANES:
+        _require(required_lane in lane_ids, f"missing required coverage lane: {required_lane}", errors)
+    _require(primary_count >= 4, "civilization framework must include at least 4 primary Western lanes", errors)
+    _require(comparative_count >= 4, "civilization framework must include at least 4 comparative lanes", errors)
+
+    review_gates = set(str(item) for item in (framework.get("review_gates") or []))
+    for required_gate in ("source_identity_checked", "rights_checked", "cultural_context_checked", "misread_risks_recorded", "transfer_boundary_recorded"):
+        _require(required_gate in review_gates, f"civilization framework missing review gate: {required_gate}", errors)
+
+    build_phase_ids = {str(item.get("id")) for item in framework.get("build_phases") or [] if isinstance(item, dict)}
+    for required_phase in ("phase-1-western-foundation", "phase-2-comparative-guardrails", "phase-3-comparative-extensions"):
+        _require(required_phase in build_phase_ids, f"civilization framework missing build phase: {required_phase}", errors)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo-root", default=".")
@@ -185,6 +284,7 @@ def main() -> int:
     errors: list[str] = []
     _validate_docs(root, errors)
     _validate_program(root, errors)
+    _validate_civilization_framework(root, errors)
 
     if errors:
         for error in errors:

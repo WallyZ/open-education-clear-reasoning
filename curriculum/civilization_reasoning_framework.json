@@ -1,0 +1,168 @@
+{
+  "schema_version": "open-education-clear-reasoning/civilization-framework/v1",
+  "repo_id": "open-education-clear-reasoning",
+  "primary_spine": "western-civilization",
+  "purpose": "Use Western civilization as the main reasoning curriculum spine while integrating other civilizations as culture-aware contrast, enrichment, and correction.",
+  "coverage_lanes": [
+    {
+      "id": "western-greek-roman",
+      "priority": "primary",
+      "civilization": "Western",
+      "traditions": ["Greek inquiry", "Aristotelian logic", "Euclidean proof", "Roman rhetoric", "civic duty"],
+      "knowledge_standard": "Definitions, demonstration, dialectic, prudence, civic argument, and public persuasion.",
+      "argument_goal": "Truth-seeking, proof, civic persuasion, ethical speech, and practical judgment.",
+      "disagreement_norm": "Dialogue, dialectic, public debate, legal argument, and rhetorical contest.",
+      "authority_structure": "Reason, source texts, public speech, law, civic office, and visible inference.",
+      "transferable_moves": ["define terms", "sequence proof", "map arguments", "adapt speech to audience"],
+      "misread_risks": ["treating rhetoric as manipulation", "separating proof from moral judgment too sharply"],
+      "build_status": "build_first"
+    },
+    {
+      "id": "western-scholastic",
+      "priority": "primary",
+      "civilization": "Western",
+      "traditions": ["medieval logic", "scholastic disputation", "Christian interpretation"],
+      "knowledge_standard": "Textual authority, formal distinction, objection, reply, synthesis, and ordered theology/philosophy.",
+      "argument_goal": "Resolve or clarify disputed questions while preserving objections and distinctions.",
+      "disagreement_norm": "Formal disputation, preserved objections, replies, and careful synthesis.",
+      "authority_structure": "Scripture, received authorities, reason, teacher tradition, and institutional learning.",
+      "transferable_moves": ["state objections strongly", "reply directly", "make distinctions", "synthesize without evasion"],
+      "misread_risks": ["mistaking scholastic structure for sterile formalism", "ignoring theological setting"],
+      "build_status": "build_after_western_foundation"
+    },
+    {
+      "id": "western-early-modern-scientific",
+      "priority": "primary",
+      "civilization": "Western",
+      "traditions": ["method", "induction", "scientific controversy", "probability", "fallibilism"],
+      "knowledge_standard": "Observation, experiment, method, probability, causal inference, and public correction.",
+      "argument_goal": "Improve inquiry, test causes, compare explanations, and state uncertainty honestly.",
+      "disagreement_norm": "Method critique, rival explanation, evidence challenge, and public revision.",
+      "authority_structure": "Observation, mathematics, experiment, method, publication, and criticism.",
+      "transferable_moves": ["separate observation from inference", "compare rival causes", "audit uncertainty"],
+      "misread_risks": ["treating method as mechanical certainty", "ignoring inherited philosophical disputes"],
+      "build_status": "build_after_proof_and_dialectic"
+    },
+    {
+      "id": "western-civic-constitutional",
+      "priority": "primary",
+      "civilization": "Western",
+      "traditions": ["constitutional argument", "liberty", "institutional design", "public moral speech"],
+      "knowledge_standard": "Public reason, legal text, institutional consequence, moral judgment, and historical evidence.",
+      "argument_goal": "Reason about liberty, duty, power, faction, reform, justice, and public legitimacy.",
+      "disagreement_norm": "Public debate, legal interpretation, electoral conflict, civic persuasion, and principled dissent.",
+      "authority_structure": "Constitutions, law, public office, civic tradition, moral principle, and institutional performance.",
+      "transferable_moves": ["map incentives", "name tradeoffs", "test institutional consequences", "argue publicly without contempt"],
+      "misread_risks": ["turning civic judgment into slogans", "ignoring institutional context"],
+      "build_status": "build_after_rhetoric_and_evidence"
+    },
+    {
+      "id": "indian-nyaya-buddhist",
+      "priority": "comparative",
+      "civilization": "Indian",
+      "traditions": ["Nyaya logic", "Buddhist logic", "debate and refutation"],
+      "knowledge_standard": "Epistemic instruments, inference, testimony, perception, debate, and refutation within school contexts.",
+      "argument_goal": "Clarify truth, defeat false views, defend schools, and in some contexts support liberation-oriented inquiry.",
+      "disagreement_norm": "Formal debate, refutation, school-based argument, teacher correction, and disciplined classification.",
+      "authority_structure": "Texts, teachers, schools, perception, inference, testimony, and debate norms.",
+      "transferable_moves": ["compare inference forms", "test testimony", "state opponent position clearly", "classify means of knowledge"],
+      "misread_risks": ["forcing Greek syllogism categories onto Nyaya inference", "ignoring liberation or school context"],
+      "build_status": "needs_source_packet_and_cultural_review"
+    },
+    {
+      "id": "islamic-reasoning",
+      "priority": "comparative",
+      "civilization": "Islamic",
+      "traditions": ["falsafa", "kalam", "logic", "law", "commentary"],
+      "knowledge_standard": "Demonstration, theology, legal reasoning, commentary, linguistic analysis, and reason/revelation boundaries.",
+      "argument_goal": "Clarify truth, defend doctrine, reason legally, interpret texts, and integrate or contest philosophical inheritance.",
+      "disagreement_norm": "Commentary, disputation, legal schools, theological debate, and teacher-guided argument.",
+      "authority_structure": "Scripture, law, commentary chains, teachers, reason, language, and school authority.",
+      "transferable_moves": ["track authority layers", "separate demonstration from legal reasoning", "map reason and revelation boundaries"],
+      "misread_risks": ["flattening theological/legal context into secular philosophy", "treating commentary as derivative rather than argumentative"],
+      "build_status": "needs_source_packet_and_cultural_review"
+    },
+    {
+      "id": "jewish-legal-philosophical",
+      "priority": "comparative",
+      "civilization": "Jewish",
+      "traditions": ["legal reasoning", "commentary", "philosophical interpretation", "case argument"],
+      "knowledge_standard": "Text, commentary, precedent, case distinction, communal law, and philosophical reflection.",
+      "argument_goal": "Preserve, interpret, apply, and argue through law and text while recording disagreement.",
+      "disagreement_norm": "Textual dispute, preserved minority views, case comparison, objection and reply.",
+      "authority_structure": "Scripture, Talmudic reasoning, rabbinic authority, commentary, law, and community.",
+      "transferable_moves": ["preserve live disagreement", "reason by case", "distinguish similar cases", "argue from text responsibly"],
+      "misread_risks": ["treating preserved disagreement as indecision", "ignoring legal and communal setting"],
+      "build_status": "needs_source_packet_and_cultural_review"
+    },
+    {
+      "id": "chinese-classical",
+      "priority": "comparative",
+      "civilization": "Chinese",
+      "traditions": ["Confucian moral speech", "Mohist standards", "Daoist limits of naming", "strategic reasoning"],
+      "knowledge_standard": "Role-aware moral judgment, standards, names, social order, practical wisdom, and restraint.",
+      "argument_goal": "Cultivate order, moral conduct, right naming, practical standards, and sometimes strategic advantage.",
+      "disagreement_norm": "Role-sensitive correction, remonstrance, aphorism, debate in some schools, and indirect critique.",
+      "authority_structure": "Classics, sages, roles, ritual, standards, rulers, teachers, and practical consequence.",
+      "transferable_moves": ["recognize role context", "test names against conduct", "use restraint in speech", "see limits of direct debate"],
+      "misread_risks": ["mistaking restraint for lack of argument", "forcing adversarial debate norms onto role-based speech"],
+      "build_status": "needs_source_packet_and_cultural_review"
+    },
+    {
+      "id": "african-oral-deliberative",
+      "priority": "comparative",
+      "civilization": "African and oral traditions",
+      "traditions": ["proverb", "public counsel", "communal deliberation", "oral memory"],
+      "knowledge_standard": "Communal memory, proverb, elder counsel, precedent, lived consequence, and public accountability.",
+      "argument_goal": "Maintain community, teach prudence, resolve conflict, preserve memory, and counsel action.",
+      "disagreement_norm": "Council, proverb, elder mediation, restorative speech, and community-facing deliberation.",
+      "authority_structure": "Elders, oral tradition, community memory, public standing, and lived wisdom.",
+      "transferable_moves": ["reason through proverb", "weigh communal consequence", "speak for repair", "use memory as evidence carefully"],
+      "misread_risks": ["treating oral reasoning as informal or inferior", "romanticizing without source discipline"],
+      "build_status": "needs_source_packet_and_cultural_review"
+    }
+  ],
+  "required_frameworks": [
+    "civilization_coverage",
+    "culture_difference_framework",
+    "source_packet_system",
+    "curriculum_matrix",
+    "reviewer_standard",
+    "build_order"
+  ],
+  "curriculum_matrix_rules": [
+    "Every unit has a Western anchor.",
+    "Every comparative lane has a cultural caveat.",
+    "Every comparative lesson requires source packet and reviewer status.",
+    "Every transfer move must name what should not be borrowed superficially."
+  ],
+  "review_gates": [
+    "source_identity_checked",
+    "rights_checked",
+    "cultural_context_checked",
+    "misread_risks_recorded",
+    "transfer_boundary_recorded"
+  ],
+  "build_phases": [
+    {
+      "id": "phase-1-western-foundation",
+      "summary": "Build Greek, Roman, scholastic, early modern, and Western civic spine first."
+    },
+    {
+      "id": "phase-2-comparative-guardrails",
+      "summary": "Complete culture framework, reviewer standard, packet system, and curriculum matrix before comparative lessons."
+    },
+    {
+      "id": "phase-3-comparative-extensions",
+      "summary": "Add comparative traditions only after source and cultural review."
+    },
+    {
+      "id": "phase-4-practice-performance",
+      "summary": "Build proof, disputation, speech, evidence, civic judgment, adversarial, and teach-back labs."
+    },
+    {
+      "id": "phase-5-platform-integration",
+      "summary": "Integrate with open-education-suite, voice-studio, video tooling, source preservation, and QA Live."
+    }
+  ]
+}

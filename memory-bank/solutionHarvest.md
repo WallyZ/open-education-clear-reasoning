@@ -2,8 +2,8 @@
 
 ## Metadata
 
-- Last updated: 2026-06-13
-- Wave ID: clear-reasoning-initial-scaffold-v1
+- Last updated: 2026-06-14
+- Wave ID: clear-reasoning-civilization-framework-v1
 
 ## Candidate Reusable Solutions
 
@@ -19,6 +19,18 @@
   - Reuse potential: high
   - Adopted this wave: yes; source text is reference-only until license-verified source packets exist.
 
+- Candidate: civilization-reasoning-framework
+  - Problem solved: Education repos need to compare reasoning traditions without flattening them into Western categories or treating cultural difference as a substitute for reasoning quality.
+  - Reusable assets: docs/CIVILIZATION_COVERAGE.md, docs/CULTURE_DIFFERENCE_FRAMEWORK.md, docs/CURRICULUM_MATRIX.md, curriculum/civilization_reasoning_framework.json, schemas/civilization_reasoning_framework.schema.json
+  - Reuse potential: high
+  - Adopted this wave: yes; the curriculum checker validates primary Western lanes, comparative lanes, review gates, and build phases.
+
+- Candidate: source-packet-rights-culture-gate
+  - Problem solved: Great-works repos need one gate for source rights, excerpt boundaries, attribution, cultural caveats, misread risks, and reviewer status before lesson construction.
+  - Reusable assets: docs/SOURCE_PACKET_SYSTEM.md, source-packets/TEMPLATE.md, schemas/source_packet.schema.json, docs/REVIEWER_STANDARD.md
+  - Reuse potential: high
+  - Adopted this wave: yes; source packet docs and schema are checked by the deterministic verifier.
+
 ## Promoted to Repo-Kit
 
 - None in this wave. Candidate exports are recorded in `.repo-kit/exchange.json` for later review.
@@ -29,7 +41,7 @@
 
 ## Test Confirmation Notes
 
-- Command(s) run: `python scripts\lifecycle\check_clear_reasoning_program.py --repo-root .`; `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`
-- Expected outcome: curriculum docs, source boundaries, JSON contract, modules, privacy flags, capstone requirements, TODO lifecycle, language lint, exchange smoke, logging smoke, and memory-bank checks pass.
+- Command(s) run: `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`
+- Expected outcome: curriculum docs, source boundaries, civilization framework, source packet schema/template, JSON contracts, TODO lifecycle, language lint, and memory-bank checks pass.
 - Actual outcome: passed.
 - Follow-up fix needed: no

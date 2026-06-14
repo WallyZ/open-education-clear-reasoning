@@ -5,10 +5,12 @@
 This repo is a subject content repo. The normal workflow is:
 
 1. Add or revise source metadata in `docs/SOURCE_CANON.md`, `docs/CANON_INTEGRATION_MAP.md`, and `curriculum/clear_reasoning_program.json`.
-2. Add lesson, module, practice, or assessment material under `study-plans/` or `exercises/`.
-3. Update TODO evidence for completed curriculum work.
-4. Run canonical verification.
-5. Commit and push to `main`.
+2. For comparative material, update `docs/CIVILIZATION_COVERAGE.md`, `docs/CULTURE_DIFFERENCE_FRAMEWORK.md`, `docs/CURRICULUM_MATRIX.md`, and `curriculum/civilization_reasoning_framework.json`.
+3. For source excerpts or source-grounded lessons, create or update a source packet under `source-packets/` using `source-packets/TEMPLATE.md`.
+4. Add lesson, module, practice, or assessment material under `study-plans/` or `exercises/`.
+5. Update TODO evidence for completed curriculum work.
+6. Run canonical verification.
+7. Commit and push to `main`.
 
 ## Verification
 
@@ -45,6 +47,18 @@ Each source integration should answer:
 3. What drill builds it?
 4. What assessment proves it?
 5. What misuse must be prevented?
+
+## Cross-Civilizational Rules
+
+Western civilization is the primary spine for this program. Comparative material is used as contrast, enrichment, and correction only when cultural context and source boundaries are clear.
+
+Before building a comparative lesson:
+
+1. Confirm the lane exists in `docs/CIVILIZATION_COVERAGE.md`.
+2. Record the culture lens fields from `docs/CULTURE_DIFFERENCE_FRAMEWORK.md`.
+3. Map the unit in `docs/CURRICULUM_MATRIX.md`.
+4. Apply `docs/REVIEWER_STANDARD.md`.
+5. Keep the item reference-only until source packets and cultural review are ready.
 
 ## Future Integration Targets
 

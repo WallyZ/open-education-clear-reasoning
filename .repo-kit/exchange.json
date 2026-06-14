@@ -148,6 +148,76 @@
       "evidence": "Maps great works to trainable reasoning moves, practice labs, assessments, and transfer requirements."
     },
     {
+      "local_path": "curriculum/civilization_reasoning_framework.json",
+      "last_reviewed_utc": "2026-06-14T00:00:00Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "curriculum-metadata",
+      "proposed_destination": "open-education-suite/content-sources/open-education-clear-reasoning/civilization_reasoning_framework.json",
+      "id": "clear-reasoning-civilization-framework",
+      "evidence": "Machine-readable Western-primary cross-civilizational reasoning framework with coverage lanes, review gates, and build phases."
+    },
+    {
+      "local_path": "schemas/civilization_reasoning_framework.schema.json",
+      "last_reviewed_utc": "2026-06-14T00:00:00Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "schema",
+      "proposed_destination": "00-repo-kit/repo-standards/open-education/civilization_reasoning_framework.schema.json",
+      "id": "clear-reasoning-civilization-framework-schema",
+      "evidence": "Schema for validating Western-primary comparative reasoning coverage, review gates, and build phases."
+    },
+    {
+      "local_path": "schemas/source_packet.schema.json",
+      "last_reviewed_utc": "2026-06-14T00:00:00Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "schema",
+      "proposed_destination": "00-repo-kit/repo-standards/open-education/source_packet.schema.json",
+      "id": "clear-reasoning-source-packet-schema",
+      "evidence": "Schema for source provenance, rights, cultural context, excerpt boundaries, and reviewer status."
+    },
+    {
+      "local_path": "docs/CIVILIZATION_COVERAGE.md",
+      "last_reviewed_utc": "2026-06-14T00:00:00Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "curriculum-method",
+      "proposed_destination": "open-education-suite/content-sources/open-education-clear-reasoning/CIVILIZATION_COVERAGE.md",
+      "id": "clear-reasoning-civilization-coverage",
+      "evidence": "Defines Western-primary coverage lanes and comparative tradition build status."
+    },
+    {
+      "local_path": "docs/CULTURE_DIFFERENCE_FRAMEWORK.md",
+      "last_reviewed_utc": "2026-06-14T00:00:00Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "curriculum-method",
+      "proposed_destination": "open-education-suite/content-sources/open-education-clear-reasoning/CULTURE_DIFFERENCE_FRAMEWORK.md",
+      "id": "clear-reasoning-culture-difference-framework",
+      "evidence": "Culture-aware comparison rules for knowledge standards, argument goals, disagreement norms, authority structures, transfer limits, and misread risks."
+    },
+    {
+      "local_path": "docs/CURRICULUM_MATRIX.md",
+      "last_reviewed_utc": "2026-06-14T00:00:00Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "curriculum-method",
+      "proposed_destination": "open-education-suite/content-sources/open-education-clear-reasoning/CURRICULUM_MATRIX.md",
+      "id": "clear-reasoning-curriculum-matrix",
+      "evidence": "Maps Western anchors, comparative lanes, cultural caveats, practices, and assessments."
+    },
+    {
+      "local_path": "docs/REVIEWER_STANDARD.md",
+      "last_reviewed_utc": "2026-06-14T00:00:00Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "review-standard",
+      "proposed_destination": "open-education-suite/content-sources/open-education-clear-reasoning/REVIEWER_STANDARD.md",
+      "id": "clear-reasoning-reviewer-standard",
+      "evidence": "Review standard for source rights, cultural context, Western comparison risks, transfer limits, and cautious claims."
+    },
+    {
       "local_path": "scripts/lifecycle/check_clear_reasoning_program.py",
       "last_reviewed_utc": "2026-06-13T21:41:02.4239112Z",
       "privacy_classification": "public",

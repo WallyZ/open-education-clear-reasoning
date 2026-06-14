@@ -6,6 +6,8 @@ This repo records source references, learning purposes, and original exercises. 
 
 When full source passages are needed, use public-domain editions or properly licensed editions and preserve attribution. Public-domain status can vary by translation, editor, and country, so every future source packet must include edition and license evidence before text is copied.
 
+Cross-civilizational material must also follow `docs/CIVILIZATION_COVERAGE.md`, `docs/CULTURE_DIFFERENCE_FRAMEWORK.md`, `docs/CURRICULUM_MATRIX.md`, and `docs/REVIEWER_STANDARD.md`.
+
 ## Integration Stages
 
 | Stage | Meaning |

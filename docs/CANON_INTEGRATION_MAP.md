@@ -6,6 +6,8 @@ This program is not a history survey. Each source is used because it trains a re
 
 The integration map prevents the canon from becoming decorative. A source is useful only when it becomes a practice, an assessment, and a transferable habit.
 
+For comparative traditions, this map must be used together with the civilization coverage and culture-difference framework. The Western spine remains primary; comparative lanes add contrast and enrichment only after source and cultural review gates are satisfied.
+
 ## Integration Stages
 
 | Stage | Meaning | Required Evidence |
