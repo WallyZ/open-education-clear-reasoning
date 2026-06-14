@@ -1,6 +1,7 @@
 # Progress
 
 ## Completed
+- 2026-06-14: [106d11e] Add first source packets and western outlines
 - 2026-06-14: [346fbec] Add cross-civilizational reasoning framework
 - 2026-06-14: [2af36fb] Expand clear reasoning curriculum canon
 - 2026-06-14: [296cce3] Scaffold clear reasoning education repo

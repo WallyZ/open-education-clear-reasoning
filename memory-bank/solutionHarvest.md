@@ -37,6 +37,12 @@
   - Reuse potential: high
   - Adopted this wave: yes; Western packets can support original lesson outlines while comparative packets remain needs_cultural_review.
 
+- Candidate: source-packet-readiness-index
+  - Problem solved: Downstream courseware tools need packet status, usage flags, and lesson readiness without parsing Markdown packets.
+  - Reusable assets: source-packets/index.json, schemas/source_packet_index.schema.json, scripts/lifecycle/check_clear_reasoning_program.py
+  - Reuse potential: high
+  - Adopted this wave: yes; the verifier cross-checks index paths, counts, statuses, and excerpt-use flags.
+
 ## Promoted to Repo-Kit
 
 - None in this wave. Candidate exports are recorded in `.repo-kit/exchange.json` for later review.

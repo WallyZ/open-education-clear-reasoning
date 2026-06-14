@@ -34,7 +34,7 @@ REQUIRED_DOC_TOKENS = {
     "study-plans/clear-reasoning-foundations/COURSE.md": ["Clear Reasoning Foundations", "Module Map", "Completion Evidence"],
     "study-plans/western-spine-lessons/LESSON_OUTLINES.md": ["Packet Gate", "Euclidean Proof Craft", "No copied source text: yes"],
     "exercises/reasoning-drills.md": ["Term Lock", "Steelman Ladder", "Combative Opponent Reset", "Source-Move Extraction"],
-    "source-packets/README.md": ["Western packet records", "Comparative packet candidates", "Layout"],
+    "source-packets/README.md": ["Western packet records", "Comparative packet candidates", "Downstream Index"],
     "source-packets/TEMPLATE.md": ["Source Packet Template", "Is any source text copied into this repo? no", "Reviewer status"],
 }
 
@@ -298,8 +298,12 @@ def _validate_civilization_framework(root: Path, errors: list[str]) -> None:
 def _validate_source_packets(root: Path, errors: list[str]) -> None:
     western_dir = root / "source-packets" / "western"
     comparative_dir = root / "source-packets" / "comparative"
+    index_path = root / "source-packets" / "index.json"
+    index_schema_path = root / "schemas" / "source_packet_index.schema.json"
     _require(western_dir.is_dir(), "missing source-packets/western directory", errors)
     _require(comparative_dir.is_dir(), "missing source-packets/comparative directory", errors)
+    _require(index_path.is_file(), "missing source packet index", errors)
+    _require(index_schema_path.is_file(), "missing source packet index schema", errors)
     if not western_dir.is_dir() or not comparative_dir.is_dir():
         return
 
@@ -351,6 +355,62 @@ def _validate_source_packets(root: Path, errors: list[str]) -> None:
             f"{path.relative_to(root)} must be reference-only",
             errors,
         )
+
+    if not index_path.is_file() or not index_schema_path.is_file():
+        return
+    index_schema = _load_json(index_schema_path)
+    index = _load_json(index_path)
+    _require(index_schema.get("title") == "Clear Reasoning Source Packet Index", "source packet index schema title drifted", errors)
+    _require(index.get("schema_version") == "open-education-clear-reasoning/source-packet-index/v1", "unexpected source packet index schema_version", errors)
+    _require(index.get("repo_id") == REPO_ID, "unexpected source packet index repo_id", errors)
+    policy = index.get("policy") or {}
+    _require(policy.get("source_text_copied") is False, "source packet index must state source_text_copied=false", errors)
+    _require(policy.get("excerpt_use_requires_packet_approval") is True, "source packet index must require excerpt approval", errors)
+    _require(policy.get("western_packets_support_original_lessons") is True, "source packet index must allow western original lessons", errors)
+    _require(policy.get("comparative_packets_require_cultural_review") is True, "source packet index must require comparative cultural review", errors)
+
+    packets = index.get("packets") or []
+    _require(len(packets) == len(REQUIRED_WESTERN_PACKETS) + len(REQUIRED_COMPARATIVE_PACKETS), "source packet index packet count drifted", errors)
+    packet_ids: set[str] = set()
+    western_index_count = 0
+    comparative_index_count = 0
+    original_allowed_count = 0
+    needs_review_count = 0
+    for packet in packets:
+        if not isinstance(packet, dict):
+            errors.append("source packet index entries must be objects")
+            continue
+        packet_id = str(packet.get("id") or "")
+        _require(bool(packet_id), "source packet index entry missing id", errors)
+        _require(packet_id not in packet_ids, f"duplicate source packet index id: {packet_id}", errors)
+        packet_ids.add(packet_id)
+        relative_path = str(packet.get("path") or "")
+        _require(bool(relative_path), f"source packet index entry {packet_id} missing path", errors)
+        if relative_path:
+            _require((root / relative_path).is_file(), f"source packet index path does not exist: {relative_path}", errors)
+        _require(packet.get("excerpt_use_allowed") is False, f"source packet index packet {packet_id} must not allow excerpt use", errors)
+        category = packet.get("category")
+        if category == "western":
+            western_index_count += 1
+            original_allowed_count += 1 if packet.get("original_lesson_allowed") is True else 0
+            _require(packet.get("review_status") == "approved_for_original_lesson", f"western index packet {packet_id} must be approved_for_original_lesson", errors)
+            _require(packet.get("needs_cultural_review") is False, f"western index packet {packet_id} should not require cultural review", errors)
+            _require(len(packet.get("lesson_refs") or []) >= 1, f"western index packet {packet_id} must include lesson_refs", errors)
+        elif category == "comparative":
+            comparative_index_count += 1
+            needs_review_count += 1 if packet.get("needs_cultural_review") is True else 0
+            _require(packet.get("review_status") == "needs_cultural_review", f"comparative index packet {packet_id} must be needs_cultural_review", errors)
+            _require(packet.get("original_lesson_allowed") is False, f"comparative index packet {packet_id} must not allow original lessons yet", errors)
+            _require(len(packet.get("lesson_refs") or []) == 0, f"comparative index packet {packet_id} should not include lesson_refs yet", errors)
+        else:
+            errors.append(f"source packet index packet {packet_id} has invalid category: {category}")
+
+    summary = index.get("summary") or {}
+    _require(summary.get("western_packets") == western_index_count, "source packet index western summary mismatch", errors)
+    _require(summary.get("comparative_candidate_packets") == comparative_index_count, "source packet index comparative summary mismatch", errors)
+    _require(summary.get("original_lesson_allowed") == original_allowed_count, "source packet index original lesson summary mismatch", errors)
+    _require(summary.get("excerpt_use_allowed") == 0, "source packet index must have zero excerpt-use packets", errors)
+    _require(summary.get("needs_cultural_review") == needs_review_count, "source packet index cultural review summary mismatch", errors)
 
 
 def _validate_lesson_outlines(root: Path, errors: list[str]) -> None:

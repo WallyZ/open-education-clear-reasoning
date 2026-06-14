@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Clear Reasoning Source Packet Index",
+  "type": "object",
+  "required": ["schema_version", "repo_id", "last_reviewed", "policy", "summary", "packets"],
+  "properties": {
+    "schema_version": { "const": "open-education-clear-reasoning/source-packet-index/v1" },
+    "repo_id": { "const": "open-education-clear-reasoning" },
+    "last_reviewed": { "type": "string", "minLength": 1 },
+    "policy": {
+      "type": "object",
+      "required": [
+        "source_text_copied",
+        "excerpt_use_requires_packet_approval",
+        "western_packets_support_original_lessons",
+        "comparative_packets_require_cultural_review"
+      ],
+      "properties": {
+        "source_text_copied": { "const": false },
+        "excerpt_use_requires_packet_approval": { "const": true },
+        "western_packets_support_original_lessons": { "const": true },
+        "comparative_packets_require_cultural_review": { "const": true }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "western_packets",
+        "comparative_candidate_packets",
+        "original_lesson_allowed",
+        "excerpt_use_allowed",
+        "needs_cultural_review"
+      ],
+      "properties": {
+        "western_packets": { "type": "integer", "minimum": 0 },
+        "comparative_candidate_packets": { "type": "integer", "minimum": 0 },
+        "original_lesson_allowed": { "type": "integer", "minimum": 0 },
+        "excerpt_use_allowed": { "const": 0 },
+        "needs_cultural_review": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "packets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "source_id",
+          "path",
+          "category",
+          "work",
+          "author",
+          "review_status",
+          "rights_status",
+          "source_reference",
+          "original_lesson_allowed",
+          "excerpt_use_allowed",
+          "needs_cultural_review",
+          "lesson_refs"
+        ],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "source_id": { "type": "string", "minLength": 1 },
+          "path": { "type": "string", "minLength": 1 },
+          "category": { "type": "string", "enum": ["western", "comparative"] },
+          "work": { "type": "string", "minLength": 1 },
+          "author": { "type": "string", "minLength": 1 },
+          "review_status": { "type": "string", "minLength": 1 },
+          "rights_status": { "type": "string", "minLength": 1 },
+          "source_reference": { "type": "string", "minLength": 1 },
+          "original_lesson_allowed": { "type": "boolean" },
+          "excerpt_use_allowed": { "const": false },
+          "needs_cultural_review": { "type": "boolean" },
+          "lesson_refs": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

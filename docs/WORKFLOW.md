@@ -66,6 +66,8 @@ For Western spine lessons, create the packet first, then write the outline. The 
 
 For comparative lanes, create candidate packets first and leave them `needs_cultural_review`. Comparative lesson writing waits until the packet is reviewed.
 
+Downstream tools should read `source-packets/index.json` for packet readiness instead of parsing packet Markdown directly.
+
 ## Future Integration Targets
 
 - Content Courseware Kit metadata export.

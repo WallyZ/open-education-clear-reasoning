@@ -60,9 +60,17 @@ Make the program Western-primary while covering disciplined thought from multipl
   - Evidence: Added `study-plans/western-spine-lessons/LESSON_OUTLINES.md` with five original packet-gated outlines and no copied source text.
   - Verification: Passed `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`; log `.codex-cache\logs\codex-verify_20260614_112701_39a66a68.log`.
 
-- [ ] [P1] Add machine-readable packet index for downstream ingestion. <!-- yta:evidence paths="source-packets/,schemas/" id=clear-reasoning-source-packet-index -->
+- [x] [P1] Add machine-readable packet index for downstream ingestion. <!-- yta:evidence paths="source-packets/,schemas/" id=clear-reasoning-source-packet-index -->
   - What: Add a JSON index of source packets, packet status, source IDs, and lesson-readiness flags for courseware ingestion.
   - Acceptance: Index lists Western packets, comparative candidates, review status, and whether original lesson use or excerpt use is allowed.
+  - Evidence: Added `source-packets/index.json`, `schemas/source_packet_index.schema.json`, exchange exports, and deterministic checks for packet paths, statuses, counts, and usage flags.
+  - Verification: Passed `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`; log `.codex-cache\logs\codex-verify_20260614_121553_27dfe268.log`.
+
+- [ ] [P2] Generate packet index from packet Markdown automatically. <!-- yta:evidence paths="source-packets/,scripts/lifecycle/" id=clear-reasoning-source-packet-index-generator -->
+  - What: Add a deterministic script that rebuilds `source-packets/index.json` from packet Markdown front matter or structured fields.
+  - Acceptance: Manual index drift is eliminated; verifier can fail when generated output differs from checked-in index.
   - Verification: `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`.
+
+
 
 

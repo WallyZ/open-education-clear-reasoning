@@ -15,6 +15,7 @@ Source packets document source provenance, rights, cultural context, excerpt bou
 
 - `source-packets/western/`: Western spine packets used for first lesson outlines.
 - `source-packets/comparative/`: comparative candidates for future reviewed extensions.
+- `source-packets/index.json`: machine-readable packet readiness index for downstream ingestion.
 
 ## First Packet Priority
 
@@ -26,3 +27,13 @@ Source packets document source provenance, rights, cultural context, excerpt bou
 6. Cicero or Quintilian rhetorical work.
 
 Comparative packets come after the Western packet workflow is proven.
+
+## Downstream Index
+
+Use `source-packets/index.json` when a consumer needs packet status without parsing Markdown. The index records source IDs, packet paths, review status, rights status, source references, whether original lesson use is allowed, whether excerpt use is allowed, and whether cultural review is still required.
+
+Current policy:
+
+- Western packets may support original lesson outlines.
+- No packet currently allows copied excerpts.
+- Comparative candidates remain blocked on cultural review.
