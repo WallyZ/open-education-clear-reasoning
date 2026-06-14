@@ -3,7 +3,7 @@
 ## Metadata
 
 - Last updated: 2026-06-14
-- Wave ID: clear-reasoning-civilization-framework-v1
+- Wave ID: clear-reasoning-source-packet-wave-v1
 
 ## Candidate Reusable Solutions
 
@@ -31,6 +31,12 @@
   - Reuse potential: high
   - Adopted this wave: yes; source packet docs and schema are checked by the deterministic verifier.
 
+- Candidate: packet-gated-lesson-outline-pattern
+  - Problem solved: Great-works lessons need to start from source references without copying source text or pretending comparative sources are culturally reviewed.
+  - Reusable assets: source-packets/western/*.md, source-packets/comparative/*.md, study-plans/western-spine-lessons/LESSON_OUTLINES.md, scripts/lifecycle/check_clear_reasoning_program.py
+  - Reuse potential: high
+  - Adopted this wave: yes; Western packets can support original lesson outlines while comparative packets remain needs_cultural_review.
+
 ## Promoted to Repo-Kit
 
 - None in this wave. Candidate exports are recorded in `.repo-kit/exchange.json` for later review.
@@ -42,6 +48,6 @@
 ## Test Confirmation Notes
 
 - Command(s) run: `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`
-- Expected outcome: curriculum docs, source boundaries, civilization framework, source packet schema/template, JSON contracts, TODO lifecycle, language lint, and memory-bank checks pass.
+- Expected outcome: curriculum docs, source boundaries, civilization framework, source packet schema/template, first source packets, lesson outlines, TODO lifecycle, language lint, and memory-bank checks pass.
 - Actual outcome: passed.
 - Follow-up fix needed: no

@@ -21,7 +21,7 @@ All source works are reference-only unless a packet proves otherwise. A source r
 
 A packet must include:
 
-- source ID matching `curriculum/clear_reasoning_program.json`
+- source ID matching `curriculum/clear_reasoning_program.json` when the source is already part of the active program, or a clearly marked candidate ID for sources not yet promoted into the active canon
 - author
 - work title
 - civilization and tradition
@@ -67,3 +67,9 @@ The first source packets should be Western spine packets:
 6. Cicero or Quintilian rhetorical work.
 
 Comparative packets should follow only after the Western packet workflow is proven.
+
+## Current Packet Policy
+
+The first Western packets may be used for original lesson outlines when `Reviewer status` is `approved_for_original_lesson`. That status does not approve copied excerpts.
+
+Comparative candidates must remain `needs_cultural_review` until a source and culture reviewer approves the source identity, rights boundary, cultural caveat, and transfer limits.

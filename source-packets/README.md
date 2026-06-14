@@ -8,6 +8,13 @@ Source packets document source provenance, rights, cultural context, excerpt bou
 - Use `source-packets/TEMPLATE.md` for human-readable packets.
 - Future machine-readable packets should follow `schemas/source_packet.schema.json`.
 - Do not include full source text, copied translations, scans, or course assets in this repo unless rights and excerpt boundaries are explicitly approved.
+- Western packet records that are approved for original lessons may support original outlines, drills, and assessments, but not copied excerpts.
+- Comparative packet candidates must stay `needs_cultural_review` until source rights and cultural framing are reviewed.
+
+## Layout
+
+- `source-packets/western/`: Western spine packets used for first lesson outlines.
+- `source-packets/comparative/`: comparative candidates for future reviewed extensions.
 
 ## First Packet Priority
 

@@ -60,6 +60,12 @@ Before building a comparative lesson:
 4. Apply `docs/REVIEWER_STANDARD.md`.
 5. Keep the item reference-only until source packets and cultural review are ready.
 
+## Source Packet Workflow
+
+For Western spine lessons, create the packet first, then write the outline. The outline may use original summaries, drills, and assessments when the packet is approved for original lesson use, but it still may not copy source text.
+
+For comparative lanes, create candidate packets first and leave them `needs_cultural_review`. Comparative lesson writing waits until the packet is reviewed.
+
 ## Future Integration Targets
 
 - Content Courseware Kit metadata export.

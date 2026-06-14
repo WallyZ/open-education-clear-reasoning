@@ -42,18 +42,27 @@ Make the program Western-primary while covering disciplined thought from multipl
   - Evidence: Added `docs/BUILD_ORDER.md`; framework JSON includes required build phases.
   - Verification: Passed `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`; log `.codex-cache\logs\codex-verify_20260614_111209_b2592bb0.log`.
 
-- [ ] [P1] Create first Western source packets using the new template. <!-- yta:evidence paths="source-packets/" id=clear-reasoning-first-western-source-packets -->
+- [x] [P1] Create first Western source packets using the new template. <!-- yta:evidence paths="source-packets/" id=clear-reasoning-first-western-source-packets -->
   - What: Create approved packet records for Euclid, Aristotle `Categories`, Aristotle `Prior Analytics`, Aristotle `Rhetoric`, and one Plato dialogue.
   - Acceptance: Each packet records edition, translation, publication date, license/public-domain evidence, URL/library reference, excerpt boundary, cultural caveat, attribution, and review status.
-  - Verification: `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`.
+  - Evidence: Added five Western source packets under `source-packets/western/`; all are `approved_for_original_lesson` and explicitly block copied source excerpts.
+  - Verification: Passed `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`; log `.codex-cache\logs\codex-verify_20260614_112701_39a66a68.log`.
 
-- [ ] [P2] Add comparative source packet candidates for priority non-Western lanes. <!-- yta:evidence paths="source-packets/" id=clear-reasoning-comparative-source-packet-candidates -->
+- [x] [P2] Add comparative source packet candidates for priority non-Western lanes. <!-- yta:evidence paths="source-packets/" id=clear-reasoning-comparative-source-packet-candidates -->
   - What: Add candidate packets for Nyaya, Buddhist logic, Islamic reasoning, Jewish legal reasoning, Chinese classical reasoning, and African/oral deliberative sources.
   - Acceptance: Candidates are explicitly marked `needs_cultural_review` or `needs_review` until source and cultural review is complete.
-  - Verification: `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`.
+  - Evidence: Added six comparative candidate packets under `source-packets/comparative/`; each remains `needs_cultural_review` and reference-only.
+  - Verification: Passed `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`; log `.codex-cache\logs\codex-verify_20260614_112701_39a66a68.log`.
 
-- [ ] [P2] Build first lesson outlines from the Western spine. <!-- yta:evidence paths="study-plans/,exercises/" id=clear-reasoning-first-western-lesson-outlines -->
+- [x] [P2] Build first lesson outlines from the Western spine. <!-- yta:evidence paths="study-plans/,exercises/" id=clear-reasoning-first-western-lesson-outlines -->
   - What: Build lesson outlines for Euclidean proof, Aristotelian categories, syllogism, rhetoric, and dialectic using the new source-packet gates.
   - Acceptance: Each outline includes objective, source anchor, no copied source text, drill, assessment, revision path, and transfer case.
+  - Evidence: Added `study-plans/western-spine-lessons/LESSON_OUTLINES.md` with five original packet-gated outlines and no copied source text.
+  - Verification: Passed `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`; log `.codex-cache\logs\codex-verify_20260614_112701_39a66a68.log`.
+
+- [ ] [P1] Add machine-readable packet index for downstream ingestion. <!-- yta:evidence paths="source-packets/,schemas/" id=clear-reasoning-source-packet-index -->
+  - What: Add a JSON index of source packets, packet status, source IDs, and lesson-readiness flags for courseware ingestion.
+  - Acceptance: Index lists Western packets, comparative candidates, review status, and whether original lesson use or excerpt use is allowed.
   - Verification: `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`.
+
 

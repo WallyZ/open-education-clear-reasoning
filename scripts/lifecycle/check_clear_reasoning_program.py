@@ -32,7 +32,10 @@ REQUIRED_DOC_TOKENS = {
     "docs/ASSESSMENT_RUBRICS.md": ["Capstone Standard", "Definition discipline", "Mastery Evidence Map"],
     "docs/WORKFLOW.md": ["Courseware Integration", "Source Rules", "CANON_INTEGRATION_MAP"],
     "study-plans/clear-reasoning-foundations/COURSE.md": ["Clear Reasoning Foundations", "Module Map", "Completion Evidence"],
+    "study-plans/western-spine-lessons/LESSON_OUTLINES.md": ["Packet Gate", "Euclidean Proof Craft", "No copied source text: yes"],
     "exercises/reasoning-drills.md": ["Term Lock", "Steelman Ladder", "Combative Opponent Reset", "Source-Move Extraction"],
+    "source-packets/README.md": ["Western packet records", "Comparative packet candidates", "Layout"],
+    "source-packets/TEMPLATE.md": ["Source Packet Template", "Is any source text copied into this repo? no", "Reviewer status"],
 }
 
 REQUIRED_FRAMEWORKS = {
@@ -54,6 +57,23 @@ REQUIRED_COVERAGE_LANES = {
     "jewish-legal-philosophical",
     "chinese-classical",
     "african-oral-deliberative",
+}
+
+REQUIRED_WESTERN_PACKETS = {
+    "euclid-elements-casey.md",
+    "aristotle-categories-edghill.md",
+    "aristotle-prior-analytics-owen.md",
+    "aristotle-rhetoric-cope-sandys.md",
+    "plato-apology-jowett.md",
+}
+
+REQUIRED_COMPARATIVE_PACKETS = {
+    "indian-nyaya-sutras-candidate.md",
+    "buddhist-logic-candidate.md",
+    "islamic-ghazali-deliverance-candidate.md",
+    "jewish-pirke-avot-candidate.md",
+    "chinese-confucian-analects-candidate.md",
+    "african-oral-deliberation-candidate.md",
 }
 
 
@@ -275,6 +295,83 @@ def _validate_civilization_framework(root: Path, errors: list[str]) -> None:
         _require(required_phase in build_phase_ids, f"civilization framework missing build phase: {required_phase}", errors)
 
 
+def _validate_source_packets(root: Path, errors: list[str]) -> None:
+    western_dir = root / "source-packets" / "western"
+    comparative_dir = root / "source-packets" / "comparative"
+    _require(western_dir.is_dir(), "missing source-packets/western directory", errors)
+    _require(comparative_dir.is_dir(), "missing source-packets/comparative directory", errors)
+    if not western_dir.is_dir() or not comparative_dir.is_dir():
+        return
+
+    western_files = {path.name for path in western_dir.glob("*.md")}
+    comparative_files = {path.name for path in comparative_dir.glob("*.md")}
+    for required in REQUIRED_WESTERN_PACKETS:
+        _require(required in western_files, f"missing required western source packet: {required}", errors)
+    for required in REQUIRED_COMPARATIVE_PACKETS:
+        _require(required in comparative_files, f"missing required comparative source packet: {required}", errors)
+
+    required_packet_tokens = (
+        "## Identity",
+        "## Location",
+        "## Rights",
+        "## Excerpt Boundary",
+        "## Pedagogical Use",
+        "## Cultural Context",
+        "## Review",
+        "Is any source text copied into this repo? no",
+    )
+    for path in list(western_dir.glob("*.md")) + list(comparative_dir.glob("*.md")):
+        text = path.read_text(encoding="utf-8")
+        for token in required_packet_tokens:
+            _require(token in text, f"{path.relative_to(root)} missing packet token: {token}", errors)
+        _require("full source text" not in text.lower(), f"{path.relative_to(root)} appears to mention full source text", errors)
+
+    for path in western_dir.glob("*.md"):
+        text = path.read_text(encoding="utf-8")
+        _require(
+            "Reviewer status: approved_for_original_lesson" in text,
+            f"{path.relative_to(root)} must be approved_for_original_lesson for first western outlines",
+            errors,
+        )
+        _require(
+            "no source excerpt is approved" in text.lower() or "no copied source text" in text.lower(),
+            f"{path.relative_to(root)} must block copied excerpts",
+            errors,
+        )
+
+    for path in comparative_dir.glob("*.md"):
+        text = path.read_text(encoding="utf-8")
+        _require(
+            "Reviewer status: needs_cultural_review" in text,
+            f"{path.relative_to(root)} must remain needs_cultural_review",
+            errors,
+        )
+        _require(
+            "Reference-only" in text or "reference-only" in text,
+            f"{path.relative_to(root)} must be reference-only",
+            errors,
+        )
+
+
+def _validate_lesson_outlines(root: Path, errors: list[str]) -> None:
+    path = root / "study-plans" / "western-spine-lessons" / "LESSON_OUTLINES.md"
+    _require(path.is_file(), "missing western spine lesson outlines", errors)
+    if not path.is_file():
+        return
+    text = path.read_text(encoding="utf-8")
+    for lesson_title in (
+        "Euclidean Proof Craft",
+        "Aristotelian Categories And Definitions",
+        "Syllogism And Valid Inference",
+        "Ethical Rhetoric And Audience",
+        "Socratic Questioning Under Pressure",
+    ):
+        _require(lesson_title in text, f"western lesson outlines missing lesson: {lesson_title}", errors)
+    _require(text.count("No copied source text: yes") >= 5, "every first western outline must state no copied source text", errors)
+    for token in ("Objective:", "Drill:", "Assessment:", "Revision path:", "Transfer case:", "Mastery evidence:"):
+        _require(text.count(token) >= 5, f"western lesson outlines must include {token} for each lesson", errors)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo-root", default=".")
@@ -285,6 +382,8 @@ def main() -> int:
     _validate_docs(root, errors)
     _validate_program(root, errors)
     _validate_civilization_framework(root, errors)
+    _validate_source_packets(root, errors)
+    _validate_lesson_outlines(root, errors)
 
     if errors:
         for error in errors:

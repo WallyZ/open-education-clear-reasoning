@@ -218,6 +218,26 @@
       "evidence": "Review standard for source rights, cultural context, Western comparison risks, transfer limits, and cautious claims."
     },
     {
+      "local_path": "source-packets/",
+      "last_reviewed_utc": "2026-06-14T16:26:00Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "source-packets",
+      "proposed_destination": "open-education-suite/content-sources/open-education-clear-reasoning/source-packets/",
+      "id": "clear-reasoning-source-packets",
+      "evidence": "First Western source packets approved for original lesson use plus comparative source packet candidates marked needs_cultural_review."
+    },
+    {
+      "local_path": "study-plans/western-spine-lessons/LESSON_OUTLINES.md",
+      "last_reviewed_utc": "2026-06-14T16:26:00Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "lesson-outlines",
+      "proposed_destination": "open-education-suite/study-plans/western-spine-lessons/LESSON_OUTLINES.md",
+      "id": "clear-reasoning-western-spine-lesson-outlines",
+      "evidence": "Five source-packet-gated Western spine lesson outlines with no copied source text."
+    },
+    {
       "local_path": "scripts/lifecycle/check_clear_reasoning_program.py",
       "last_reviewed_utc": "2026-06-13T21:41:02.4239112Z",
       "privacy_classification": "public",
