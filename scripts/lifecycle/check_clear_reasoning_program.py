@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 from pathlib import Path
 from typing import Any
@@ -295,6 +296,28 @@ def _validate_civilization_framework(root: Path, errors: list[str]) -> None:
         _require(required_phase in build_phase_ids, f"civilization framework missing build phase: {required_phase}", errors)
 
 
+def _validate_generated_source_packet_index(root: Path, errors: list[str]) -> None:
+    generator_path = root / "scripts" / "lifecycle" / "generate_source_packet_index.py"
+    index_path = root / "source-packets" / "index.json"
+    _require(generator_path.is_file(), "missing source packet index generator", errors)
+    if not generator_path.is_file() or not index_path.is_file():
+        return
+
+    spec = importlib.util.spec_from_file_location("generate_source_packet_index", generator_path)
+    if spec is None or spec.loader is None:
+        errors.append("could not load source packet index generator")
+        return
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    generated = module.format_index(module.build_index(root))
+    current = index_path.read_text(encoding="utf-8")
+    _require(
+        current == generated,
+        "source-packets/index.json drifted; run python scripts/lifecycle/generate_source_packet_index.py --repo-root . --write",
+        errors,
+    )
+
+
 def _validate_source_packets(root: Path, errors: list[str]) -> None:
     western_dir = root / "source-packets" / "western"
     comparative_dir = root / "source-packets" / "comparative"
@@ -411,6 +434,7 @@ def _validate_source_packets(root: Path, errors: list[str]) -> None:
     _require(summary.get("original_lesson_allowed") == original_allowed_count, "source packet index original lesson summary mismatch", errors)
     _require(summary.get("excerpt_use_allowed") == 0, "source packet index must have zero excerpt-use packets", errors)
     _require(summary.get("needs_cultural_review") == needs_review_count, "source packet index cultural review summary mismatch", errors)
+    _validate_generated_source_packet_index(root, errors)
 
 
 def _validate_lesson_outlines(root: Path, errors: list[str]) -> None:

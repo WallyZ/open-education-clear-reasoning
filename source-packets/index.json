@@ -22,14 +22,16 @@
       "path": "source-packets/western/euclid-elements-casey.md",
       "category": "western",
       "work": "The First Six Books of the Elements of Euclid",
-      "author": "Euclid; edited by John Casey",
+      "author": "Euclid; edited and annotated by John Casey",
       "review_status": "approved_for_original_lesson",
       "rights_status": "public_domain_usa_source_page_checked",
       "source_reference": "https://www.gutenberg.org/ebooks/21076",
       "original_lesson_allowed": true,
       "excerpt_use_allowed": false,
       "needs_cultural_review": false,
-      "lesson_refs": ["study-plans/western-spine-lessons/LESSON_OUTLINES.md#euclidean-proof-craft"]
+      "lesson_refs": [
+        "study-plans/western-spine-lessons/LESSON_OUTLINES.md#euclidean-proof-craft"
+      ]
     },
     {
       "id": "aristotle-categories-edghill",
@@ -44,14 +46,16 @@
       "original_lesson_allowed": true,
       "excerpt_use_allowed": false,
       "needs_cultural_review": false,
-      "lesson_refs": ["study-plans/western-spine-lessons/LESSON_OUTLINES.md#aristotelian-categories-and-definitions"]
+      "lesson_refs": [
+        "study-plans/western-spine-lessons/LESSON_OUTLINES.md#aristotelian-categories-and-definitions"
+      ]
     },
     {
       "id": "aristotle-prior-analytics-owen",
       "source_id": "aristotle-prior-analytics",
       "path": "source-packets/western/aristotle-prior-analytics-owen.md",
       "category": "western",
-      "work": "Prior Analytics within The Organon",
+      "work": "Prior Analytics within The Organon, or Logical Treatises of Aristotle",
       "author": "Aristotle; translated by Octavius Freire Owen",
       "review_status": "approved_for_original_lesson",
       "rights_status": "publication_date_public_domain_candidate_checked",
@@ -59,7 +63,9 @@
       "original_lesson_allowed": true,
       "excerpt_use_allowed": false,
       "needs_cultural_review": false,
-      "lesson_refs": ["study-plans/western-spine-lessons/LESSON_OUTLINES.md#syllogism-and-valid-inference"]
+      "lesson_refs": [
+        "study-plans/western-spine-lessons/LESSON_OUTLINES.md#syllogism-and-valid-inference"
+      ]
     },
     {
       "id": "aristotle-rhetoric-cope-sandys",
@@ -67,14 +73,16 @@
       "path": "source-packets/western/aristotle-rhetoric-cope-sandys.md",
       "category": "western",
       "work": "The Rhetoric of Aristotle",
-      "author": "Aristotle; Cope/Sandys edition",
+      "author": "Aristotle; translated by Edward Meredith Cope; John Edwin Sandys",
       "review_status": "approved_for_original_lesson",
       "rights_status": "publication_date_public_domain_candidate_checked",
       "source_reference": "https://archive.org/details/rhetoricaristot09sandgoog",
       "original_lesson_allowed": true,
       "excerpt_use_allowed": false,
       "needs_cultural_review": false,
-      "lesson_refs": ["study-plans/western-spine-lessons/LESSON_OUTLINES.md#ethical-rhetoric-and-audience"]
+      "lesson_refs": [
+        "study-plans/western-spine-lessons/LESSON_OUTLINES.md#ethical-rhetoric-and-audience"
+      ]
     },
     {
       "id": "plato-apology-jowett",
@@ -89,7 +97,9 @@
       "original_lesson_allowed": true,
       "excerpt_use_allowed": false,
       "needs_cultural_review": false,
-      "lesson_refs": ["study-plans/western-spine-lessons/LESSON_OUTLINES.md#socratic-questioning-under-pressure"]
+      "lesson_refs": [
+        "study-plans/western-spine-lessons/LESSON_OUTLINES.md#socratic-questioning-under-pressure"
+      ]
     },
     {
       "id": "indian-nyaya-sutras-candidate",
@@ -97,7 +107,7 @@
       "path": "source-packets/comparative/indian-nyaya-sutras-candidate.md",
       "category": "comparative",
       "work": "The Nyaya Sutras of Gotama",
-      "author": "Gautama/Aksapada Gautama; translation candidate",
+      "author": "Gautama/Aksapada Gautama; translation candidate by Satisa Chandra Vidyabhusana",
       "review_status": "needs_cultural_review",
       "rights_status": "candidate_needs_review",
       "source_reference": "https://archive.org/details/in.ernet.dli.2015.281073",
@@ -112,7 +122,7 @@
       "path": "source-packets/comparative/buddhist-logic-candidate.md",
       "category": "comparative",
       "work": "Buddhist Logic candidate materials",
-      "author": "Candidate tradition/source set",
+      "author": "Candidate secondary/source tradition around Dignaga, Dharmakirti, and later interpreters",
       "review_status": "needs_cultural_review",
       "rights_status": "candidate_needs_review",
       "source_reference": "https://archive.org/search?query=%22Buddhist%20Logic%22%20Stcherbatsky",
@@ -142,7 +152,7 @@
       "path": "source-packets/comparative/jewish-pirke-avot-candidate.md",
       "category": "comparative",
       "work": "Pirke Avot: The Sayings of the Jewish Fathers",
-      "author": "Pirke Avot tradition; translated by Joseph I. Gorfinkle",
+      "author": "Pirke Avot tradition; translation candidate by Joseph I. Gorfinkle",
       "review_status": "needs_cultural_review",
       "rights_status": "public_domain_usa_source_page_checked_but_cultural_review_needed",
       "source_reference": "https://www.gutenberg.org/ebooks/8547",
@@ -172,7 +182,7 @@
       "path": "source-packets/comparative/african-oral-deliberation-candidate.md",
       "category": "comparative",
       "work": "African Proverbs and Riddles candidate materials",
-      "author": "Candidate compilation/research source",
+      "author": "Candidate compilation/research source; exact culturally grounded source to verify",
       "review_status": "needs_cultural_review",
       "rights_status": "candidate_needs_review",
       "source_reference": "https://archive.org/details/pub-domain-african-proverbs",

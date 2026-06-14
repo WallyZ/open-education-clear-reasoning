@@ -43,6 +43,12 @@
   - Reuse potential: high
   - Adopted this wave: yes; the verifier cross-checks index paths, counts, statuses, and excerpt-use flags.
 
+- Candidate: source-packet-index-generator
+  - Problem solved: Source packet indexes drift when packet Markdown or lesson links are edited manually.
+  - Reusable assets: scripts/lifecycle/generate_source_packet_index.py, source-packets/index.json, scripts/lifecycle/check_clear_reasoning_program.py
+  - Reuse potential: high
+  - Adopted this wave: yes; the generator rebuilds the checked-in index from packet Markdown and lesson-outline packet links, and the verifier fails on generated-index drift.
+
 ## Promoted to Repo-Kit
 
 - None in this wave. Candidate exports are recorded in `.repo-kit/exchange.json` for later review.

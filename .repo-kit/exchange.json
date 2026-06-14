@@ -238,6 +238,16 @@
       "evidence": "Machine-readable packet readiness index for downstream ingestion without parsing packet Markdown."
     },
     {
+      "local_path": "scripts/lifecycle/generate_source_packet_index.py",
+      "last_reviewed_utc": "2026-06-14T17:00:00Z",
+      "privacy_classification": "public",
+      "status": "candidate",
+      "category": "validator",
+      "proposed_destination": "00-repo-kit/scripts/lifecycle/generate_source_packet_index.py",
+      "id": "clear-reasoning-source-packet-index-generator",
+      "evidence": "Stdlib generator rebuilds source-packets/index.json from packet Markdown and lesson-outline packet links, enabling drift checks."
+    },
+    {
       "local_path": "schemas/source_packet_index.schema.json",
       "last_reviewed_utc": "2026-06-14T16:40:00Z",
       "privacy_classification": "public",

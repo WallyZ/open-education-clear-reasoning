@@ -1,6 +1,7 @@
 # Progress
 
 ## Completed
+- 2026-06-14: [f2e1f08] Add source packet readiness index
 - 2026-06-14: [106d11e] Add first source packets and western outlines
 - 2026-06-14: [346fbec] Add cross-civilizational reasoning framework
 - 2026-06-14: [2af36fb] Expand clear reasoning curriculum canon

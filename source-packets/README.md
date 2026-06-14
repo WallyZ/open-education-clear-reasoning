@@ -32,6 +32,14 @@ Comparative packets come after the Western packet workflow is proven.
 
 Use `source-packets/index.json` when a consumer needs packet status without parsing Markdown. The index records source IDs, packet paths, review status, rights status, source references, whether original lesson use is allowed, whether excerpt use is allowed, and whether cultural review is still required.
 
+Regenerate the index after changing packet Markdown or Western lesson packet links:
+
+```powershell
+python scripts\lifecycle\generate_source_packet_index.py --repo-root . --write
+```
+
+Verification fails if the checked-in index no longer matches generated output.
+
 Current policy:
 
 - Western packets may support original lesson outlines.

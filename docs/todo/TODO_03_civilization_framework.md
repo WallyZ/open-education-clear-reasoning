@@ -66,10 +66,11 @@ Make the program Western-primary while covering disciplined thought from multipl
   - Evidence: Added `source-packets/index.json`, `schemas/source_packet_index.schema.json`, exchange exports, and deterministic checks for packet paths, statuses, counts, and usage flags.
   - Verification: Passed `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`; log `.codex-cache\logs\codex-verify_20260614_121553_27dfe268.log`.
 
-- [ ] [P2] Generate packet index from packet Markdown automatically. <!-- yta:evidence paths="source-packets/,scripts/lifecycle/" id=clear-reasoning-source-packet-index-generator -->
+- [x] [P2] Generate packet index from packet Markdown automatically. <!-- yta:evidence paths="source-packets/,scripts/lifecycle/" id=clear-reasoning-source-packet-index-generator -->
   - What: Add a deterministic script that rebuilds `source-packets/index.json` from packet Markdown front matter or structured fields.
   - Acceptance: Manual index drift is eliminated; verifier can fail when generated output differs from checked-in index.
-  - Verification: `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`.
+  - Evidence: Added `scripts/lifecycle/generate_source_packet_index.py`; regenerated `source-packets/index.json` from packet Markdown and lesson-outline source-packet links; `check_clear_reasoning_program.py` now fails verification on generated-index drift.
+  - Verification: Passed `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`; log `.codex-cache\logs\codex-verify_20260614_123713_498d2071.log`.
 
 
 
