@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "clear-reasoning",
+  "title": "Open Education Clear Reasoning",
+  "role": "content-repository",
+  "compatibleSuite": "open-education-suite",
+  "license": "CC-BY-4.0 for repo-authored metadata and curriculum text unless a file says otherwise; linked third-party resources retain original licenses",
+  "attribution": "Open Education Clear Reasoning",
+  "paths": {
+    "studyPlans": "study-plans",
+    "resources": "resources",
+    "objectives": "objectives",
+    "assessments": "assessments",
+    "misconceptions": "misconceptions",
+    "fixtures": "fixtures",
+    "generatedLectures": "generated-lectures"
+  },
+  "status": "complete-delivery-ready",
+  "teacherAssets": {
+    "repo": "../open-education-teacher",
+    "recommendedProfileId": "oet-calm-board-professor-v1",
+    "fallbackProfileId": "oes-default-generated-instructor-v1"
+  },
+  "subjectPack": {
+    "programPath": "curriculum/clear_reasoning_program.json",
+    "frameworkPath": "curriculum/civilization_reasoning_framework.json",
+    "sourcePacketIndexPath": "source-packets/index.json",
+    "schemaPath": "schemas"
+  }
+}

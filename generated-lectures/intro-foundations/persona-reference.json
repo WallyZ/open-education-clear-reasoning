@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "subjectRepo": "clear-reasoning",
+  "courseId": "CR-101",
+  "personaId": "oet-calm-board-professor-v1",
+  "personaVersion": "1.0.0",
+  "voiceMatchPolicy": "match-generated-instructor-gender",
+  "targetInstructorGender": "female",
+  "targetVoiceGender": "feminine",
+  "deliveryStyle": "calm, precise, Socratic instructor at a board",
+  "disclosureLanguage": "This lesson is delivered by a generated instructor for clear reasoning education.",
+  "status": "contract-reference"
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "courseId": "CR-101",
+  "objectiveIds": [
+    "clear-reasoning:objectives/course/cr-101/attention-and-distinction",
+    "clear-reasoning:objectives/course/cr-101/definitions-and-categories",
+    "clear-reasoning:objectives/course/cr-101/disagreement-discipline"
+  ],
+  "title": "Slow Down Before Arguing",
+  "targetDurationMinutes": 50,
+  "fixtureDurationSeconds": 180,
+  "mediaStatus": "deterministic-fixture",
+  "teacherPersonaRef": "generated-lectures/intro-foundations/persona-reference.json",
+  "segments": [
+    {
+      "id": "opening",
+      "kind": "lecture",
+      "durationSeconds": 45,
+      "boardPlan": "Write: question, terms, claim, evidence, repair.",
+      "transcript": "Clear reasoning begins by slowing down. Before we argue, we identify the question, define the terms, separate the claim from the evidence, and leave room to repair the thought."
+    },
+    {
+      "id": "worked-distinction",
+      "kind": "board-work",
+      "durationSeconds": 75,
+      "boardPlan": "Draw a distinction ladder from vague word to stable definition.",
+      "transcript": "A distinction ladder prevents confusion from hiding inside one word. We test examples, borderline cases, and counterexamples until the term becomes usable."
+    },
+    {
+      "id": "pause-practice",
+      "kind": "checkpoint",
+      "durationSeconds": 30,
+      "overlay": "Pause and write one disputed word, two possible meanings, and one fair question.",
+      "transcript": "Pause here. Write one disputed word, two possible meanings, and one fair question you could ask before arguing."
+    },
+    {
+      "id": "close",
+      "kind": "lecture",
+      "durationSeconds": 30,
+      "boardPlan": "Circle charity and revision.",
+      "transcript": "Discipline and charity make reasoning stronger. We do not weaken the opposing view; we make it clear enough to answer honestly."
+    }
+  ],
+  "practicePrompts": [
+    "Build a distinction ladder for one contested term.",
+    "Rewrite a weak opposing argument into a stronger and fairer form before answering it."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "courseId": "CR-101",
+  "scenarios": [
+    {
+      "learnerId": "quick-but-sloppy",
+      "profile": "Answers quickly and persuasively but skips definitions and evidence.",
+      "adaptation": "Require term locks, slow proposition extraction, and written revision before debate."
+    },
+    {
+      "learnerId": "conflict-avoidant",
+      "profile": "Avoids disagreement and weakens claims to keep peace.",
+      "adaptation": "Use low-stakes objection practice, steelman drills, and confidence-building spoken explanations."
+    },
+    {
+      "learnerId": "combative",
+      "profile": "Treats argument as domination.",
+      "adaptation": "Require charitable reconstruction, repair packets, and ethical rhetoric constraints before live debate."
+    }
+  ]
+}

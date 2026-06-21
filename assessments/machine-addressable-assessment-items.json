@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "courseId": "CR-101",
+  "items": [
+    {
+      "assessmentId": "cr-assessment-001-baseline-essay",
+      "type": "essay",
+      "objectiveIds": ["clear-reasoning:objectives/course/cr-101/attention-and-distinction"],
+      "promptRef": "Baseline essay diagnosing a confused argument",
+      "evidenceRequired": ["question type", "claim separation", "confusion source", "repair"],
+      "rubricRef": "assessments/clear-reasoning-assessment-bank.md"
+    },
+    {
+      "assessmentId": "cr-assessment-002-definition-packet",
+      "type": "portfolio_artifact",
+      "objectiveIds": ["clear-reasoning:objectives/course/cr-101/definitions-and-categories"],
+      "promptRef": "Definition tree and borderline cases",
+      "evidenceRequired": ["term", "genus", "difference", "borderline case"],
+      "rubricRef": "assessments/clear-reasoning-assessment-bank.md"
+    },
+    {
+      "assessmentId": "cr-assessment-003-proof-reconstruction",
+      "type": "project",
+      "objectiveIds": ["clear-reasoning:objectives/course/cr-101/proof-craft", "clear-reasoning:objectives/course/cr-101/inference-and-validity"],
+      "promptRef": "Reconstruct a proof-like argument",
+      "evidenceRequired": ["definitions", "premises", "ordered steps", "validity note"],
+      "rubricRef": "assessments/clear-reasoning-assessment-bank.md"
+    },
+    {
+      "assessmentId": "cr-assessment-004-fallacy-repair",
+      "type": "essay",
+      "objectiveIds": ["clear-reasoning:objectives/course/cr-101/fallacy-repair"],
+      "promptRef": "Fallacy repair packet",
+      "evidenceRequired": ["fallacy diagnosis", "steelman", "repair", "revision"],
+      "rubricRef": "assessments/clear-reasoning-assessment-bank.md"
+    },
+    {
+      "assessmentId": "cr-assessment-005-dialogue-performance",
+      "type": "simulation_after_action_review",
+      "objectiveIds": ["clear-reasoning:objectives/course/cr-101/dialectical-questions", "clear-reasoning:objectives/course/cr-101/disagreement-discipline"],
+      "promptRef": "Written dialogue with ordered questions",
+      "evidenceRequired": ["questions", "concessions", "objections", "after-action review"],
+      "rubricRef": "assessments/clear-reasoning-assessment-bank.md"
+    },
+    {
+      "assessmentId": "cr-assessment-006-ethical-speech",
+      "type": "essay",
+      "objectiveIds": ["clear-reasoning:objectives/course/cr-101/ethical-rhetoric"],
+      "promptRef": "Ethical persuasion outline",
+      "evidenceRequired": ["audience", "claim", "evidence", "ethical boundary"],
+      "rubricRef": "assessments/clear-reasoning-assessment-bank.md"
+    },
+    {
+      "assessmentId": "cr-assessment-007-capstone-defense",
+      "type": "oral_defense_and_portfolio",
+      "objectiveIds": ["clear-reasoning:objectives/course/cr-101/capstone-defense"],
+      "promptRef": "Defend and revise a clear reasoning portfolio",
+      "evidenceRequired": ["portfolio", "objection response", "spoken explanation", "revision"],
+      "rubricRef": "assessments/clear-reasoning-assessment-bank.md"
+    }
+  ]
+}
