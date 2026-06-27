@@ -60,3 +60,9 @@ Build this from a strong curriculum scaffold into a world-class reasoning, speak
   - Evidence: Added QA Live readiness contract and first run-spec name `clear-reasoning-cr101-learner-flow`; this content repo does not own a learner-facing UI, so execution belongs to the suite once it consumes CR-101.
   - Verification: Passed `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`; log `.codex-cache\logs\codex-verify_20260626_232427_7dd1d491.log`.
 
+- [x] [P2] Add offline AI knowledge seed for local AI tutoring. <!-- yta:evidence paths="ai-knowledge/manifest.json,ai-knowledge/records.jsonl,content-repo.json,docs/WORKFLOW.md,scripts/lifecycle/check_clear_reasoning_program.py,scripts/lint/run_changed_scope.ps1" id=clear-reasoning-offline-ai-knowledge-seed -->
+  - What: Expose public-safe Clear Reasoning retrieval records for the suite offline AI knowledge-store template.
+  - Acceptance: The seed supports Ollama and LM Studio runtime profiles, requires citations, avoids private learner data and copied source text, keeps local overlays out of git, and is validated by canonical verification.
+  - Evidence: Added the `ai-knowledge` manifest and record set, wired `content-repo.json`, documented the workflow, and extended the Clear Reasoning checker plus changed-scope routing.
+  - Verification: Passed `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`; log `.codex-cache\logs\codex-verify_20260627_092021_f2a589c1.log`.
+

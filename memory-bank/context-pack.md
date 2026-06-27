@@ -2,7 +2,7 @@
 
 Use this compact context for a single focused wave.
 
-Generated: 2026-06-26
+Generated: 2026-06-27
 
 ## Context profile
 - Profile: 32k (requested: auto)

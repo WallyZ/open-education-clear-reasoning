@@ -94,6 +94,31 @@ No learner-facing UI is owned by this repo today. Once a suite learner surface c
 
 The first QA Live run-spec should be named `clear-reasoning-cr101-learner-flow` and should report the course load, objective visibility, practice launch, assessment prompt visibility, accessibility text, and source provenance checks.
 
+## Offline AI Knowledge Store
+
+This repo exposes the first course-owned offline AI knowledge seed for `open-education-suite`.
+
+Seed files:
+
+- `ai-knowledge/manifest.json` defines the Clear Reasoning store, privacy boundary, runtime profiles, retrieval policy, and writeback policy.
+- `ai-knowledge/records.jsonl` lists public-safe retrieval records with source paths, summaries, tags, and retrieval terms.
+- `content-repo.json` points the suite to the seed through `aiKnowledgeStore`.
+
+Design rule: the suite owns the reusable schema, builder, local SQLite package, provider switching, and private overlay location. This content repo owns only public-safe course seed metadata. Local AIs may use Ollama through `ollama-local` or LM Studio through `lm-studio-local`, but model inventory, embeddings, private notes, learner data, and generated local databases stay outside this repo.
+
+Allowed in the seed:
+
+- course, objective, assessment, misconception, practice, source-boundary, source-index, lecture metadata, and workflow records;
+- original repo-authored summaries;
+- relative source paths and required citations;
+- public-safe tags and retrieval terms.
+
+Not allowed in the seed:
+
+- private learner state, private notes, chat transcripts, recordings, embeddings, credentials, local absolute paths, or copied source text;
+- AI-generated claims promoted into public seed records without human review and normal verification;
+- learner-state mutation rules, which remain suite-owned checked code.
+
 ## Source Rules
 
 Do not copy source text unless the edition or translation is public domain or otherwise licensed for reuse. Prefer source references and original exercises until source preservation packets exist.

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "open-education/offline-ai-knowledge-store/v1",
+  "storeId": "clear-reasoning-offline-ai-knowledge",
+  "ownerRepoId": "clear-reasoning",
+  "role": "content-knowledge-seed",
+  "title": "Clear Reasoning Offline AI Knowledge Seed",
+  "description": "Public-safe retrieval seed for local AI tutors supporting Clear Reasoning courses, practice labs, assessment, source boundaries, and change facilitation.",
+  "sourceRecordsPath": "ai-knowledge/records.jsonl",
+  "preferredRuntimeProfiles": [
+    "ollama-local",
+    "lm-studio-local"
+  ],
+  "runtimeProfiles": [
+    {
+      "id": "ollama-local",
+      "provider": "ollama",
+      "apiBase": "http://127.0.0.1:11434",
+      "chatEndpoint": "/api/chat",
+      "embeddingsEndpoint": "/api/embeddings",
+      "networkScope": "localhost-only",
+      "defaultModelPolicy": "owner-selected"
+    },
+    {
+      "id": "lm-studio-local",
+      "provider": "lm-studio",
+      "apiBase": "http://127.0.0.1:1234/v1",
+      "chatEndpoint": "/chat/completions",
+      "embeddingsEndpoint": "/embeddings",
+      "networkScope": "localhost-only",
+      "defaultModelPolicy": "owner-selected"
+    }
+  ],
+  "recordTypes": [
+    "program",
+    "course",
+    "objective",
+    "assessment",
+    "misconception",
+    "practice_lab",
+    "source_index",
+    "source_boundary",
+    "lecture_metadata",
+    "workflow"
+  ],
+  "privacyBoundary": {
+    "containsLearnerPrivateData": false,
+    "containsCredentials": false,
+    "containsPrivateNotes": false,
+    "containsEmbeddings": false,
+    "containsCopiedSourceText": false,
+    "allowsLocalPrivateOverlays": true
+  },
+  "writebackPolicy": {
+    "seedRecordsAreReadOnly": true,
+    "privateOverlaysStayLocal": true,
+    "publicPromotionRequiresReview": true,
+    "durableLearnerStateRequiresCheckedCode": true
+  },
+  "retrievalPolicy": {
+    "citationRequired": true,
+    "sourcePathRequired": true,
+    "preferCourseSeedBeforePrivateOverlay": true,
+    "fallbackWhenMissing": "ask for clarification or use deterministic suite content lookup"
+  }
+}

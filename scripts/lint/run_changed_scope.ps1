@@ -193,7 +193,7 @@ $checks = @(
     },
     [pscustomobject]@{
         Name = 'Clear Reasoning curriculum checks'
-        Patterns = @('^curriculum/', '^schemas/clear_reasoning_program\.schema\.json$', '^study-plans/', '^exercises/', '^docs/(PROGRAM_DESIGN|SOURCE_CANON|PEDAGOGY|ASSESSMENT_RUBRICS|WORKFLOW)\.md$', '^README\.md$', '^scripts/lifecycle/check_clear_reasoning_program\.py$', '^scripts/lint/run_changed_scope\.ps1$')
+        Patterns = @('^ai-knowledge/', '^content-repo\.json$', '^curriculum/', '^schemas/clear_reasoning_program\.schema\.json$', '^study-plans/', '^exercises/', '^docs/(PROGRAM_DESIGN|SOURCE_CANON|PEDAGOGY|ASSESSMENT_RUBRICS|WORKFLOW)\.md$', '^README\.md$', '^scripts/lifecycle/check_clear_reasoning_program\.py$', '^scripts/lint/run_changed_scope\.ps1$')
         Exists = { Test-Path 'scripts/lifecycle/check_clear_reasoning_program.py' }
         Command = {
             python scripts/lifecycle/check_clear_reasoning_program.py --repo-root .

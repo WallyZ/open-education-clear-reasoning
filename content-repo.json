@@ -26,5 +26,15 @@
     "frameworkPath": "curriculum/civilization_reasoning_framework.json",
     "sourcePacketIndexPath": "source-packets/index.json",
     "schemaPath": "schemas"
+  },
+  "aiKnowledgeStore": {
+    "manifestPath": "ai-knowledge/manifest.json",
+    "recordsPath": "ai-knowledge/records.jsonl",
+    "suiteSchemaPath": "../open-education-suite/schemas/offline-ai-knowledge-store.schema.json",
+    "preferredRuntimeProfiles": [
+      "ollama-local",
+      "lm-studio-local"
+    ],
+    "status": "seed-ready"
   }
 }

@@ -16,6 +16,10 @@ reports/
 var/
 media/
 recordings/
+ai-knowledge/local/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
 
 # Private/local artifacts
 data/private/

@@ -77,6 +77,20 @@ REQUIRED_COMPARATIVE_PACKETS = {
     "african-oral-deliberation-candidate.md",
 }
 
+REQUIRED_AI_KNOWLEDGE_RECORDS = {
+    "clear-reasoning-program",
+    "cr-101-course",
+    "objective-index",
+    "assessment-bank",
+    "misconception-map",
+    "reasoning-drills",
+    "debate-persuasion-practice-lab",
+    "change-facilitation-research-lab",
+    "source-canon-boundary",
+    "source-packet-index",
+    "offline-ai-workflow",
+}
+
 
 def _load_json(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as handle:
@@ -86,9 +100,27 @@ def _load_json(path: Path) -> dict[str, Any]:
     return data
 
 
+def _load_jsonl(path: Path) -> list[dict[str, Any]]:
+    records: list[dict[str, Any]] = []
+    with path.open("r", encoding="utf-8") as handle:
+        for line_number, line in enumerate(handle, 1):
+            raw = line.strip()
+            if not raw:
+                continue
+            data = json.loads(raw)
+            if not isinstance(data, dict):
+                raise ValueError(f"Expected JSON object in {path}:{line_number}")
+            records.append(data)
+    return records
+
+
 def _require(condition: bool, message: str, errors: list[str]) -> None:
     if not condition:
         errors.append(message)
+
+
+def _is_relative_public_path(value: str) -> bool:
+    return bool(value) and ":" not in value and not value.startswith(("/", "\\"))
 
 
 def _validate_docs(root: Path, errors: list[str]) -> None:
@@ -456,6 +488,78 @@ def _validate_lesson_outlines(root: Path, errors: list[str]) -> None:
         _require(text.count(token) >= 5, f"western lesson outlines must include {token} for each lesson", errors)
 
 
+def _validate_offline_ai_knowledge_store(root: Path, errors: list[str]) -> None:
+    content_manifest_path = root / "content-repo.json"
+    manifest_path = root / "ai-knowledge" / "manifest.json"
+    records_path = root / "ai-knowledge" / "records.jsonl"
+
+    _require(content_manifest_path.is_file(), "missing content-repo.json", errors)
+    _require(manifest_path.is_file(), "missing AI knowledge store manifest", errors)
+    _require(records_path.is_file(), "missing AI knowledge store records", errors)
+    if not content_manifest_path.is_file() or not manifest_path.is_file() or not records_path.is_file():
+        return
+
+    content_manifest = _load_json(content_manifest_path)
+    ai_config = content_manifest.get("aiKnowledgeStore") or {}
+    _require(ai_config.get("manifestPath") == "ai-knowledge/manifest.json", "content manifest must expose AI knowledge manifest", errors)
+    _require(ai_config.get("recordsPath") == "ai-knowledge/records.jsonl", "content manifest must expose AI knowledge records", errors)
+    _require(ai_config.get("status") == "seed-ready", "AI knowledge store status must be seed-ready", errors)
+    for profile_id in ("ollama-local", "lm-studio-local"):
+        _require(profile_id in (ai_config.get("preferredRuntimeProfiles") or []), f"content manifest missing runtime profile: {profile_id}", errors)
+
+    manifest = _load_json(manifest_path)
+    _require(manifest.get("schemaVersion") == "open-education/offline-ai-knowledge-store/v1", "AI knowledge manifest schemaVersion drifted", errors)
+    _require(manifest.get("storeId") == "clear-reasoning-offline-ai-knowledge", "AI knowledge manifest storeId drifted", errors)
+    _require(manifest.get("ownerRepoId") == "clear-reasoning", "AI knowledge manifest ownerRepoId drifted", errors)
+    _require(manifest.get("role") == "content-knowledge-seed", "AI knowledge manifest role must be content-knowledge-seed", errors)
+    _require(manifest.get("sourceRecordsPath") == "ai-knowledge/records.jsonl", "AI knowledge manifest records path drifted", errors)
+
+    profile_ids = {str(profile.get("id")) for profile in manifest.get("runtimeProfiles") or [] if isinstance(profile, dict)}
+    for profile_id in ("ollama-local", "lm-studio-local"):
+        _require(profile_id in profile_ids, f"AI knowledge manifest missing runtime profile: {profile_id}", errors)
+    for profile in manifest.get("runtimeProfiles") or []:
+        if not isinstance(profile, dict):
+            errors.append("AI knowledge runtime profile entries must be objects")
+            continue
+        _require(profile.get("networkScope") == "localhost-only", f"AI runtime profile {profile.get('id')} must be localhost-only", errors)
+        _require(str(profile.get("apiBase") or "").startswith("http://127.0.0.1:"), f"AI runtime profile {profile.get('id')} must use localhost apiBase", errors)
+
+    privacy = manifest.get("privacyBoundary") or {}
+    for key in ("containsLearnerPrivateData", "containsCredentials", "containsPrivateNotes", "containsEmbeddings", "containsCopiedSourceText"):
+        _require(privacy.get(key) is False, f"AI knowledge privacyBoundary.{key} must be false", errors)
+    _require(privacy.get("allowsLocalPrivateOverlays") is True, "AI knowledge store must allow local private overlays", errors)
+
+    writeback = manifest.get("writebackPolicy") or {}
+    for key in ("seedRecordsAreReadOnly", "privateOverlaysStayLocal", "publicPromotionRequiresReview", "durableLearnerStateRequiresCheckedCode"):
+        _require(writeback.get(key) is True, f"AI knowledge writebackPolicy.{key} must be true", errors)
+
+    records = _load_jsonl(records_path)
+    _require(len(records) >= len(REQUIRED_AI_KNOWLEDGE_RECORDS), "AI knowledge store must include required seed records", errors)
+    seen_ids: set[str] = set()
+    for record in records:
+        record_id = str(record.get("recordId") or "")
+        _require(bool(record_id), "AI knowledge record missing recordId", errors)
+        _require(record_id not in seen_ids, f"duplicate AI knowledge record id: {record_id}", errors)
+        seen_ids.add(record_id)
+        for key in ("kind", "title", "sourceRepo", "sourcePath", "summary"):
+            _require(bool(record.get(key)), f"AI knowledge record {record_id} missing {key}", errors)
+        source_path = str(record.get("sourcePath") or "")
+        _require(_is_relative_public_path(source_path), f"AI knowledge record {record_id} sourcePath must be relative", errors)
+        if source_path:
+            _require((root / source_path).is_file(), f"AI knowledge record {record_id} sourcePath does not exist: {source_path}", errors)
+        _require(record.get("sourceRepo") == "clear-reasoning", f"AI knowledge record {record_id} sourceRepo must be clear-reasoning", errors)
+        _require(record.get("privacyClass") == "public-course-seed", f"AI knowledge record {record_id} privacyClass must be public-course-seed", errors)
+        _require(record.get("writePolicy") == "read-only-seed", f"AI knowledge record {record_id} writePolicy must be read-only-seed", errors)
+        _require(record.get("citationRequired") is True, f"AI knowledge record {record_id} must require citation", errors)
+        _require(len(record.get("retrievalTerms") or []) >= 3, f"AI knowledge record {record_id} needs at least 3 retrievalTerms", errors)
+        serialized = json.dumps(record, sort_keys=True)
+        for token in ("F:\\", "api_key", "bearer ", "secret", "token=", "learnerId", "privateNote", "excerpt_text", "full_text"):
+            _require(token.lower() not in serialized.lower(), f"AI knowledge record {record_id} includes forbidden token: {token}", errors)
+
+    for required_record in REQUIRED_AI_KNOWLEDGE_RECORDS:
+        _require(required_record in seen_ids, f"AI knowledge store missing required record: {required_record}", errors)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo-root", default=".")
@@ -468,6 +572,7 @@ def main() -> int:
     _validate_civilization_framework(root, errors)
     _validate_source_packets(root, errors)
     _validate_lesson_outlines(root, errors)
+    _validate_offline_ai_knowledge_store(root, errors)
 
     if errors:
         for error in errors:
