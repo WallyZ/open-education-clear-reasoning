@@ -86,6 +86,24 @@ The current repo keeps all listed works `reference_only` until source packets ar
 | Pascal, Pensees and provincial letters | Persuasion, heart/reason relation, irony, and probability. | Audience awareness and moral persuasion. | Reference-only until edition packet is verified. |
 | Newman, Grammar of Assent | Assent, probability, conscience, and informal reasoning. | Practical certainty and responsible belief. | Reference-only until edition packet is verified. |
 
+## Change Research And Helping Others Revise
+
+Modern change research belongs in this program because clear reasoning often fails at the final mile: a person may understand the argument but not yet see the need to change, feel safe enough to revise, know the next step, or have a practice structure that makes revision durable.
+
+| Research Family | Why It Matters | Use In Program | Boundary |
+| --- | --- | --- | --- |
+| Motivational interviewing and ambivalence research | People often defend the status quo because they are ambivalent, not because they are incapable of reason. | Reflect values, evoke reasons for change, ask permission before advising, and avoid argument traps. | Reference-only; do not copy manuals, scripts, assessment instruments, or training worksheets. |
+| Transtheoretical and readiness-to-change models | People may be unaware, considering, preparing, acting, maintaining, or relapsing. | Match the question to readiness: raise awareness, explore discrepancy, plan action, or support maintenance. | Reference-only; use original course language and avoid proprietary staging tools. |
+| Self-determination theory | Durable change depends on autonomy, competence, and relatedness rather than pressure alone. | Teach learners to preserve agency, build skill confidence, and maintain relational respect. | Reference-only; no copied scales or proprietary materials. |
+| Social cognitive theory and self-efficacy | People change more readily when they believe the next action is possible and can observe a model. | Use small wins, modeling, rehearsal, and feedback to build confidence. | Reference-only; use original scenarios and coaching prompts. |
+| Implementation intentions and goal-setting research | Vague agreement rarely becomes action without a concrete if-then plan. | Turn insight into a next action, cue, obstacle plan, and follow-up check. | Reference-only; no copied intervention materials. |
+| Habit, friction, reinforcement, and environment design | Repeated behavior is shaped by cues, ease, reward, and context. | Change the environment, reduce friction, and design practice loops rather than relying on willpower alone. | Reference-only; use original drills and public-safe summaries. |
+| Cognitive dissonance and self-perception research | People resist identity threat and often infer beliefs from their own actions. | Invite small truthful commitments and let the person own the conclusion. | Reference-only; do not manipulate shame, threat, or hidden pressure. |
+| Attitude-change, elaboration, and inoculation research | Strong change requires attention, relevance, argument quality, resistance handling, and rehearsal against counterarguments. | Match depth to audience, use strong reasons, pre-answer objections, and practice future pressure. | Reference-only; no copied proprietary training content. |
+| Reactance research | People resist when persuasion feels like control or humiliation. | Reduce coercion, ask permission, preserve choice, and avoid cornering the person publicly. | Reference-only; use ethical adaptation only. |
+| Social norms, diffusion, and community change research | Change spreads through trust, identity, visible norms, early adopters, and social proof. | Teach civic and group persuasion without deception or manufactured consensus. | Reference-only; do not fabricate popularity or evidence. |
+| Adult learning, coaching, feedback, and deliberate practice research | Adults need relevance, practice, feedback, retrieval, and revision, not just explanation. | Convert insight into coached practice, feedback, spaced retrieval, and portfolio evidence. | Reference-only; store only public-safe prompts and rubrics here. |
+
 ## Global And Comparative Extensions
 
 A world-class reasoning course should not imply that only one civilization practiced disciplined thought. Comparative extensions may include:

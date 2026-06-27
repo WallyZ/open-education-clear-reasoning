@@ -397,6 +397,17 @@
       "role": "Strategic awareness, adversarial incentives, and manipulative tactic recognition.",
       "recommended_use": "adversarial recognition with ethical constraints",
       "use_boundary": "Reference-only; train diagnosis and repair, not dishonest imitation."
+    },
+    {
+      "id": "behavior-change-research",
+      "author": "Modern behavior-change, motivation, coaching, social influence, habit, and adult-learning researchers",
+      "work": "Motivational interviewing, readiness-to-change, self-determination, self-efficacy, implementation intentions, habit design, cognitive dissonance, attitude-change, reactance, diffusion, and adult-learning research",
+      "tradition": "change facilitation and coaching",
+      "integration_stage": "reference_only",
+      "source_packet_status": "needed",
+      "role": "Helping people see the need for change, own the reason, form a concrete next step, and sustain revision without coercion.",
+      "recommended_use": "change conversations, autonomy-supportive persuasion, implementation planning, relapse repair, and coached practice",
+      "use_boundary": "Reference-only; do not copy manuals, scales, proprietary worksheets, therapy protocols, or copyrighted research text."
     }
   ],
   "mastery_bands": [
@@ -464,6 +475,14 @@
       "capstone_artifact": "Combative exchange repair and self-command audit."
     },
     {
+      "id": "change-facilitation",
+      "title": "Change Facilitation",
+      "source_refs": ["behavior-change-research", "aristotle-rhetoric", "pascal-newman-persuasion", "quintilian-institutio", "augustine-doctrina"],
+      "outcomes": ["help another person see the need for change", "preserve autonomy while persuading", "turn insight into a concrete next step", "support revision after relapse"],
+      "labs": ["readiness map", "ambivalence reflection", "autonomy-support question", "if-then plan", "friction audit", "relapse repair"],
+      "capstone_artifact": "Change conversation plan, transcript or role-play, next-step agreement, and follow-up revision."
+    },
+    {
       "id": "teacher-formation",
       "title": "Teacher Formation",
       "source_refs": ["quintilian-institutio", "augustine-doctrina", "aquinas-disputation"],
@@ -507,6 +526,20 @@
       "skill_family": "adversarial reasoning",
       "source_refs": ["aristotle-sophistical-refutations", "strategy-adversarial-classics"],
       "evidence": "Learner handles pressure tactics without returning manipulation."
+    },
+    {
+      "id": "debate-persuasion-lab",
+      "title": "Debate And Persuasion Practice Lab",
+      "skill_family": "ethical persuasion under pressure",
+      "source_refs": ["aristotle-rhetoric", "aristotle-sophistical-refutations", "plato-dialogues", "lincoln-douglass-speech", "strategy-adversarial-classics"],
+      "evidence": "Learner stabilizes terms, recognizes disingenuous moves, serves honest listeners, and gives opponents a path to self-revision."
+    },
+    {
+      "id": "change-facilitation-lab",
+      "title": "Change Facilitation Lab",
+      "skill_family": "helping others change",
+      "source_refs": ["behavior-change-research", "pascal-newman-persuasion", "quintilian-institutio", "augustine-doctrina"],
+      "evidence": "Learner identifies readiness, reflects ambivalence, preserves autonomy, builds an implementation plan, and supports relapse repair without coercion."
     },
     {
       "id": "teach-back",
@@ -596,9 +629,9 @@
       {
         "id": "m09-rhetoric-ethical-persuasion",
         "title": "Rhetoric And Ethical Persuasion",
-        "source_refs": ["aristotle-rhetoric", "isocrates-orations", "cicero-rhetoric-duty", "quintilian-institutio", "augustine-doctrina"],
-        "skills": ["adapt to audience", "balance ethos pathos and logos", "avoid manipulative persuasion"],
-        "practice": ["speech compression", "ethos pathos logos audit", "arrangement outline"],
+        "source_refs": ["aristotle-rhetoric", "isocrates-orations", "cicero-rhetoric-duty", "quintilian-institutio", "augustine-doctrina", "behavior-change-research"],
+        "skills": ["adapt to audience", "balance ethos pathos and logos", "avoid manipulative persuasion", "help another person see the need for change without coercion"],
+        "practice": ["speech compression", "ethos pathos logos audit", "arrangement outline", "change facilitation lab"],
         "assessment": "Deliver a short speech outline with ethical constraint notes.",
         "performance_pressure": "Public audience needs clarity without oversimplification."
       },
@@ -643,6 +676,7 @@
       "persuasive speech outline and performance rubric",
       "evidence and induction audit",
       "civic or moral judgment case",
+      "change facilitation conversation plan",
       "source-move extraction artifact",
       "teach-back artifact",
       "self-audit and continuing practice plan"

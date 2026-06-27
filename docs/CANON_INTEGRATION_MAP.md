@@ -30,6 +30,7 @@ Until a packet is ready, every source is treated as reference-only.
 | Inquiry and evidence | Bacon, Galileo, Mill, Peirce, Darwin | Separate observation, cause, induction, probability, and explanation. | Induction ladder, causal rival map, belief-fixation audit. | Analyze an evidence claim and state what would change the conclusion. |
 | Civic and moral judgment | Aristotle, Cicero, Confucius, Epictetus, Smith, Federalist Papers, Tocqueville | Reason about duty, character, incentives, institutions, liberty, and consequence. | Duty-conflict map, institutional incentive map, prudence case. | Defend a civic judgment while naming tradeoffs and limiting claims. |
 | Strategy and adversarial reasoning | Sun Tzu, Machiavelli, Clausewitz, Sophistical Refutations, diagnostic eristic references | Recognize adversarial moves and preserve discipline. | Eristic shield, bad-faith reset, frame-control audit. | Stay accurate under combative questioning without mirroring manipulation. |
+| Change facilitation and coaching | Motivational interviewing, readiness-to-change, self-determination, self-efficacy, implementation intentions, habit design, attitude-change, reactance, diffusion, and adult-learning research | Help another person see the need for change, preserve agency, form a next step, and sustain revision. | Readiness map, ambivalence reflection, autonomy-support question, if-then plan, friction audit, relapse repair. | Conduct a change conversation that ends with the other person owning a truthful next step. |
 | Teacher formation | Quintilian, Augustine, Aquinas, selected modern pedagogy references | Teach reasoning moves and coach correction. | Teach-back, error diagnosis, revision conference. | Teach a skill to another learner and document the correction path. |
 
 ## Reference-Only Modern Sources
@@ -41,6 +42,8 @@ Potential reference-only categories:
 - argument model and informal logic traditions
 - cognitive bias and judgment research
 - negotiation and conflict-resolution research
+- motivation, behavior-change, coaching, and habit-formation research
+- attitude-change, reactance, social-norm, and diffusion research
 - visual explanation and data communication
 - modern rhetoric, debate, and composition pedagogy
 

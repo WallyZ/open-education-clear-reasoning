@@ -36,6 +36,64 @@ This repo owns:
 - assessment rubrics
 - source-use boundaries
 
+Courseware export surfaces are:
+
+- `content-repo.json` for suite discovery and repository status.
+- `study-plans/courses/CR-101-clear-reasoning-foundations.md` for suite-facing course structure.
+- `objectives/clear-reasoning-objectives.md` for objective IDs.
+- `assessments/clear-reasoning-assessment-bank.md` for assessment metadata.
+- `misconceptions/misconceptions.md` for remediation signals.
+- `generated-lectures/intro-foundations/lecture-video.json` for deterministic lecture fixture shape.
+
+## Voice Studio Practice Contract
+
+Voice Studio may record spoken explanations, objection handling, and disputation practice, but this repository must store only public-safe prompts, rubrics, objective IDs, transcript requirements, and scoring fields. Private audio, private transcripts, learner names, and review notes stay in learner-owned or platform-owned storage.
+
+Recommended Voice Studio practice modes:
+
+| Mode | Prompt Source | Evidence Stored Outside This Repo | Rubric Focus |
+| --- | --- | --- | --- |
+| Spoken explanation | weekly lecture blueprint | learner recording or transcript reference | order, precision, warrant defense |
+| Objection handling | Objection Box and Question Ladder | objection response recording | fairness, concession, answer quality |
+| Combative reset | Debate And Persuasion Practice Lab | pressure exchange recording | composure, term lock, tactic naming |
+| Persuasive revision | persuasion-to-self-revision drill | before/after transcript reference | audience adaptation, dignity, changed mind path |
+| Capstone defense | capstone portfolio | final defense recording reference | synthesis, clarity, revision after questions |
+
+## Lecture And Video Production Handoff
+
+Lecture production should use repo-authored outlines, objective IDs, board plans, and practice prompts. Generated media belongs outside this repo unless it is a deterministic fixture explicitly approved for public inclusion.
+
+Each full lecture handoff should include:
+
+1. course ID and objective IDs;
+2. target duration and accessibility requirements;
+3. board-work plan for definitions, argument maps, or proof steps;
+4. source references by packet ID or link-only source reference;
+5. no copied source text unless a packet authorizes excerpt use;
+6. pause-practice prompts;
+7. transcript/caption requirement;
+8. practice artifact and assessment link.
+
+Required lecture styles:
+
+- board lecture for definitions, propositions, proof, inference, and evidence;
+- seminar dialogue for dialectic, disagreement, and capstone defense;
+- worked example for fallacy repair, word games, and hostile conversation reset;
+- audience-adaptation rehearsal for rhetoric and persuasion.
+
+## QA Live Readiness Contract
+
+No learner-facing UI is owned by this repo today. Once a suite learner surface consumes this content, QA Live should validate that the UI can:
+
+1. load CR-101 from the content repository manifest;
+2. display weekly lecture, practice, objective, assessment, and source-reference data;
+3. complete a representative drill without storing private learner data in this repo;
+4. surface source-use boundaries and no-hidden-testing guidance;
+5. run a Debate And Persuasion Practice Lab scenario;
+6. record only public-safe report metadata, screenshots, and logs in the QA report path.
+
+The first QA Live run-spec should be named `clear-reasoning-cr101-learner-flow` and should report the course load, objective visibility, practice launch, assessment prompt visibility, accessibility text, and source provenance checks.
+
 ## Source Rules
 
 Do not copy source text unless the edition or translation is public domain or otherwise licensed for reuse. Prefer source references and original exercises until source preservation packets exist.
@@ -72,7 +130,4 @@ Downstream tools should read `source-packets/index.json` for packet readiness in
 
 - Content Courseware Kit metadata export.
 - Assessment Mastery Engine rubrics and evidence contracts.
-- Voice Studio practice for spoken explanations and disputation.
-- Video Studio for lecture and board-work production.
 - Source Preservation Kit for public-domain edition evidence.
-- QA Live checks once a learner-facing UI exists.
