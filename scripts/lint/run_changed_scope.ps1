@@ -188,7 +188,7 @@ $checks = @(
         Patterns = @('\.(md|py|ps1|psm1|psd1|json|ya?ml|js|jsx|ts|tsx|c|cc|cpp|cxx|h|hh|hpp|hxx|ixx|cs|uproject|uplugin)$', '^scripts/lint/run_language_lint\.ps1$', '^docs/LANGUAGE_LINTING\.md$', '^repo-standards/lint/(language_lint_matrix|cspell)\.json$', '^repo-standards/lint/docs_terminology_allowlist\.txt$', '^docs/COMMON_PITFALLS\.md$', '^scripts/memory/record_pitfall\.ps1$')
         Exists = { Test-Path 'scripts/lint/run_language_lint.ps1' }
         Command = {
-            & ./scripts/lint/run_language_lint.ps1 -RepoRoot .
+            & ./scripts/lint/run_language_lint.ps1 -RepoRoot . -ChangedFiles $changed
         }
     },
     [pscustomobject]@{

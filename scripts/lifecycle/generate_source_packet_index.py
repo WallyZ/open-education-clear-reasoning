@@ -52,6 +52,14 @@ def _slugify(text: str) -> str:
     return slug
 
 
+def _unwrap_markdown_autolink(value: str) -> str:
+    if value.startswith("<") and value.endswith(">"):
+        candidate = value[1:-1]
+        if candidate.startswith(("https://", "http://")):
+            return candidate
+    return value
+
+
 def _lesson_refs_by_packet(repo_root: Path) -> dict[str, list[str]]:
     path = repo_root / LESSON_OUTLINE_PATH
     if not path.is_file():
@@ -123,7 +131,9 @@ def _packet_entry(path: Path, repo_root: Path, lesson_refs: dict[str, list[str]]
         "author": _packet_author(fields),
         "review_status": review_status,
         "rights_status": _rights_status(fields, category, review_status),
-        "source_reference": fields.get("Source URL or library reference", ""),
+        "source_reference": _unwrap_markdown_autolink(
+            fields.get("Source URL or library reference", "")
+        ),
         "original_lesson_allowed": original_lesson_allowed,
         "excerpt_use_allowed": False,
         "needs_cultural_review": needs_cultural_review,

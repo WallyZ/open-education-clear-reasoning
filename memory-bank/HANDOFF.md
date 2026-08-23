@@ -4,11 +4,11 @@ Compact handoff package for local-context continuity.
 
 ## Metadata
 
-- Last updated: 2026-06-13
-- Handoff owner: <name-or-role>
-- Runtime target: local | cloud
-- Context profile target: 32k | 64k | cloud
-- Estimated token count: <update before handoff> (must stay <= 2000)
+- Last updated: 2026-08-23
+- Handoff owner: repo maintainer
+- Runtime target: local and cloud
+- Context profile target: cloud
+- Estimated token count: under 1000
 
 ## Must-Read Order (receiver)
 
@@ -19,44 +19,41 @@ Compact handoff package for local-context continuity.
 
 ## Current Objective
 
-- One-sentence objective:
-- Current active wave / TODO item:
+- Complete root-owned Markdown lint fleet Wave 45 without weakening the repo's curriculum contract.
+- Active item: `RK_MARKDOWN_LINT_FLEET_ROLLOUT_001`; repo-local TODOs remain complete.
 
 ## Completed Since Last Handoff
 
-- <completed item 1>
-- <completed item 2>
+- Clean full baseline retained; domain checks passed and six stale memory dates caused the expected failure.
+- Shared dependency-free lint assets installed and conservative Markdown repairs applied.
 
 ## In Progress
 
-- <current change 1>
-- <current change 2>
+- Corrected-candidate changed/full verification passed; independent promotion review remains pending.
 
 ## Next Commands (Max 5)
 
 ```powershell
-# 1) <command>
-# 2) <command>
-# 3) <command>
+# 1) pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked
+# 2) pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode full -IncludeUntracked
+# 3) git status --short
 ```
 
 ## Scope Guardrails
 
-- Files allowed to edit next:
-  - `<path>`
-- Files explicitly out of scope:
-  - `<path>`
+- Allowed: lint assets/integration, conservatively normalized Markdown, and memory-bank status.
+- Out of scope: curriculum meaning, source rights/status, cultural-review gates, and private/local knowledge data.
 
 ## Open Risks / Blockers
 
-- <risk-or-blocker>
+- Optional external Markdown tools remain optional; the dependency-free guard is authoritative for this rollout.
 
 ## Verification Snapshot
 
-- Last checks run:
-  - `<command>` -> <pass/fail + short note>
-- Pending checks before merge:
-  - `<command>`
+- Full baseline -> failed only stale memory freshness after all selected domain checks passed.
+- Corrected candidate changed -> PASS: `.codex-cache/logs/codex-verify_20260823_133555_225768d4.log`.
+- Corrected candidate full -> PASS: `.codex-cache/logs/codex-verify_20260823_133614_8c871868.log`.
+- Pending: independent promotion review and commit/push.
 
 ## Resume Checklist
 

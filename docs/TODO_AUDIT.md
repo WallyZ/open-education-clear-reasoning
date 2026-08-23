@@ -54,6 +54,7 @@ python scripts/todo_audit.py --todo docs/todo/03_scripts_and_repo_standards.md -
 ```
 
 Notes:
+
 - Apply mode writes a backup next to the TODO file (`.bak*`).
 - Use `--repair-namespace auto|ms|yta` to control generated tag namespace when missing.
 
@@ -64,6 +65,7 @@ python scripts/lifecycle/check_todo_format.py --repo-root . --todo-root docs/tod
 ```
 
 This check is also wired into:
+
 - `scripts/lint/run_all.ps1`
 - `.github/workflows/reusable-consistency.yml`
 
@@ -119,5 +121,3 @@ python scripts/lifecycle/check_todo_ready_queue.py --repo-root . --todo-root doc
 ```
 
 See `docs/TODO_PROCESS.md` for the full TODO workflow.
-
-

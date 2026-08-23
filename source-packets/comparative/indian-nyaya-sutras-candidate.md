@@ -13,7 +13,7 @@
 
 ## Location
 
-- Source URL or library reference: https://archive.org/details/in.ernet.dli.2015.281073
+- Source URL or library reference: <https://archive.org/details/in.ernet.dli.2015.281073>
 - Archive or preservation reference: Internet Archive candidate record for The Nyaya Sutras of Gotama 1913
 - Last accessed: 2026-06-14
 

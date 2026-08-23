@@ -13,7 +13,7 @@
 
 ## Location
 
-- Source URL or library reference: https://archive.org/details/organonorlogicalt01aris
+- Source URL or library reference: <https://archive.org/details/organonorlogicalt01aris>
 - Archive or preservation reference: Internet Archive identifier organonorlogicalt01aris
 - Last accessed: 2026-06-14
 

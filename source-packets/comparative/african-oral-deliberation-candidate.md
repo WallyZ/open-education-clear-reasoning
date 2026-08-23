@@ -13,7 +13,7 @@
 
 ## Location
 
-- Source URL or library reference: https://archive.org/details/pub-domain-african-proverbs
+- Source URL or library reference: <https://archive.org/details/pub-domain-african-proverbs>
 - Archive or preservation reference: Internet Archive candidate record pub-domain-african-proverbs
 - Last accessed: 2026-06-14
 

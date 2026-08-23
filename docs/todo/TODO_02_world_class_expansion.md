@@ -65,4 +65,3 @@ Build this from a strong curriculum scaffold into a world-class reasoning, speak
   - Acceptance: The seed supports Ollama and LM Studio runtime profiles, requires citations, avoids private learner data and copied source text, keeps local overlays out of git, and is validated by canonical verification.
   - Evidence: Added the `ai-knowledge` manifest and record set, wired `content-repo.json`, documented the workflow, and extended the Clear Reasoning checker plus changed-scope routing.
   - Verification: Passed `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`; log `.codex-cache\logs\codex-verify_20260627_092021_f2a589c1.log`.
-

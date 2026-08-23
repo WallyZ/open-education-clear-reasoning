@@ -13,7 +13,7 @@
 
 ## Location
 
-- Source URL or library reference: https://archive.org/details/AlGhazaliMunkidhMinAlDalalDeliveranceFromError
+- Source URL or library reference: <https://archive.org/details/AlGhazaliMunkidhMinAlDalalDeliveranceFromError>
 - Archive or preservation reference: Internet Archive candidate record
 - Last accessed: 2026-06-14
 

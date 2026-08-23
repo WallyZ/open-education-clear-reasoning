@@ -13,7 +13,7 @@
 
 ## Location
 
-- Source URL or library reference: https://www.gutenberg.org/ebooks/1656
+- Source URL or library reference: <https://www.gutenberg.org/ebooks/1656>
 - Archive or preservation reference: Project Gutenberg ebook 1656
 - Last accessed: 2026-06-14
 

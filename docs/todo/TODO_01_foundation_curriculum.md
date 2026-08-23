@@ -27,4 +27,3 @@ Create the first public-safe, machine-readable Clear Reasoning Foundations cours
 - The repo contains no learner private data, generated media, private recordings, or copied copyrighted translations.
 - The curriculum is structured enough for future ingestion by `open-education-suite`.
 - Follow-up implementation is split into `TODO_02_world_class_expansion.md`.
-

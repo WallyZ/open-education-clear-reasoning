@@ -13,7 +13,7 @@
 
 ## Location
 
-- Source URL or library reference: https://www.gutenberg.org/ebooks/8547
+- Source URL or library reference: <https://www.gutenberg.org/ebooks/8547>
 - Archive or preservation reference: Project Gutenberg ebook 8547
 - Last accessed: 2026-06-14
 

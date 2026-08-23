@@ -13,7 +13,7 @@
 
 ## Location
 
-- Source URL or library reference: https://archive.org/search?query=%22Buddhist%20Logic%22%20Stcherbatsky
+- Source URL or library reference: <https://archive.org/search?query=%22Buddhist%20Logic%22%20Stcherbatsky>
 - Archive or preservation reference: Candidate Internet Archive search results; no edition approved
 - Last accessed: 2026-06-14
 

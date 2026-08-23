@@ -13,7 +13,7 @@
 
 ## Location
 
-- Source URL or library reference: https://www.gutenberg.org/ebooks/21076
+- Source URL or library reference: <https://www.gutenberg.org/ebooks/21076>
 - Archive or preservation reference: Project Gutenberg ebook 21076
 - Last accessed: 2026-06-14
 

@@ -71,7 +71,3 @@ Make the program Western-primary while covering disciplined thought from multipl
   - Acceptance: Manual index drift is eliminated; verifier can fail when generated output differs from checked-in index.
   - Evidence: Added `scripts/lifecycle/generate_source_packet_index.py`; regenerated `source-packets/index.json` from packet Markdown and lesson-outline source-packet links; `check_clear_reasoning_program.py` now fails verification on generated-index drift.
   - Verification: Passed `pwsh -NoProfile -ExecutionPolicy Bypass -File .\scripts\codex-verify.ps1 -RepoRoot . -ContextProfile cloud -Mode changed -IncludeUntracked`; log `.codex-cache\logs\codex-verify_20260614_123713_498d2071.log`.
-
-
-
-

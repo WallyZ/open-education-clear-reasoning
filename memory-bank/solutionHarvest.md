@@ -2,8 +2,8 @@
 
 ## Metadata
 
-- Last updated: 2026-06-14
-- Wave ID: clear-reasoning-source-packet-wave-v1
+- Last updated: 2026-08-23
+- Wave ID: markdown-lint-wave-45-review
 
 ## Candidate Reusable Solutions
 
@@ -52,6 +52,11 @@
 ## Promoted to Repo-Kit
 
 - None in this wave. Candidate exports are recorded in `.repo-kit/exchange.json` for later review.
+
+## Wave 45 Review
+
+- Adopted the reviewed dependency-free Markdown guard and changed-file language-lint wiring.
+- No new Clear Reasoning domain solution was inferred or promoted from this formatting/integration wave.
 
 ## Deferred / Not Reusable
 

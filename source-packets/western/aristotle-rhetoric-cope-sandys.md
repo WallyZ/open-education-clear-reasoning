@@ -13,7 +13,7 @@
 
 ## Location
 
-- Source URL or library reference: https://archive.org/details/rhetoricaristot09sandgoog
+- Source URL or library reference: <https://archive.org/details/rhetoricaristot09sandgoog>
 - Archive or preservation reference: Internet Archive identifier rhetoricaristot09sandgoog
 - Last accessed: 2026-06-14
 

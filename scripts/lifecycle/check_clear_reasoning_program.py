@@ -443,6 +443,13 @@ def _validate_source_packets(root: Path, errors: list[str]) -> None:
         _require(bool(relative_path), f"source packet index entry {packet_id} missing path", errors)
         if relative_path:
             _require((root / relative_path).is_file(), f"source packet index path does not exist: {relative_path}", errors)
+        source_reference = str(packet.get("source_reference") or "")
+        _require(bool(source_reference), f"source packet index entry {packet_id} missing source_reference", errors)
+        _require(
+            not (source_reference.startswith("<") or source_reference.endswith(">")),
+            f"source packet index entry {packet_id} source_reference must be a raw reference, not Markdown autolink syntax",
+            errors,
+        )
         _require(packet.get("excerpt_use_allowed") is False, f"source packet index packet {packet_id} must not allow excerpt use", errors)
         category = packet.get("category")
         if category == "western":

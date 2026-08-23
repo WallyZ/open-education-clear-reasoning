@@ -13,7 +13,7 @@
 
 ## Location
 
-- Source URL or library reference: https://www.gutenberg.org/ebooks/4094
+- Source URL or library reference: <https://www.gutenberg.org/ebooks/4094>
 - Archive or preservation reference: Project Gutenberg ebook 4094
 - Last accessed: 2026-06-14
 

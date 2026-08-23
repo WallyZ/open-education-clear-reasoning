@@ -180,5 +180,3 @@ python scripts/lifecycle/check_todo_ready_queue.py --repo-root . --todo-root doc
 - `Files:` entries should wrap paths in backticks so `agent.files` and `agent.file_refs` are parseable.
 - Completed (`[x]`) items still require evidence/id tags per `docs/TODO_AUDIT.md`.
 - Dependency ids should point to TODO ids in the same split backlog set when possible.
-
-

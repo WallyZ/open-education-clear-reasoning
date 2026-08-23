@@ -13,7 +13,7 @@
 
 ## Location
 
-- Source URL or library reference: https://www.gutenberg.org/ebooks/2412
+- Source URL or library reference: <https://www.gutenberg.org/ebooks/2412>
 - Archive or preservation reference: Project Gutenberg ebook 2412
 - Last accessed: 2026-06-14
 
