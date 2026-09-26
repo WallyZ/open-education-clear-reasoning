@@ -5,11 +5,13 @@ from __future__ import annotations
 import argparse
 import importlib.util
 import json
+import re
 from pathlib import Path
 from typing import Any
 
 SCHEMA_VERSION = "open-education-clear-reasoning/program/v1"
 FRAMEWORK_SCHEMA_VERSION = "open-education-clear-reasoning/civilization-framework/v1"
+TEACHING_DEBATE_SCHEMA_VERSION = "open-education-clear-reasoning/teaching-debate-program/v1"
 REPO_ID = "open-education-clear-reasoning"
 FORBIDDEN_TOKENS = [
     "excerpt_text",
@@ -33,6 +35,7 @@ REQUIRED_DOC_TOKENS = {
     "docs/ASSESSMENT_RUBRICS.md": ["Capstone Standard", "Definition discipline", "Mastery Evidence Map"],
     "docs/WORKFLOW.md": ["Courseware Integration", "Source Rules", "CANON_INTEGRATION_MAP"],
     "study-plans/clear-reasoning-foundations/COURSE.md": ["Clear Reasoning Foundations", "Module Map", "Completion Evidence"],
+    "study-plans/teaching-debate/COURSE.md": ["Teaching Debate", "Ownership Boundary", "Pilot Sequence", "Expansion Gate"],
     "study-plans/western-spine-lessons/LESSON_OUTLINES.md": ["Packet Gate", "Euclidean Proof Craft", "No copied source text: yes"],
     "exercises/reasoning-drills.md": ["Term Lock", "Steelman Ladder", "Combative Opponent Reset", "Source-Move Extraction"],
     "source-packets/README.md": ["Western packet records", "Comparative packet candidates", "Downstream Index"],
@@ -567,6 +570,116 @@ def _validate_offline_ai_knowledge_store(root: Path, errors: list[str]) -> None:
         _require(required_record in seen_ids, f"AI knowledge store missing required record: {required_record}", errors)
 
 
+def _validate_teaching_debate_program(root: Path, errors: list[str]) -> None:
+    schema_path = root / "schemas" / "teaching_debate_program.schema.json"
+    program_path = root / "curriculum" / "teaching_debate_program.json"
+    _require(schema_path.is_file(), "missing Teaching Debate schema", errors)
+    _require(program_path.is_file(), "missing Teaching Debate program", errors)
+    if not schema_path.is_file() or not program_path.is_file():
+        return
+
+    schema = _load_json(schema_path)
+    program = _load_json(program_path)
+    _require(schema.get("title") == "Teaching Debate Program", "Teaching Debate schema title drifted", errors)
+    _require(program.get("schema_version") == TEACHING_DEBATE_SCHEMA_VERSION, "unexpected Teaching Debate schema_version", errors)
+    _require(program.get("repo_id") == REPO_ID, "unexpected Teaching Debate repo_id", errors)
+    _require(program.get("course_id") == "teaching-debate", "unexpected Teaching Debate course_id", errors)
+    _require(program.get("status") == "pilot", "Teaching Debate must remain pilot", errors)
+
+    authority = program.get("authority") or {}
+    required_authority = {
+        "subject_curriculum_owner": REPO_ID,
+        "leadership_application_owner": "open-education-leadership",
+        "learner_runtime_owner": "open-education-suite",
+        "production_workflow_owner": "youtube-automation",
+        "channel_adaptation_owner": "private-channel-package-pending",
+        "subject_dossier_owner": "relevant-subject-content-repository",
+    }
+    for key, expected in required_authority.items():
+        _require(authority.get(key) == expected, f"Teaching Debate authority.{key} drifted", errors)
+
+    provenance = program.get("provenance") or {}
+    for key in ("source_pack_sha256", "source_curriculum_sha256"):
+        value = str(provenance.get(key) or "")
+        _require(bool(re.fullmatch(r"[0-9a-f]{64}", value)), f"Teaching Debate provenance.{key} must be lowercase SHA-256", errors)
+    _require(provenance.get("source_status") == "starter-input-not-authority", "Teaching Debate starter pack must not be authoritative", errors)
+
+    privacy = program.get("privacy_boundary") or {}
+    for key in (
+        "contains_learner_private_data",
+        "contains_channel_scripts",
+        "contains_production_state",
+        "contains_copied_source_text",
+        "contains_generated_media",
+    ):
+        _require(privacy.get(key) is False, f"Teaching Debate privacy_boundary.{key} must be false", errors)
+
+    policy = program.get("pilot_policy") or {}
+    for key in ("prerequisite_complete", "channel_neutral", "source_reconciliation_required"):
+        _require(policy.get(key) is True, f"Teaching Debate pilot_policy.{key} must be true", errors)
+    for key in ("publication_authorized", "full_pack_imported"):
+        _require(policy.get(key) is False, f"Teaching Debate pilot_policy.{key} must be false", errors)
+
+    foundation = _load_json(root / "curriculum" / "clear_reasoning_program.json")
+    valid_overlap_refs = {
+        str(module.get("id"))
+        for module in (foundation.get("course") or {}).get("modules") or []
+        if isinstance(module, dict)
+    }
+    valid_overlap_refs.update(
+        str(lab.get("id"))
+        for lab in foundation.get("practice_labs") or []
+        if isinstance(lab, dict)
+    )
+
+    lessons = program.get("lessons") or []
+    _require(isinstance(lessons, list) and len(lessons) == 2, "Teaching Debate pilot must contain exactly two lessons", errors)
+    lesson_ids: set[str] = set()
+    lesson_by_id: dict[str, dict[str, Any]] = {}
+    for lesson in lessons:
+        if not isinstance(lesson, dict):
+            errors.append("Teaching Debate lessons must be objects")
+            continue
+        lesson_id = str(lesson.get("id") or "")
+        _require(bool(re.fullmatch(r"TD[0-9]{3}", lesson_id)), f"invalid Teaching Debate lesson id: {lesson_id}", errors)
+        _require(lesson_id not in lesson_ids, f"duplicate Teaching Debate lesson id: {lesson_id}", errors)
+        lesson_ids.add(lesson_id)
+        lesson_by_id[lesson_id] = lesson
+        _require(lesson.get("source_status") == "needs_reconciliation", f"{lesson_id} source status must remain unresolved", errors)
+        _require(lesson.get("rights_status") == "original-metadata-only", f"{lesson_id} rights status drifted", errors)
+        _require(lesson.get("publication_status") == "not_authorized", f"{lesson_id} publication must remain unauthorized", errors)
+        _require(bool(lesson.get("learning_outcome")), f"{lesson_id} missing learning outcome", errors)
+        _require(bool(lesson.get("practice")), f"{lesson_id} missing practice", errors)
+        _require(bool(lesson.get("assessment")), f"{lesson_id} missing assessment", errors)
+        for overlap_ref in lesson.get("overlap_refs") or []:
+            _require(str(overlap_ref) in valid_overlap_refs, f"{lesson_id} unknown overlap ref: {overlap_ref}", errors)
+        for source_id in lesson.get("origin_source_ids") or []:
+            _require(bool(re.fullmatch(r"S[0-9]+", str(source_id))), f"{lesson_id} invalid origin source id: {source_id}", errors)
+
+    _require(lesson_ids == {"TD001", "TD002"}, "Teaching Debate pilot IDs must be TD001 and TD002", errors)
+    _require((lesson_by_id.get("TD001") or {}).get("prerequisite_ids") == [], "TD001 must have no prerequisite", errors)
+    _require((lesson_by_id.get("TD002") or {}).get("prerequisite_ids") == ["TD001"], "TD002 must depend only on TD001", errors)
+    for lesson_id, lesson in lesson_by_id.items():
+        for prerequisite_id in lesson.get("prerequisite_ids") or []:
+            _require(prerequisite_id in lesson_ids, f"{lesson_id} prerequisite is outside accepted pilot: {prerequisite_id}", errors)
+
+    serialized = json.dumps(program, sort_keys=True).lower()
+    for token in ("script_beats", "youtube_video_id", "clearer_argument", "contested_questions", "f:\\\\"):
+        _require(token not in serialized, f"Teaching Debate program includes channel/private token: {token}", errors)
+
+    expansion_gate = program.get("expansion_gate") or {}
+    _require(expansion_gate.get("remaining_lesson_range") == "TD003-TD072", "Teaching Debate expansion range drifted", errors)
+    expected_classifications = {"reuse", "extend", "new", "channel-only", "needs-review"}
+    _require(set(expansion_gate.get("required_classifications") or []) == expected_classifications, "Teaching Debate classifications drifted", errors)
+    for key in (
+        "requires_full_prerequisite_closure",
+        "requires_source_and_rights_review",
+        "requires_leadership_boundary_review",
+        "requires_human_curriculum_review",
+    ):
+        _require(expansion_gate.get(key) is True, f"Teaching Debate expansion_gate.{key} must be true", errors)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo-root", default=".")
@@ -580,6 +693,7 @@ def main() -> int:
     _validate_source_packets(root, errors)
     _validate_lesson_outlines(root, errors)
     _validate_offline_ai_knowledge_store(root, errors)
+    _validate_teaching_debate_program(root, errors)
 
     if errors:
         for error in errors:

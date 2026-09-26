@@ -14,6 +14,7 @@ This file is the TODO hub for this repository.
 - `docs/todo/TODO_01_foundation_curriculum.md` - initial clear reasoning curriculum, source canon, practice, assessment, and verification.
 - `docs/todo/TODO_02_world_class_expansion.md` - expanded canon integration, source packets, adaptive practice, speaking labs, courseware integration, and media/UI delivery.
 - `docs/todo/TODO_03_civilization_framework.md` - Western-primary cross-civilizational coverage, culture-difference guardrails, source packets, curriculum matrix, reviewer standard, and build order.
+- `docs/todo/TODO_04_teaching_debate.md` - reusable Teaching Debate curriculum, ownership reconciliation, pilot lessons, and downstream adaptation boundaries.
 
 ## Working Rules
 

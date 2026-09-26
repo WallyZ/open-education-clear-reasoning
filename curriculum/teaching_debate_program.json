@@ -1,0 +1,84 @@
+{
+  "schema_version": "open-education-clear-reasoning/teaching-debate-program/v1",
+  "repo_id": "open-education-clear-reasoning",
+  "course_id": "teaching-debate",
+  "title": "Teaching Debate",
+  "status": "pilot",
+  "authority": {
+    "subject_curriculum_owner": "open-education-clear-reasoning",
+    "leadership_application_owner": "open-education-leadership",
+    "learner_runtime_owner": "open-education-suite",
+    "production_workflow_owner": "youtube-automation",
+    "channel_adaptation_owner": "private-channel-package-pending",
+    "subject_dossier_owner": "relevant-subject-content-repository"
+  },
+  "provenance": {
+    "source_pack": "Teaching_Debate_Curriculum_Pack.zip",
+    "source_pack_sha256": "3c4c92bf9a748c1534b348f3b989f644760c5774e25d48bb6610904b0cd50db8",
+    "source_curriculum_sha256": "401783a05496e580855aeb5ac4030b956d7d0cb16216da4def631b8553342334",
+    "source_date": "2026-09-23",
+    "source_status": "starter-input-not-authority"
+  },
+  "privacy_boundary": {
+    "contains_learner_private_data": false,
+    "contains_channel_scripts": false,
+    "contains_production_state": false,
+    "contains_copied_source_text": false,
+    "contains_generated_media": false
+  },
+  "pilot_policy": {
+    "prerequisite_complete": true,
+    "channel_neutral": true,
+    "publication_authorized": false,
+    "source_reconciliation_required": true,
+    "full_pack_imported": false
+  },
+  "lessons": [
+    {
+      "id": "TD001",
+      "title": "What Is Debate Actually For?",
+      "level": 1,
+      "module": "Purpose and conversation",
+      "prerequisite_ids": [],
+      "learning_outcome": "Distinguish truth-seeking, persuasion, competition, negotiation, and venting.",
+      "practice": "State your objective, ask the other person's objective, and write one shared question.",
+      "assessment": "Identify the conversation type without equating winning with truth.",
+      "overlap_refs": [
+        "m01-attention-distinction",
+        "m07-dialectic-ordered-questions",
+        "m10-dialogue-disagreement"
+      ],
+      "origin_source_ids": ["S10", "S17", "S21"],
+      "source_status": "needs_reconciliation",
+      "rights_status": "original-metadata-only",
+      "publication_status": "not_authorized"
+    },
+    {
+      "id": "TD002",
+      "title": "Listen Before You Answer",
+      "level": 1,
+      "module": "Purpose and conversation",
+      "prerequisite_ids": ["TD001"],
+      "learning_outcome": "Reconstruct the other person's claim and concern before rebutting.",
+      "practice": "Listen, summarize, invite correction, and incorporate a specific correction.",
+      "assessment": "The other speaker confirms the summary or identifies a concrete repair that the learner incorporates.",
+      "overlap_refs": [
+        "m07-dialectic-ordered-questions",
+        "m10-dialogue-disagreement",
+        "debate-persuasion-lab"
+      ],
+      "origin_source_ids": ["S10", "S32", "S33"],
+      "source_status": "needs_reconciliation",
+      "rights_status": "original-metadata-only",
+      "publication_status": "not_authorized"
+    }
+  ],
+  "expansion_gate": {
+    "remaining_lesson_range": "TD003-TD072",
+    "required_classifications": ["reuse", "extend", "new", "channel-only", "needs-review"],
+    "requires_full_prerequisite_closure": true,
+    "requires_source_and_rights_review": true,
+    "requires_leadership_boundary_review": true,
+    "requires_human_curriculum_review": true
+  }
+}

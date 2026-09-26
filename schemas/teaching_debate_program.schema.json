@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Teaching Debate Program",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "repo_id",
+    "course_id",
+    "title",
+    "status",
+    "authority",
+    "provenance",
+    "privacy_boundary",
+    "pilot_policy",
+    "lessons",
+    "expansion_gate"
+  ],
+  "properties": {
+    "schema_version": {"const": "open-education-clear-reasoning/teaching-debate-program/v1"},
+    "repo_id": {"const": "open-education-clear-reasoning"},
+    "course_id": {"const": "teaching-debate"},
+    "title": {"const": "Teaching Debate"},
+    "status": {"const": "pilot"},
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject_curriculum_owner", "leadership_application_owner", "learner_runtime_owner", "production_workflow_owner", "channel_adaptation_owner", "subject_dossier_owner"],
+      "properties": {
+        "subject_curriculum_owner": {"const": "open-education-clear-reasoning"},
+        "leadership_application_owner": {"const": "open-education-leadership"},
+        "learner_runtime_owner": {"const": "open-education-suite"},
+        "production_workflow_owner": {"const": "youtube-automation"},
+        "channel_adaptation_owner": {"const": "private-channel-package-pending"},
+        "subject_dossier_owner": {"const": "relevant-subject-content-repository"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_pack", "source_pack_sha256", "source_curriculum_sha256", "source_date", "source_status"],
+      "properties": {
+        "source_pack": {"const": "Teaching_Debate_Curriculum_Pack.zip"},
+        "source_pack_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "source_curriculum_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "source_date": {"const": "2026-09-23"},
+        "source_status": {"const": "starter-input-not-authority"}
+      }
+    },
+    "privacy_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contains_learner_private_data", "contains_channel_scripts", "contains_production_state", "contains_copied_source_text", "contains_generated_media"],
+      "properties": {
+        "contains_learner_private_data": {"const": false},
+        "contains_channel_scripts": {"const": false},
+        "contains_production_state": {"const": false},
+        "contains_copied_source_text": {"const": false},
+        "contains_generated_media": {"const": false}
+      }
+    },
+    "pilot_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["prerequisite_complete", "channel_neutral", "publication_authorized", "source_reconciliation_required", "full_pack_imported"],
+      "properties": {
+        "prerequisite_complete": {"const": true},
+        "channel_neutral": {"const": true},
+        "publication_authorized": {"const": false},
+        "source_reconciliation_required": {"const": true},
+        "full_pack_imported": {"const": false}
+      }
+    },
+    "lessons": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "level", "module", "prerequisite_ids", "learning_outcome", "practice", "assessment", "overlap_refs", "origin_source_ids", "source_status", "rights_status", "publication_status"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^TD[0-9]{3}$"},
+          "title": {"type": "string", "minLength": 3},
+          "level": {"type": "integer", "minimum": 1, "maximum": 6},
+          "module": {"type": "string", "minLength": 3},
+          "prerequisite_ids": {"type": "array", "items": {"type": "string", "pattern": "^TD[0-9]{3}$"}},
+          "learning_outcome": {"type": "string", "minLength": 10},
+          "practice": {"type": "string", "minLength": 10},
+          "assessment": {"type": "string", "minLength": 10},
+          "overlap_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "origin_source_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^S[0-9]+$"}},
+          "source_status": {"const": "needs_reconciliation"},
+          "rights_status": {"const": "original-metadata-only"},
+          "publication_status": {"const": "not_authorized"}
+        }
+      }
+    },
+    "expansion_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["remaining_lesson_range", "required_classifications", "requires_full_prerequisite_closure", "requires_source_and_rights_review", "requires_leadership_boundary_review", "requires_human_curriculum_review"],
+      "properties": {
+        "remaining_lesson_range": {"const": "TD003-TD072"},
+        "required_classifications": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"enum": ["reuse", "extend", "new", "channel-only", "needs-review"]}},
+        "requires_full_prerequisite_closure": {"const": true},
+        "requires_source_and_rights_review": {"const": true},
+        "requires_leadership_boundary_review": {"const": true},
+        "requires_human_curriculum_review": {"const": true}
+      }
+    }
+  }
+}
