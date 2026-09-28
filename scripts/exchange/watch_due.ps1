@@ -68,10 +68,10 @@ function Get-ReviewCommands {
     )
 
     return @(
-        ("pwsh -NoProfile -ExecutionPolicy Bypass -File `"{0}`" -RepoRoot `"{1}`"" -f (Join-Path $scriptDir 'catalog_repo.ps1'), $Root),
-        ("pwsh -NoProfile -ExecutionPolicy Bypass -File `"{0}`" -RepoRoot `"{1}`" -RepoKitRoot `"{2}`"" -f (Join-Path $scriptDir 'propose_imports.ps1'), $Root, $KitRoot),
-        ("pwsh -NoProfile -ExecutionPolicy Bypass -File `"{0}`" -RepoRoot `"{1}`"" -f (Join-Path $scriptDir 'propose_exports.ps1'), $Root),
-        ("pwsh -NoProfile -ExecutionPolicy Bypass -File `"{0}`" -RepoRoot `"{1}`" -RepoKitRoot `"{2}`"" -f (Join-Path $scriptDir 'check_drift.ps1'), $Root, $KitRoot)
+        ("pwsh -NoProfile -NonInteractive -ExecutionPolicy Bypass -File `"{0}`" -RepoRoot `"{1}`"" -f (Join-Path $scriptDir 'catalog_repo.ps1'), $Root),
+        ("pwsh -NoProfile -NonInteractive -ExecutionPolicy Bypass -File `"{0}`" -RepoRoot `"{1}`" -RepoKitRoot `"{2}`"" -f (Join-Path $scriptDir 'propose_imports.ps1'), $Root, $KitRoot),
+        ("pwsh -NoProfile -NonInteractive -ExecutionPolicy Bypass -File `"{0}`" -RepoRoot `"{1}`"" -f (Join-Path $scriptDir 'propose_exports.ps1'), $Root),
+        ("pwsh -NoProfile -NonInteractive -ExecutionPolicy Bypass -File `"{0}`" -RepoRoot `"{1}`" -RepoKitRoot `"{2}`"" -f (Join-Path $scriptDir 'check_drift.ps1'), $Root, $KitRoot)
     )
 }
 
